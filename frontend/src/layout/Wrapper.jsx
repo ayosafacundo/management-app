@@ -1,7 +1,7 @@
 import React from 'react'
-import Logo from './Components/Logo';
-import Header from './Components/Header';
-import Sidebar from './Components/Sidebar';
+import Logo from '../components/Logo';
+import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 /**

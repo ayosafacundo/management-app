@@ -1,16 +1,15 @@
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Auth from "../pages/Auth";
-import Dashboard from '../pages/Dashboard';
-import Wrapper from '../layout/Wrapper';
-import Err404 from '../pages/Err404';
-import Admin from '../pages/Admin';
+import Auth from "../pages/Auth.jsx";
+import Dashboard from '../pages/Dashboard.jsx';
+import Wrapper from '../layout/Wrapper.jsx';
+import Admin from '../pages/Admin.jsx';
 
 // falta hacer router
 
 export default function Router() {
     return (
         <Routes>
-
+            <Route path='/' element={<Navigate to="login" />} />
             <Route path='/login' element={<Auth />} />
             <Route exact path="/:id/" element={<Wrapper />}>
                 <Route index exact path='dashboard' element={<Dashboard />} />
@@ -22,8 +21,6 @@ export default function Router() {
 
 
 /*
-    <Route path='/' element={<Navigate to="login" />} />
-
             <Route path='*' element={<Err404 />} />
 
 <Wrapper>

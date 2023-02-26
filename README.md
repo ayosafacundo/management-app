@@ -1,11 +1,13 @@
 # UTN Management App
+
 Idea from [sharpen.design](sharpen.design)  
 <img src="./idea.png" width="400" height="200" alt="Idea from sharpen.design">
 
 
 ## Packages:
 
-Libraries:  
+### Frontend Libraries:  
+
 [React](https://github.com/facebook/react)    
 [React-router-dom](https://github.com/remix-run/react-router)  
 [React-hook-form](https://react-hook-form.com/get-started/)  
@@ -13,8 +15,25 @@ Libraries:
 [React icons](https://react-icons.github.io/react-icons/search?q=admi)  
 [Axios](https://axios-http.com/)
 
-Testing done in [Jest](https://github.com/facebook/jest)  
+Testing done in [React-testing-library](https://testing-library.com/docs/react-testing-library/intro/)  
 CSS preprocessed with [Sass](https://sass-lang.com/)  
+
+### Backend Libraries:
+
+[express-async-handler](https://github.com/Abazhenov/express-async-handler)  
+[bcryptjs](https://github.com/dcodeIO/bcrypt.js)  
+[cors](https://github.com/expressjs/cors)  
+[dotenv](https://github.com/motdotla/dotenv)  
+[express](https://expressjs.com/es/)  
+[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)  
+[mongoose](https://mongoosejs.com/)  
+
+Libraries taken from [Handling user authentication redux toolkit](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/#prerequisites) guide, backend created by me.
+
+### Database:
+
+Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanbaevnbXtk.pdf)  
+<img src="./RDB design.png" alt="Made by Shelley Bhatnagar" style="display: block; margin: 0 auto;">
 
 
 ## Design:
@@ -32,9 +51,9 @@ guides:
 
 ## To do: 
 
-- [ ] Router  
+- [X] Router  
 - [ ] Pages:  
-    - [x] Login      
+    - [ ] Login      
     - [ ] Admin Panel    
     - [ ] Dashboard  
     - [ ] Treasury    

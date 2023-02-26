@@ -1,10 +1,9 @@
-import React, { createContext } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './scss/main.css';
-import reportWebVitals from './reportWebVitals';
-import Router from './routes/routes';
+import reportWebVitals from './reportWebVitals.js';
+import Router from './routes/routes.js';
 import { BrowserRouter } from 'react-router-dom';
-import { State } from './context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

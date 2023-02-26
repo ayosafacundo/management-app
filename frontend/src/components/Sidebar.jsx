@@ -1,7 +1,7 @@
 import React from 'react';
 import { SlScreenDesktop } from 'react-icons/sl';
 import { MdOutlineAdminPanelSettings } from 'react-icons/md';
-import SidebarLink from '../../components/SidebarLink';
+import SidebarLink from '../components/SidebarLink';
 import { useLocation } from 'react-router-dom';
 
 

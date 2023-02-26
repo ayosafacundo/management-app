@@ -2,7 +2,7 @@ import React from 'react'
 
 function Logo() {
     return (
-        <h1 className='imglogo'>Placeholder<br />University</h1>
+        <h1 className='imglogo'>Claymore<br />University</h1>
     )
 }
 

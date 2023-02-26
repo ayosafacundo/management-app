@@ -1,9 +1,8 @@
-import React, { useContext } from 'react'
-import Logo from '../layout/Components/Logo';
+import React from 'react'
+import Logo from '../components/Logo.jsx';
 import { useForm } from 'react-hook-form';
 import accounts from '../accounts.json';
 import { useNavigate } from 'react-router-dom';
-import { State as context } from '../context';
 //import { useSelector, useDispatch } from 'react-redux';
 
 function Auth() {
@@ -13,21 +12,20 @@ function Auth() {
     //const dispatch = useDispatch();
 
     const Navigate = useNavigate();
-    const state = useContext(context);
 
     const onSubmit = (data) => {
         // Check if inputs 
-        const index = accounts.findIndex(e => e.email === data.email)
-        if (accounts[index].email === data.email && accounts[index].password === data.password) {
+        const index = accounts.findIndex(e => e.email === data.email.toLowerCase())
+        if (accounts[index].email === data.email.toLowerCase() && accounts[index].password === data.password) {
             let path = accounts[index]._id;
-            state = {
-                logged: true,
-                id: accounts[index]._id,
-                user: accounts[index].username,
-                privileges: accounts[index].privileges
-            }
             Navigate(`/${path}/dashboard`, {
                 replace: true,
+                state: {
+                    logged: true,
+                    id: accounts[index]._id,
+                    user: accounts[index].username,
+                    privileges: accounts[index].privileges
+                }
             })
         }
     }
