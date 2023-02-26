@@ -10,25 +10,23 @@ import Admin from '../pages/Admin';
 export default function Router() {
     return (
         <Routes>
-            <Route path='/' element={<Navigate to="login" />} />
-            <Route index path='login' element={<Auth />} />
-            <Route
-                path=':id'
-                element={
-                    <Wrapper>
-                        <Route path='dashboard' element={<Dashboard />} />
-                        <Route path='admin' element={<Admin />} />
-                        <Route path='*' element={<Navigate to='dashboard' />} />
-                    </Wrapper>
-                }>
+
+            <Route path='/login' element={<Auth />} />
+            <Route exact path="/:id/" element={<Wrapper />}>
+                <Route index exact path='dashboard' element={<Dashboard />} />
+                <Route exact path='admin' element={<Admin />} />
             </Route>
-            <Route path='*' element={<Err404 />} />
         </Routes>
     )
 }
 
+
 /*
-    <Wrapper>
+    <Route path='/' element={<Navigate to="login" />} />
+
+            <Route path='*' element={<Err404 />} />
+
+<Wrapper>
                         <Navigate to="dashboard" />
                         <Route path='teachers' element={<Dashboard />} />
                     </Wrapper>

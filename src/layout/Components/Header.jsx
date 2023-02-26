@@ -1,9 +1,12 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
+
+/**
+ * Header component for the Wrapper, contains a Log off button
+ * @returns React Component
+ */
 function Header() {
-
-    const { state } = useLocation();
 
     const Navigate = useNavigate();
 
@@ -16,7 +19,6 @@ function Header() {
 
     return (
         <header>
-            <h2>Welcome {state.user}!</h2>
             <button className='btn btn-warning' onClick={clickHandler}>Sign Out</button>
         </header>
     )

@@ -9,7 +9,9 @@ Libraries:
 [React](https://github.com/facebook/react)    
 [React-router-dom](https://github.com/remix-run/react-router)  
 [React-hook-form](https://react-hook-form.com/get-started/)  
+[React-redux](https://react-redux.js.org/)  
 [React icons](https://react-icons.github.io/react-icons/search?q=admi)  
+[Axios](https://axios-http.com/)
 
 Testing done in [Jest](https://github.com/facebook/jest)  
 CSS preprocessed with [Sass](https://sass-lang.com/)  
@@ -25,6 +27,7 @@ guides:
 [Rutas privadas con ReactRouterDomV6](https://www.youtube.com/watch?v=tqc8n3odVp0)  
 [Aprende React Router 6 en 30 minutos](https://www.youtube.com/watch?v=JNhhdkCuyog)  
 [Handling user authentication redux toolkit](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/#prerequisites)
+
 
 
 ## To do: 

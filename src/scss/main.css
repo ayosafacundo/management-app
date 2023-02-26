@@ -17,6 +17,9 @@ body {
   grid-template-columns: 0.15fr 1fr;
   grid-template-rows: 0.05fr 1fr;
 }
+#root:has(header, nav) main {
+  grid-area: 2/2/3/3;
+}
 #root:has(#login) {
   display: flex;
   align-items: center;
@@ -85,10 +88,15 @@ nav ul li svg {
 nav ul li.active {
   padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
   border-left: 3px solid #3d89bd;
+  color: #3d89bd;
 }
 nav ul li:hover {
   background-color: #327fb3;
   border-right: #3d89bd;
+}
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Modules or Components */
@@ -242,7 +250,15 @@ nav ul li:hover {
   color: #3d89bd;
 }
 
-main {
-  grid-area: 2/2/3/3;
-  background-color: #f0eef9;
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#dashboard h1 {
+  margin: 2rem 0 0 0;
+}
+#dashboard h2 {
+  margin: 0;
+  color: gray;
 }/*# sourceMappingURL=main.css.map */
