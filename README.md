@@ -1,4 +1,4 @@
-# UTN Management App
+# Claymore University Management App
 
 Idea from [sharpen.design](sharpen.design)  
 <img src="./Idea.png" width="400" height="200" alt="Idea from sharpen.design">
