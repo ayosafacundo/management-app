@@ -1,7 +1,7 @@
 # UTN Management App
 
 Idea from [sharpen.design](sharpen.design)  
-<img src="./idea.png" width="400" height="200" alt="Idea from sharpen.design">
+<img src="./Idea.png" width="400" height="200" alt="Idea from sharpen.design">
 
 
 ## Packages:
