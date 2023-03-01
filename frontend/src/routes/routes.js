@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate, useLocation, Link } from 'react-router-dom';
+import { Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Wrapper from '../layout/Wrapper.jsx'; //Sidebar, header and logo all-in-one Wrapper with PrivateRouting
 /* Pages */
 import Auth from "../pages/Auth.jsx";
