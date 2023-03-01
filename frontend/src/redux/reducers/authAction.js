@@ -3,7 +3,7 @@ import axios from "axios";
 
 const backendURL = 'http://127.0.0.1:5000'
 
-export const registerUser = createAsyncThunk(
+const registerUser = createAsyncThunk(
     'auth/register',
     async ({ firstname, lastname, email, password, privileges }, { rejectWithValue }) => {
         try {
@@ -26,3 +26,5 @@ export const registerUser = createAsyncThunk(
         }
     }
 )
+
+export default registerUser;

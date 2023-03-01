@@ -1,13 +1,21 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 function SidebarLink({ name, url, icon, isActive }) {
 
     const { state } = useLocation();
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/${state.id}/${url}`, {
+            replace: false,
+            state: state
+        })
+    }
 
     return (
-        <li className={isActive ? 'active' : undefined}><Link to={`/${state.id}/${url}`}>{icon} {name}</Link></li>
+        <li className={isActive ? 'active link' : 'link'} onClick={handleClick}>{icon} {name}</li>
     )
 }
 
