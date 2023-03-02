@@ -1,46 +1,28 @@
 .accordion {
 
-    color: white;
-    border: none;
-    text-align: left;
-    text-decoration: none;
-    display: list-item;
-    padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
-    vertical-align: top;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1rem;
-    font-size: clamp(1rem, 0.9741379310344828rem + 0.22988505747126436vw, 1.25rem);
-    user-select: none;
-    background-color: rgba(0, 0, 0, 0);
-    margin: 0;
-    cursor: pointer;
-
-    &:is(button) {
+    button {
+        color: white;
+        border: none;
+        text-align: left;
+        text-decoration: none;
+        display: list-item;
+        padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
+        vertical-align: top;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1rem;
+        font-size: clamp(1rem, 0.9741379310344828rem + 0.22988505747126436vw, 1.25rem);
+        user-select: none;
+        background-color: rgba(0, 0, 0, 0);
+        margin: 0;
+        cursor: pointer;
         width: 100%;
-    }
 
-
-
-    .accordion__content {
-        padding-top: 5px;
-        padding-bottom: 5px;
-
-        >ul {
-            margin: 0;
-            margin-top: 0;
+        >svg {
+            margin-right: 15px;
         }
-
-        &.hidden {
-            display: none;
-        }
-    }
-
-    >svg {
-        margin-right: 15px;
     }
 
     &.active {
-        padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
         border-left: 3px solid $cyan;
         color: $cyan;
     }
@@ -48,11 +30,32 @@
     &:hover {
         background-color: rgba(0, 0, 0, 0.5);
         border-right: $cyan;
-
-        ~.accordion__content {
-            background-color: rgba(0, 0, 0, 0.5);
-        }
+        transition: background-color 0.1s linear;
     }
 
+    .accordion__content {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        max-height: 100vh;
+        transition: max-height 0.3s ease-in-out;
+
+        >ul {
+            margin: 0;
+            margin-top: 0;
+
+            li {
+                font-size: 0.5rem;
+                font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+            }
+        }
+
+        &.hidden {
+            overflow: hidden;
+            max-height: 0;
+            transition: max-height 0.3s ease-in-out;
+            transition: padding 0.3s ease-in-out;
+            padding: 0;
+        }
+    }
 
 }

@@ -9,13 +9,14 @@ function Accordion({ title, icon, children }) {
         e.stopImmediatePropagation();
     }
 
-    return (<>
 
-        <button className='accordion' onClick={clickHandler}>{icon}{title}</button>
-        <ul className={isHidden ? 'accordion accordion__content hidden' : 'accordion accordion__content'}>
-            {children}
-        </ul>
-    </>
+    return (
+        <li className='accordion active'>
+            <button type='checkbox' onClick={clickHandler}>{icon}{title}</button>
+            <ul className={isHidden ? 'accordion__content hidden' : 'accordion__content'}>
+                {children}
+            </ul>
+        </li>
     )
 }
 

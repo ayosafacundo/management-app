@@ -24,6 +24,8 @@ li.link {
     &:hover {
         background-color: $darkcyan;
         border-right: $cyan;
+        transition: background-color 0.1s linear;
+
     }
 
 

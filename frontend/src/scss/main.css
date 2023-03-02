@@ -123,9 +123,10 @@ li.link.active {
 li.link:hover {
   background-color: #327fb3;
   border-right: #3d89bd;
+  transition: background-color 0.1s linear;
 }
 
-.accordion {
+.accordion button {
   color: white;
   border: none;
   text-align: left;
@@ -142,35 +143,40 @@ li.link:hover {
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
   cursor: pointer;
-}
-.accordion:is(button) {
   width: 100%;
 }
-.accordion .accordion__content {
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-.accordion .accordion__content > ul {
-  margin: 0;
-  margin-top: 0;
-}
-.accordion .accordion__content.hidden {
-  display: none;
-}
-.accordion > svg {
+.accordion button > svg {
   margin-right: 15px;
 }
 .accordion.active {
-  padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
   border-left: 3px solid #3d89bd;
   color: #3d89bd;
 }
 .accordion:hover {
   background-color: rgba(0, 0, 0, 0.5);
   border-right: #3d89bd;
+  transition: background-color 0.1s linear;
 }
-.accordion:hover ~ .accordion__content {
-  background-color: rgba(0, 0, 0, 0.5);
+.accordion .accordion__content {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  max-height: 100vh;
+  transition: max-height 0.3s ease-in-out;
+}
+.accordion .accordion__content > ul {
+  margin: 0;
+  margin-top: 0;
+}
+.accordion .accordion__content > ul li {
+  font-size: 0.5rem;
+  font-size: clamp(0.5rem, 0.45rem + 0.25vw, 0.75rem);
+}
+.accordion .accordion__content.hidden {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-in-out;
+  transition: padding 0.3s ease-in-out;
+  padding: 0;
 }
 
 /* Pages */

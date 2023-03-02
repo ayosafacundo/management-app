@@ -26,9 +26,8 @@ CSS preprocessed with [Sass](https://sass-lang.com/)
 [dotenv](https://github.com/motdotla/dotenv)  
 [express](https://expressjs.com/es/)  
 [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)  
-[mongoose](https://mongoosejs.com/)  
-
-Libraries taken from [Handling user authentication redux toolkit](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/#prerequisites) guide, backend created by me.
+[pg](https://github.com/brianc/node-postgres)
+[graphql][https://graphql.org/]
 
 ### Database:
 
@@ -42,11 +41,12 @@ Design from [here](https://www.sideprojectors.com/project/13673/university-manag
 Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanbaevnbXtk.pdf)  
 This search helped me a lot [Google Search](https://www.google.com/search?q=university+management+system+project&rlz=1C1ONGR_esAR1016AR1016&tbm=isch&sxsrf=AJOqlzUqROKRm6YsvZcQxqxf31gGDIwkaw:1677037853003&source=lnms&sa=X&ved=2ahUKEwjx7YLsnKj9AhW2rJUCHRzgDzUQ_AUoAnoECAoQBA&biw=2560&bih=937&dpr=1#imgrc=iwxUAxrO9jYy9M)  
 
-guides:  
+## Guides that helped me:  
+
 [Rutas privadas con ReactRouterDomV6](https://www.youtube.com/watch?v=tqc8n3odVp0)  
 [Aprende React Router 6 en 30 minutos](https://www.youtube.com/watch?v=JNhhdkCuyog)  
 [Handling user authentication redux toolkit](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/#prerequisites)
-
+[CRUD REST API with Node.js Express.js and Postgresql](https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/)
 
 
 ## To do: 
