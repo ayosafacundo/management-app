@@ -8,6 +8,7 @@
     "start": "node backend/server",
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
+    "build": "cd .\\frontend\\ && npm run build",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {

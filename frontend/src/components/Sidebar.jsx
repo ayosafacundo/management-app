@@ -11,13 +11,14 @@ function Sidebar({ privileges }) {
 
     const { pathname } = useLocation();
     const path = pathname.split('/');
+    console.log(pathname)
 
     return (
         <nav>
             <ul>
                 <SidebarLink name="Dashboard" url="dashboard" icon={<SlScreenDesktop />} isActive={path[path.length - 1] === 'dashboard' ? true : false} />
                 {privileges?.admin ? (
-                    <Accordion title="Admin Panel" icon={<MdOutlineAdminPanelSettings />}>
+                    <Accordion title="Admin Panel" path={path} icon={<MdOutlineAdminPanelSettings />}>
                         <SidebarLink name="Settings" url="admin/settings" icon={<MdOutlineAdminPanelSettings />} isActive={path[path.length - 1] === 'admin' ? true : false} />
                     </Accordion>
                 ) : undefined}

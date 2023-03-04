@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-function Accordion({ title, icon, children }) {
+function Accordion({ title, icon, path, children }) {
 
     const [isHidden, setIsHidden] = useState(true);
 
@@ -9,9 +9,8 @@ function Accordion({ title, icon, children }) {
         e.stopImmediatePropagation();
     }
 
-
     return (
-        <li className='accordion active'>
+        <li className={path.some(e => e === 'admin') ? 'accordion active' : 'accordion'}>
             <button type='checkbox' onClick={clickHandler}>{icon}{title}</button>
             <ul className={isHidden ? 'accordion__content hidden' : 'accordion__content'}>
                 {children}

@@ -25,3 +25,19 @@ body {
         align-items: center;
     }
 }
+
+* {
+    &::-webkit-scrollbar {
+        width: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f0f0f0;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $cyan;
+        border-radius: 10px;
+        border: 3px solid #ffffff;
+    }
+}

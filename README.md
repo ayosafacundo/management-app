@@ -37,9 +37,12 @@ Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanba
 
 ## Design:
 
+DESIGNS TAKEN AS REFERENCE AND IMPROVISED OVER THEM.
+
 Design from [here](https://www.sideprojectors.com/project/13673/university-management-systemadminteacherstudent)  
 Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanbaevnbXtk.pdf)  
 This search helped me a lot [Google Search](https://www.google.com/search?q=university+management+system+project&rlz=1C1ONGR_esAR1016AR1016&tbm=isch&sxsrf=AJOqlzUqROKRm6YsvZcQxqxf31gGDIwkaw:1677037853003&source=lnms&sa=X&ved=2ahUKEwjx7YLsnKj9AhW2rJUCHRzgDzUQ_AUoAnoECAoQBA&biw=2560&bih=937&dpr=1#imgrc=iwxUAxrO9jYy9M)  
+Library Design from [here](https://www.behance.net/gallery/137500455/Book-Books-A-Books-Library-Web-App-Design?tracking_source=search_projects%7CLibrary+Webapp)
 
 ## Guides that helped me:  
 
