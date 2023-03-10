@@ -29,3 +29,16 @@ app.use(
 app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
+
+import accounts from './accounts.json' assert { type: "json"};
+
+app.get('/api/users/:id', (req, res) => {
+  let params = req.params.id ? req.params.id : false;
+  const index = accounts.findIndex(e => e._id == params) != -1 ? accounts.findIndex(e => e._id == params) : false;
+  console.log(index)
+  if (!index) {
+    res.send('Error: No Parameters')
+  } else {
+    res.send(accounts[index]);
+  }
+})
