@@ -12,7 +12,12 @@
 /* Modules or Components */
 @import 'components/logo';
 @import 'components/notify-bubble';
+@import 'components/sidebar-link';
+@import 'components/accordion';
+@import 'components/chip';
+@import 'components/book';
 
 /* Pages */
 @import 'pages/auth';
 @import 'pages/dashboard';
+@import 'pages/library';
