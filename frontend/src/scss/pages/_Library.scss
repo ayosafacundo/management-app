@@ -31,12 +31,59 @@
             text-align: center;
         }
 
-        div.input {
+        .form {
+            display: flex;
+            flex-direction: row;
             margin-left: 2rem;
             margin-right: 2rem;
-            background-color: lightgray;
-            padding: 0.5rem;
             border-radius: 2rem;
+            outline: 3px solid lighten($cyan, 20%);
+            transition: outline 1s;
+
+            &:focus,
+            .input:focus,
+            &:hover,
+            button:hover,
+            button:focus {
+                outline: 3px solid $cyan;
+                transition: outline 1s;
+
+                button {
+                    outline: 0;
+                }
+            }
+
+            input.input {
+                background-color: darken($white, 10%);
+                border: 0;
+                padding: 0.5rem;
+                border-bottom-left-radius: 2rem;
+                border-top-left-radius: 2rem;
+                width: calc(100% - 3rem);
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+
+            button {
+                padding-left: 1rem;
+                width: 3rem;
+                padding-right: 1rem;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                background-color: darken($white, 10%);
+                border: 0;
+
+                &:hover {
+                    background-color: darken($white, 20%);
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+
         }
 
         h5 {
@@ -88,10 +135,11 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: left;
         padding: 2rem;
         overflow: scroll;
         overflow-x: hidden;
+        gap: 0.5rem;
 
     }
 

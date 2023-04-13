@@ -10,13 +10,21 @@
     background-color: darken($darkwhite, 10%);
     z-index: 1;
 
-    img {
+    >.cover {
         position: absolute;
         top: 0;
         left: 0;
         aspect-ratio: 2/3;
+        width: 100%;
         z-index: -1;
-        filter: blur(1px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+
+        >.title {
+            font-size: 1.5rem;
+        }
     }
 
     .before {
@@ -37,7 +45,7 @@
         box-sizing: border-box;
 
         >h2 {
-            font-size: clamp(0.8rem, 3vw, 2rem);
+            font-size: clamp(0.8rem, 3vw, 1.5rem);
         }
 
         >.bookdescription {

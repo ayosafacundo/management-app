@@ -11,7 +11,6 @@ import { Navigate, Outlet, useLocation } from 'react-router-dom';
 function Wrapper() {
 
     const { state } = useLocation();
-    console.log(state)
 
     return state?.logged ? (
         <>

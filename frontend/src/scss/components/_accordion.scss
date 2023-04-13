@@ -24,7 +24,10 @@
 
     &.active {
         border-left: 3px solid $cyan;
-        color: $cyan;
+
+        button {
+            color: $cyan;
+        }
     }
 
     &:hover {

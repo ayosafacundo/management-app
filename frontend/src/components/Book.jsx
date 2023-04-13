@@ -1,16 +1,22 @@
 import React from 'react'
 
-function Book() {
+function Book({ title, description, cover, author, language, pdfurl, buyurl }) {
     return (
         <article className='book'>
-            <img src='https://picsum.photos/200/300' alt='cover' />
+            {cover ? (
+                <img className="cover" src={cover} alt={`${title} cover.`} />
+            ) : (
+                <div className='cover'>
+                    <p className='title'>{title}</p>
+                </div>
+            )}
             <div className='before'>
                 <div>
-                    <button className='btn viewpdf'>View PDF</button>
-                    <button className='btn buy'>Buy Book</button>
+                    <button className='btn viewpdf' disabled={pdfurl ? true : false}>View PDF</button>
+                    <button className='btn buy' disabled={buyurl ? true : false}>Buy Book</button>
                 </div>
-                <span className='bookdescription'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean consequat justo fermentum ultrices finibus. Praesent varius mauris non nisl tempor, lacinia laoreet orci posuere. Praesent mattis bibendum tortor eget rutrum. Duis molestie ultricies cursus. Phasellus eget nisi tortor. Quisque vel pulvinar leo, ac maximus sem. Ut consectetur, nisl nec pharetra iaculis, justo libero facilisis justo, vel vulputate justo diam semper enim.</span>
-                <h2>Book Name</h2>
+                <span className='bookdescription'>{description ? description : `Author: ${author}\n\n Language: ${language}`}</span>
+                <h2>{title}</h2>
             </div>
         </article>
     )

@@ -26,15 +26,41 @@ body {
 }
 
 *::-webkit-scrollbar {
-  width: 16px;
+  width: 2px;
+  height: 2px;
 }
-*::-webkit-scrollbar-track {
-  background: #f0f0f0;
+*::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+*::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
 }
 *::-webkit-scrollbar-thumb {
-  background-color: #3d89bd;
-  border-radius: 10px;
-  border: 3px solid #ffffff;
+  background: #f0eef9;
+  border: 0px none #fbfbfb;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: #fbfbfb;
+}
+*::-webkit-scrollbar-thumb:active {
+  background: #3d89bd;
+}
+*::-webkit-scrollbar-track {
+  background: #242831;
+  border: 0px none transparent;
+  border-radius: 50px;
+}
+*::-webkit-scrollbar-track:hover {
+  background: #242831;
+}
+*::-webkit-scrollbar-track:active {
+  background: #327fb3;
+}
+*::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /* Layouts*/
@@ -72,6 +98,8 @@ nav {
   background-color: #242831;
   color: #fbfbfb;
   grid-area: 2/1/3/2;
+  overflow-y: scroll;
+  scrollbar-width: 5px;
 }
 nav > ul {
   margin: 0;
@@ -120,6 +148,7 @@ li.link {
      -moz-user-select: none;
           user-select: none;
   cursor: pointer;
+  color: #fbfbfb;
 }
 li.link > svg {
   aspect-ratio: 1/1;
@@ -162,6 +191,8 @@ li.link:hover {
 }
 .accordion.active {
   border-left: 3px solid #3d89bd;
+}
+.accordion.active button {
   color: #3d89bd;
 }
 .accordion:hover {
@@ -241,13 +272,20 @@ li.link:hover {
   background-color: #cfc8ec;
   z-index: 1;
 }
-.book img {
+.book > .cover {
   position: absolute;
   top: 0;
   left: 0;
   aspect-ratio: 2/3;
+  width: 100%;
   z-index: -1;
-  filter: blur(1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+.book > .cover > .title {
+  font-size: 1.5rem;
 }
 .book .before {
   content: "";
@@ -267,7 +305,7 @@ li.link:hover {
   box-sizing: border-box;
 }
 .book .before > h2 {
-  font-size: clamp(0.8rem, 3vw, 2rem);
+  font-size: clamp(0.8rem, 3vw, 1.5rem);
 }
 .book .before > .bookdescription {
   font-size: 0.8rem;
@@ -306,6 +344,13 @@ li.link:hover {
 }
 
 /* Pages */
+#wip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 #login {
   box-sizing: border-box;
   padding: 1rem;
@@ -470,12 +515,53 @@ li.link:hover {
 #library > aside.tags h3 {
   text-align: center;
 }
-#library > aside.tags div.input {
+#library > aside.tags .form {
+  display: flex;
+  flex-direction: row;
   margin-left: 2rem;
   margin-right: 2rem;
-  background-color: lightgray;
-  padding: 0.5rem;
   border-radius: 2rem;
+  outline: 3px solid #88b8d8;
+  transition: outline 1s;
+}
+#library > aside.tags .form:focus,
+#library > aside.tags .form .input:focus, #library > aside.tags .form:hover,
+#library > aside.tags .form button:hover,
+#library > aside.tags .form button:focus {
+  outline: 3px solid #3d89bd;
+  transition: outline 1s;
+}
+#library > aside.tags .form:focus button,
+#library > aside.tags .form .input:focus button, #library > aside.tags .form:hover button,
+#library > aside.tags .form button:hover button,
+#library > aside.tags .form button:focus button {
+  outline: 0;
+}
+#library > aside.tags .form input.input {
+  background-color: #e2e2e2;
+  border: 0;
+  padding: 0.5rem;
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+  width: calc(100% - 3rem);
+}
+#library > aside.tags .form input.input:focus {
+  outline: 0;
+}
+#library > aside.tags .form button {
+  padding-left: 1rem;
+  width: 3rem;
+  padding-right: 1rem;
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: #e2e2e2;
+  border: 0;
+}
+#library > aside.tags .form button:hover {
+  background-color: #c8c8c8;
+}
+#library > aside.tags .form button:focus {
+  outline: 0;
 }
 #library > aside.tags h5 {
   padding-left: clamp(1rem, 10%, 3rem);
@@ -520,10 +606,11 @@ li.link:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
   padding: 2rem;
   overflow: scroll;
   overflow-x: hidden;
+  gap: 0.5rem;
 }
 #library > aside.shopping_list {
   background-color: #3d89bd;
@@ -531,4 +618,58 @@ li.link:hover {
 }
 #library > aside.shopping_list h3 {
   text-align: center;
+}
+
+main#student {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  max-width: 100%;
+  max-height: 100%;
+}
+main#student section {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+main#student section h2 {
+  display: block;
+  margin: 0;
+  padding: 0.5rem;
+}
+main#student section.courses {
+  grid-area: 1/1/2/2;
+  display: flex;
+  flex-direction: column;
+}
+main#student section.courses .content {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  overflow: scroll;
+  scroll-snap-align: center;
+  scrollbar-width: none;
+}
+main#student section.courses .content::-webkit-scrollbar {
+  width: 0;
+}
+main#student section.courses .content .course {
+  width: 15rem;
+  border: 3px solid black;
+}
+main#student section.timetable {
+  grid-area: 2/1/3/2;
+}
+main#student section.announcements {
+  grid-area: 1/2/2/3;
+}
+main#student section.feesannouncements {
+  grid-area: 2/2/3/3;
 }/*# sourceMappingURL=main.css.map */
