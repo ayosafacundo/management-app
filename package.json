@@ -9,7 +9,8 @@
     "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "build": "cd .\\frontend\\ && npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client deploy": "cd .\\frontend\\ && npm run deploy"
   },
   "repository": {
     "type": "git",

@@ -1,5 +1,6 @@
 {
   "name": "management-app",
+  "homepage": "https://ayosafacundo.github.io/management-app",
   "description": "Management App for UC Berkely, Idea originated from Sharpen.Design prompt",
   "author": "Facundo Ezequiel Ayosa",
   "type": "module",
@@ -8,7 +9,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -55,6 +58,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "react-icons": "^4.7.1",
     "react-scripts": "5.0.1"
   }
