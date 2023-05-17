@@ -7,7 +7,6 @@ import Admin from '../pages/Admin.jsx';
 import Teacher from '../pages/Teacher.jsx';
 import Library from '../pages/Library.jsx';
 import Fees from '../pages/Fees.jsx';
-import Student from '../pages/Student.jsx';
 import WIP from '../pages/WIP.jsx';
 
 export default function Router() {
@@ -25,13 +24,18 @@ export default function Router() {
                     <Route exact path='settings' element={<WIP />} />           {/* TODO */}
                 </Route>
                 <Route exact path='student'>
-                    <Route exact path='home' element={<Student />} />           {/* TODO */}
+                    <Route exact path='home' element={<WIP />} />               {/* TODO */}
                     <Route exact path='courses' element={<WIP />} />            {/* TODO */}
                     <Route exact path='settings' element={<WIP />} />           {/* TODO */}
                 </Route>
                 <Route exact path='teacher'>
                     <Route exact path='home' element={<Teacher />} />           {/* TODO */}
                     <Route exact path='courses' element={<WIP />} />            {/* TODO */}
+                    <Route exact path='settings' element={<WIP />} />           {/* TODO */}
+                </Route>
+                <Route exact path='librarian'>
+                    <Route exact path='home' element={<WIP />} />               {/* TODO */}
+                    <Route exact path='books' element={<WIP />} />              {/* TODO */}
                     <Route exact path='settings' element={<WIP />} />           {/* TODO */}
                 </Route>
                 <Route exact path='library' element={<Library />} />

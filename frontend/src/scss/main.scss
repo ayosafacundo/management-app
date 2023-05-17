@@ -18,8 +18,9 @@
 @import 'components/book';
 
 /* Pages */
-@import 'pages/wip';
+@import 'pages/wip'; // Work in progress Placeholder
 @import 'pages/auth';
-@import 'pages/dashboard';
 @import 'pages/library';
-@import 'pages/student';
+// Dashboards
+@import 'pages/dashboards/dashboard';
+@import 'pages/dashboards/student';

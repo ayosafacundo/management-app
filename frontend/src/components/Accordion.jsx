@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { GoTriangleUp, GoTriangleDown } from 'react-icons/go';
+
 
 function Accordion({ title, icon, path, accordion, children }) {
 
@@ -9,7 +11,7 @@ function Accordion({ title, icon, path, accordion, children }) {
     }
     return (
         <li className={path.some(e => e === accordion) ? 'accordion active' : 'accordion'}>
-            <button type='checkbox' onClick={clickHandler}>{icon}{title}</button>
+            <button type='checkbox' onClick={clickHandler}><div>{icon}{title}</div>{isHidden ? (<GoTriangleDown />) : (<GoTriangleUp />)}</button>
             <ul className={isHidden ? 'accordion__content hidden' : 'accordion__content'}>
                 {children}
             </ul>

@@ -8,7 +8,10 @@ import { Provider } from 'react-redux';
 import store from './api/store.js';
 
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const rootDiv = document.getElementById('root');
+const root = ReactDOM.createRoot(rootDiv);
+rootDiv.classList.add(window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"); // Add theme as a class to root div.
+
 
 root.render(
   <React.StrictMode>

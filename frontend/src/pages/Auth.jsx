@@ -24,6 +24,7 @@ function Auth() {
                     logged: true,
                     id: accounts[index]._id,
                     user: accounts[index].username,
+                    type: accounts[index].type,
                     privileges: accounts[index].privileges
                 }
             })

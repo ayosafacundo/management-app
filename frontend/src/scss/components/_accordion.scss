@@ -1,38 +1,56 @@
 .accordion {
 
     button {
-        color: white;
+        color: $text-100;
         border: none;
-        text-align: left;
-        text-decoration: none;
-        display: list-item;
-        padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
-        vertical-align: top;
-        font-family: 'Times New Roman', Times, serif;
+
+        div {
+            max-width: calc(100% - 1rem);
+            text-align: left;
+            text-decoration: none;
+            display: list-item;
+            padding: 1rem 0 calc(1rem + 3px) clamp(8px, 8px + 2.5vw, 24px);
+
+            >svg {
+                margin-right: 15px;
+            }
+        }
+
+        font-family: 'Times New Roman',
+        Times,
+        serif;
         font-size: 1rem;
         font-size: clamp(1rem, 0.9741379310344828rem + 0.22988505747126436vw, 1.25rem);
+        vertical-align: top;
         user-select: none;
         background-color: rgba(0, 0, 0, 0);
         margin: 0;
+        padding: 0;
         cursor: pointer;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
 
         >svg {
-            margin-right: 15px;
+            width: 2rem;
+            height: 1.5rem;
+            padding-right: 1.5rem;
         }
     }
 
     &.active {
-        border-left: 3px solid $cyan;
+        border-left: 3px solid $primary-100;
 
         button {
-            color: $cyan;
+            color: $primary-100;
         }
     }
 
     &:hover {
-        background-color: rgba(0, 0, 0, 0.5);
-        border-right: $cyan;
+        background-color: $primary-300;
+        border-right: $accent-100;
         transition: background-color 0.1s linear;
     }
 

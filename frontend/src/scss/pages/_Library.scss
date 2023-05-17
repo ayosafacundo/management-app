@@ -5,16 +5,18 @@
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     overflow: hidden;
+    background-color: $bg-100;
 
     >header {
         grid-area: 1 / 1 / 2 / 4;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        background-color: darken($white, 15%);
+        background-color: $bg-200;
         padding: 15px;
 
         h2 {
+            color: $text-100;
             margin-left: 3rem;
             text-align: left;
             font-size: clamp(1.5rem, 3.5vw, 2.5rem);
@@ -25,7 +27,8 @@
 
     >aside.tags {
         grid-area: 2 / 1 / 6 / 2;
-        background-color: $cyan;
+        background-color: $bg-200;
+        color: $text-200;
 
         h3 {
             text-align: center;
@@ -37,7 +40,7 @@
             margin-left: 2rem;
             margin-right: 2rem;
             border-radius: 2rem;
-            outline: 3px solid lighten($cyan, 20%);
+            outline: 3px solid $accent-100;
             transition: outline 1s;
 
             &:focus,
@@ -45,7 +48,7 @@
             &:hover,
             button:hover,
             button:focus {
-                outline: 3px solid $cyan;
+                outline: 3px solid $accent-100;
                 transition: outline 1s;
 
                 button {
@@ -54,7 +57,8 @@
             }
 
             input.input {
-                background-color: darken($white, 10%);
+                background-color: $bg-300;
+                color: $text-100;
                 border: 0;
                 padding: 0.5rem;
                 border-bottom-left-radius: 2rem;
@@ -72,11 +76,12 @@
                 padding-right: 1rem;
                 border-top-right-radius: 2rem;
                 border-bottom-right-radius: 2rem;
-                background-color: darken($white, 10%);
+                background-color: $bg-300;
                 border: 0;
 
                 &:hover {
-                    background-color: darken($white, 20%);
+                    background-color: $primary-300;
+                    cursor: pointer;
                 }
 
                 &:focus {
@@ -88,7 +93,6 @@
 
         h5 {
             padding-left: clamp(1rem, 10%, 3rem);
-
         }
 
         ul {
@@ -101,7 +105,7 @@
                 text-align: center;
                 padding: 0.2rem;
                 border-radius: 0.5rem;
-                border: 1px solid $cyan;
+                border: 1px solid $primary-100;
                 margin-bottom: 0.3rem;
                 transition: background-color 150ms ease-in-out;
                 transition: border 250ms ease-in-out;
@@ -111,16 +115,16 @@
                 }
 
                 &:hover {
-                    background-color: lighten($cyan, 5%);
-                    border: 1px solid lighten($cyan, 15%);
+                    background-color: $accent-200;
+                    border: 1px solid $accent-100;
                     cursor: pointer;
                     transition: background-color 150ms ease-in-out;
                     transition: border 0ms ease-in-out;
                 }
 
                 &:active {
-                    background-color: darken($cyan, 5%);
-                    border: 1px solid darken($cyan, 15%);
+                    background-color: $accent-200;
+                    border: 1px solid $accent-100;
                 }
 
                 &::selection {
@@ -135,16 +139,19 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: left;
-        padding: 2rem;
+        justify-content: space-around;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 1rem;
         overflow: scroll;
         overflow-x: hidden;
         gap: 0.5rem;
-
+        background-color: $primary-300;
     }
 
     >aside.shopping_list {
-        background-color: $cyan;
+        background-color: $bg-200;
+        color: $text-100;
         grid-area: 2 / 3 / 6 / 4;
 
         h3 {

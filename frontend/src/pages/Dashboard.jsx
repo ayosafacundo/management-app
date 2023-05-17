@@ -1,22 +1,19 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
+import Admin from './dashboards/Admin';
+import Student from './dashboards/Student';
 
 function Dashboard() {
 
     const { state } = useLocation();
 
-    return (
-        <main id="dashboard">
-            <h1>Welcome {state.user}!</h1>
-            <h2>This is your dashboard!</h2>
-            <section>
+    const dashboards = {
+        admin: <Admin />,
+        student: <Student />
+    }
 
-            </section>
-
-        </main>
-    )
+    return dashboards[state.type];
 }
-
 
 
 export default Dashboard
