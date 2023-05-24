@@ -7,6 +7,7 @@ import { SlScreenDesktop, SlGraduation, SlBookOpen, SlBriefcase } from 'react-ic
 import { RiCoinsLine } from 'react-icons/ri';
 import { MdOutlineAdminPanelSettings, MdOutlineHome } from 'react-icons/md';
 import { BsGearFill } from 'react-icons/bs';
+import { BiPaint } from 'react-icons/bi';
 import { ImBooks } from 'react-icons/im';
 import { AiOutlineBook } from 'react-icons/ai';
 
@@ -54,7 +55,7 @@ function Sidebar({ privileges }) {
                 ) : undefined}
                 {privileges?.student || privileges?.treasurer ? (<SidebarLink name="Fees" url="fees" icon={<RiCoinsLine />} isActive={isActive({ accordion: '*', url: 'fees' })} />) : undefined}
                 {privileges?.librarian || privileges?.student ? (<SidebarLink name="Library" url="library" icon={<SlBookOpen />} isActive={isActive({ accordion: '*', url: 'library' })} />) : undefined}
-
+                <SidebarLink name="Themes" url="themes" icon={<BiPaint />} isActive={isActive({ accordion: '*', url: 'theme' })} />
             </ul>
         </nav>
     )

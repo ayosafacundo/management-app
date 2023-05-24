@@ -8,6 +8,7 @@ import Teacher from '../pages/Teacher.jsx';
 import Library from '../pages/Library.jsx';
 import Fees from '../pages/Fees.jsx';
 import WIP from '../pages/WIP.jsx';
+import Themes from '../pages/Themes.jsx';
 
 export default function Router() {
 
@@ -40,6 +41,7 @@ export default function Router() {
                 </Route>
                 <Route exact path='library' element={<Library />} />
                 <Route exact path='fees' element={<Fees />} />                  {/* TODO */}
+                <Route exact path='themes' element={<Themes />} />                  {/* TODO */}
                 <Route path='*' element={<WIP />} />
             </Route>
         </Routes>
