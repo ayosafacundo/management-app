@@ -30,12 +30,8 @@ app.listen(port, function () {
   console.log(`Listening on port ${port}`);
 });
 
-app.get('/api', (req, res) => {
-  res.send("<h1>Server Online.</h1> </br> <h3>Status code: 200</h3>");
+app.get('/', (req, res) => {
+  res.status(200).send("<h1>Server Online.</h1> </br> <h3>Status code: 200</h3>");
 });
-
-let req = { firstname: "admin", middlename: "linux", lastname: "superuser", sex: "Male", ssn: "53057XXXX", dob: new Date("2000-09-12"), currentaddress: "54 Lafayette St.Schenectady, NY 12302", currentphoneno: "202-555-0146", email: "admin@placeholder.com" }
-registerUser(req);
-console.log(new Date("2000-09-12"))
 
 export default app;

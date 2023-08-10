@@ -6,7 +6,6 @@ const emailExists = (email) => {
     pool.query('SELECT * FROM student WHERE email = $1', [email], (error, results) => {
         if (error) {
             throw error
-
         }
         if (results.rows.length != 0) {
             return true
