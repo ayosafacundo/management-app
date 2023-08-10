@@ -1,0 +1,92 @@
+[
+    {
+        "_id": 1,
+        "username": "Admin",
+        "type": "admin",
+        "email": "admin@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": true,
+            "treasurer": true,
+            "teacher": true,
+            "librarian": true,
+            "advisor": true,
+            "student": true
+        }
+    },
+    {
+        "_id": 2,
+        "username": "Treasurer",
+        "type": "treasurer",
+        "email": "treasurer@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": false,
+            "treasurer": true,
+            "teacher": true,
+            "librarian": true,
+            "advisor": true,
+            "student": true
+        }
+    },
+    {
+        "_id": 3,
+        "username": "Teacher",
+        "type": "teacher",
+        "email": "teacher@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": false,
+            "treasurer": false,
+            "teacher": true,
+            "librarian": true,
+            "advisor": true,
+            "student": true
+        }
+    },
+    {
+        "_id": 4,
+        "username": "Librarian",
+        "type": "librarian",
+        "email": "librarian@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": false,
+            "treasurer": false,
+            "teacher": false,
+            "librarian": true,
+            "advisor": true,
+            "student": true
+        }
+    },
+    {
+        "_id": 5,
+        "username": "Advisor",
+        "type": "advisor",
+        "email": "advisor@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": false,
+            "treasurer": false,
+            "teacher": false,
+            "librarian": false,
+            "advisor": true,
+            "student": true
+        }
+    },
+    {
+        "_id": 6,
+        "username": "Student",
+        "type": "student",
+        "email": "student@placeholder.com",
+        "password": "Abc123!",
+        "privileges": {
+            "admin": false,
+            "treasurer": false,
+            "teacher": false,
+            "librarian": false,
+            "advisor": false,
+            "student": true
+        }
+    }
+]
