@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap');
+
+$fontSans: 'DM Sans', sans-serif;
+$fontSerif: 'DM Serif Display', serif;
+
 $cyan: #3d89bd;
 $darkcyan: #327fb3;
 
@@ -113,8 +118,8 @@ $darkblue: #242831;
     --primary-100: #8B0000;
     --primary-200: #c2402a;
     --primary-300: #feded3;
-    --accent-100: #8d0000;
-    --accent-200: #FF6347;
+    --accent-100: #FF6347;
+    --accent-200: #8d0000;
     --text-100: #000000;
     --text-200: #565656;
     --bg-100: #E9E9E9;

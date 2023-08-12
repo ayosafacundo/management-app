@@ -3,7 +3,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 // import Wrapper from '../layout/Wrapper.tsx'; //Sidebar, header and logo all-in-one Wrapper with PrivateRouting
 
 /* Pages */
-import Auth from '../pages/Auth/Auth.tsx';
+import Login from '../pages/Auth/Login.tsx';
 // import Dashboard from '../pages/Dashboard.jsx';
 // import Admin from '../pages/Admin.jsx';
 // import Teacher from '../pages/Teacher.jsx';
@@ -17,7 +17,7 @@ function routes(): React.ReactElement {
   return (
     <BrowserRouter basename='/management-app'>
       <Routes>
-        <Route index path='/' element={<Auth />} />
+        <Route index path='/' element={<Login />} />
       </Routes>
     </BrowserRouter>
   )

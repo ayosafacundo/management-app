@@ -18,10 +18,12 @@ interface SidebarInput {
     privileges: privilege;
 }
 
+interface IPath { accordion: string, url: string }
+
 function Sidebar({ privileges }: SidebarInput): React.ReactElement {
 
     const path = useLocation().pathname.split('/');
-    const isActive = ({ accordion, url }): Boolean => {
+    const isActive = ({ accordion, url }: IPath): boolean => {
         if ((path[path.length - 2] === accordion || accordion === "*") && (path[path.length - 1] === url || url === "*")) {
             return true
         }

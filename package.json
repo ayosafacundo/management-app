@@ -6,10 +6,10 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server",
-    "server": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
-    "client": "npm start --prefix frontend",
-    "build": "cd .\\frontend\\ && npm run build",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd .\\backend\\ && yarn dev",
+    "client": "cd .\\frontend\\ && yarn dev",
+    "build": "cd .\\frontend\\ && yarn build",
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
     "client deploy": "cd .\\frontend\\ && npm run deploy"
   },
   "repository": {

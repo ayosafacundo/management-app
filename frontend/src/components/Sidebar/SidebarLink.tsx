@@ -5,7 +5,7 @@ interface SidebarLinkInput {
     name: string,
     url: string,
     icon: React.ReactElement,
-    isActive: Boolean
+    isActive: boolean
 }
 
 function SidebarLink({ name, url, icon, isActive }: SidebarLinkInput): React.ReactElement {

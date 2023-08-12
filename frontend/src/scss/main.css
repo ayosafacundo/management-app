@@ -1,4 +1,5 @@
 /* Utilities */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap");
 :root {
   --primary-100: #FFC107;
   --primary-200: #dda400;
@@ -107,8 +108,8 @@
   --primary-100: #8B0000;
   --primary-200: #c2402a;
   --primary-300: #feded3;
-  --accent-100: #8d0000;
-  --accent-200: #FF6347;
+  --accent-100: #FF6347;
+  --accent-200: #8d0000;
   --text-100: #000000;
   --text-200: #565656;
   --bg-100: #E9E9E9;
@@ -482,129 +483,112 @@ li.link:hover {
 }
 
 #login {
-  box-sizing: border-box;
-  padding: 1rem;
-  width: 100%;
+  position: relative;
   height: 100%;
-  max-height: 100vh;
-  background-color: var(--bg-100);
-  display: grid;
-  place-items: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(8, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-@media (max-width: 749px) {
-  #login .imglogo {
-    width: 100%;
-    grid-area: 2/1/4/2;
-  }
-  #login form {
-    width: 100%;
-  }
-}
-@media (min-width: 749px) {
-  #login {
-    width: 750px;
-    margin: auto;
-    height: 750px;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    border: 5px solid var(--primary-200);
-  }
-  #login .imglogo {
-    width: 400px;
-    grid-area: 1/1/4/2;
-  }
-  #login form {
-    width: 500px;
-  }
-}
-#login .imglogo {
-  background-color: var(--primary-100);
-  height: -moz-fit-content;
-  height: fit-content;
-}
-#login form {
-  grid-area: 4/1/7/2;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, 1fr) 2rem 2rem;
-  grid-column-gap: 0px;
-  grid-row-gap: 2rem;
-  /* Grid placement */
-}
-#login form .email {
-  grid-area: 1/1/2/2;
-  display: flex;
-  flex-direction: column;
-}
-#login form .password {
-  grid-area: 2/1/3/2;
-  display: flex;
-  flex-direction: column;
-}
-#login form label {
-  color: var(--text-100);
-  text-align: center;
-  padding-bottom: 0.5rem;
-  text-decoration: underline;
-  margin-top: 3rem;
-}
-#login form label::first-letter {
-  text-transform: capitalize;
-}
-#login form label:first-child {
-  margin-top: 0;
-}
-#login form input {
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: var(--primary-100);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(325,960,461)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%234FE'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='300' height='250' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.04'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  /* Background from svgbackgrounds.com */
+}
+#login .welcome {
+  background: rgba(255, 255, 255, 0.2);
   box-sizing: border-box;
-  padding: 0.2rem;
-  border-radius: 5px;
-  border: 2px solid var(--accent-100);
+  padding: 2vh 5vw;
+  height: 100%;
+  width: auto;
+  align-self: flex-start;
+  flex-shrink: 3;
 }
-#login form input:focus:not(:invalid) {
-  border: 2px solid orange;
+#login .welcome h1 {
+  font-size: clamp(2.25rem, 1.083rem + 1.823vw, 4rem);
 }
-#login form input:invalid {
-  border: 2px solid red;
+#login .welcome p {
+  font-size: clamp(1rem, 0.667rem + 0.521vw, 1.5rem);
 }
-#login form input:valid {
-  border: 2px solid greenyellow;
-}
-#login form input#password {
-  margin-bottom: 0.75rem;
-}
-#login form input[type=submit] {
-  background-color: var(--accent-100);
-  border-radius: 10px;
-  border: 0;
-  grid-area: 4/1/5/2;
-}
-#login form input[type=submit]:active {
-  background-color: var(--primary-300);
-}
-#login form input[type=submit]:hover {
-  background-color: var(--accent-200);
-  cursor: pointer;
-}
-#login form a {
+#login .form {
+  background-color: var(--bg-100);
+  width: 50vw;
+  height: 100%;
+  min-width: 45vw;
+  display: flex;
+  flex-grow: 4;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: var(--text-100);
-  padding: 5px;
-  padding-left: 1rem;
-  border-left: 3px solid var(--accent-100);
-  grid-area: 3/1/4/2;
-  align-self: center;
 }
-#login form a:hover {
-  text-decoration: underline;
-  background-color: var(--text-100);
-  color: var(--bg-100);
+#login .form .person {
+  font-size: 64px;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  margin-bottom: 1rem;
 }
-#login form a:active {
-  color: #3d89bd;
+#login .form a {
+  color: var(--text-100);
+}
+#login .form form {
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 2rem;
+  gap: 1rem;
+  width: 80%;
+  align-items: center;
+}
+#login .form form .input-container {
+  background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
+  border-radius: 15rem;
+  display: flex;
+  padding: 0 0.75rem;
+  height: 2.5rem;
+  width: 50%;
+}
+#login .form form .input-container > .notify-container {
+  margin: 0;
+  width: 100%;
+}
+#login .form form .input-container > .notify-container > input {
+  background: transparent;
+  height: 95%;
+  width: 95%;
+  border: 0;
+  color: var(--text-100);
+  font-family: "DM Sans", sans-serif;
+}
+#login .form form .input-container > .notify-container > input:focus {
+  border: 0;
+  outline: 0;
+}
+#login .form form .input-container > label {
+  display: flex;
+  align-items: center;
+  padding-right: 0.5rem;
+  font-size: 20px;
+}
+#login .form form .line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 0;
+  width: 75%;
+}
+#login .form form .submit {
+  font-family: "DM Sans", sans-serif;
+  color: var(--text-100);
+  font-size: 16px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  margin: auto;
+  border: 0;
+  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
 }
 
 #library {
