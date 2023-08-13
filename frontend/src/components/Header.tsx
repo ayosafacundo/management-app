@@ -1,18 +1,25 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { BsFillPersonFill } from 'react-icons/bs'
 
 function Header(): React.ReactElement {
-  const Navigate = useNavigate();
 
-  const clickHandler = () => {
-    Navigate('/login', {
-      replace: false,
-      state: { logged: false }
-    })
-  }
+  const [Dropdown, setDropdown] = useState(false);
+
   return (
     <header>
-      <button className='btn btn-warning' onClick={clickHandler}>Sign Out</button>
+      <h1>Welcome Back!</h1>
+
+      <div className="dropdown">
+        <button onClick={() => setDropdown(!Dropdown)} className='dropbtn'><BsFillPersonFill /></button>
+        {Dropdown && (
+          <div className="dropdown-content">
+            <span>Configuration</span>
+            <span>Courses</span>
+            <span>Themes</span>
+            <span>Sign Out</span>
+          </div>
+        )}
+      </div>
     </header>
   )
 }

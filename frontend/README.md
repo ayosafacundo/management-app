@@ -1,27 +1,120 @@
-# React + TypeScript + Vite
+# University Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Idea from [sharpen.design](sharpen.design)  
+<img src="./img/Idea.png" width="400" height="200" alt="Idea from sharpen.design">
 
-Currently, two official plugins are available:
+<h2>Webpage is Live <a href="https://ayosafacundo.github.io/management-app">Here</a>.</h2>
+<h3>This is a Work In Progress.</h3>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Accounts:
 
-## Expanding the ESLint configuration
+| Email | Password | Account Type | Privileges |
+| ------- | ------ | ------------ | ---------- |
+|   admin@placeholder.com | Abc123! | Admin | Admin Privileges |
+|   treasurer@placeholder.com | Abc123! | Treasurer | Treasurer, Teacher, Librarian, Advisor, Student |
+|   Teacher@placeholder.com | Abc123! | Teacher | Teacher, Librarian, Advisor, Student |
+|   Librarian@placeholder.com | Abc123! | Librarian | Librarian, Advisor, Student | 
+|   Advisor@placeholder.com | Abc123! | Librarian | Advisor, Student | 
+|   Student@placeholder.com | Abc123! | Student | Student | 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## To do: 
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- [X] Done
+- [ ] Working on It  
+  
+  ---
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [X] Router  
+- [ ] Pages:  
+    - [X] Login      
+    - [ ] Dashboard  
+        - [ ] Admin Dashboard  
+        - [ ] Teacher Dashboard  
+        - [ ] Librarian Dashboard  
+        - [ ] Student Dashboard  
+    - [ ] Admin Panel    
+        - [ ] Home
+        - [ ] Settings
+            - [ ] Courses  
+            - [ ] Exams  
+            - [ ] Fees  
+            - [ ] Events  
+    - [ ] Teachers  
+        - [ ] Home  
+        - [ ] Courses  
+            - [ ] Exams  
+            - [ ] Calendar  
+        - [ ] Settings  
+    - [ ] Students  
+        - [ ] Home  
+        - [ ] Courses  
+            - [ ] Exams  
+            - [ ] Calendar  
+        - [ ] Settings  
+    - [ ] Librarian
+        - [ ] Home
+        - [ ] Books
+            - [ ] Add Book
+            - [ ] Remove Book
+            - [ ] Edit Book
+        - [ ] Settings
+    - [ ] Fees    
+    - [ ] Library
+
+- [ ] Models:
+    - [X] User       
+    - [ ] Course       
+    - [X] Book       
+    - [ ] Fees       
+    - [ ] Event    
+    - [ ] Tests  
+- [ ] Course Inscription  
+    - [ ] Correlative Courses  
+
+Yes, I'm aware this is a titan of a proyect, yet I'm confident on my abilities to succeed on the creation of this monstrosity
+
+## Packages:
+
+### Frontend Libraries:  
+
+[React](https://github.com/facebook/react)    
+[React-router-dom](https://github.com/remix-run/react-router)  
+[React-hook-form](https://react-hook-form.com/get-started/)  
+[React-redux](https://react-redux.js.org/)  
+[React-icons](https://react-icons.github.io/react-icons/search?q=admi)  
+[Axios](https://axios-http.com/)
+
+Testing done in [React-testing-library](https://testing-library.com/docs/react-testing-library/intro/)  
+CSS preprocessed with [Sass](https://sass-lang.com/)  
+
+### Backend Libraries:
+
+[express-async-handler](https://github.com/Abazhenov/express-async-handler)  
+[bcryptjs](https://github.com/dcodeIO/bcrypt.js)  
+[cors](https://github.com/expressjs/cors)  
+[dotenv](https://github.com/motdotla/dotenv)  
+[express](https://expressjs.com/es/)  
+[jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)  
+[pg](https://github.com/brianc/node-postgres)  
+[graphql](https://graphql.org/)
+
+### Database:
+
+To Be Designed
+
+## Design:
+
+Design Made entirely by Ayosa Facundo.
+
+## Guides that helped me:  
+
+[Rutas privadas con ReactRouterDomV6](https://www.youtube.com/watch?v=tqc8n3odVp0)  
+[React router Private Routes](https://www.robinwieruch.de/react-router-private-routes/)  
+[Aprende React Router 6 en 30 minutos](https://www.youtube.com/watch?v=JNhhdkCuyog)  
+[Handling user authentication redux toolkit](https://blog.logrocket.com/handling-user-authentication-redux-toolkit/#prerequisites)  
+[CRUD REST API with Node.js Express.js and Postgresql](https://blog.logrocket.com/crud-rest-api-node-js-express-postgresql/)
+
+## Pages:
+
+<img src="./img/Library.png" alt="Library Page">

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
-import accounts from '../../accounts.json';
+import accounts from '../accounts.json';
 import { BsPersonFill } from 'react-icons/bs';
 import { AiFillLock } from 'react-icons/ai';
 
@@ -20,8 +20,7 @@ function Login(): React.ReactElement {
 
     const index = accounts.findIndex(e => e.email === data.email.toLowerCase());
     if (accounts[index].email === data.email.toLowerCase() && accounts[index].password === data.password) {
-      const path: string = "" + accounts[index]._id;
-      Navigate(`/${path}/dashboard`, {
+      Navigate(`/user/dashboard`, {
         replace: false,
         state: {
           logged: true,

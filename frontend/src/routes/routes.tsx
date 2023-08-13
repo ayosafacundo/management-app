@@ -1,23 +1,22 @@
 import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-// import Wrapper from '../layout/Wrapper.tsx'; //Sidebar, header and logo all-in-one Wrapper with PrivateRouting
 
 /* Pages */
-import Login from '../pages/Auth/Login.tsx';
-// import Dashboard from '../pages/Dashboard.jsx';
-// import Admin from '../pages/Admin.jsx';
-// import Teacher from '../pages/Teacher.jsx';
-// import Library from '../pages/Library.jsx';
-// import Fees from '../pages/Fees.jsx';
-// import WIP from '../pages/WIP.jsx';
-// import Themes from '../pages/Themes.jsx';
+import Login from '../pages/Login.tsx';
+import Wrapper from '../layout/CampusWrapper.tsx';
+import Student from '../pages/Dashboard/Student.tsx';
+import Homepage from '../pages/Homepage.tsx';
 
 function routes(): React.ReactElement {
 
   return (
     <BrowserRouter basename='/management-app'>
       <Routes>
-        <Route index path='/' element={<Login />} />
+        <Route path='/' element={<Homepage />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='user' element={<Wrapper />}>
+          <Route path='dashboard' element={<Student />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

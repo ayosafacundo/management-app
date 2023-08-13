@@ -21,6 +21,7 @@
 @import 'pages/wip'; // Work in progress Placeholder
 @import 'pages/Login';
 @import 'pages/library';
+@import 'pages/homepage';
 // Dashboards
-@import 'pages/dashboards/dashboard';
-@import 'pages/dashboards/student';
+@import 'pages/user/dashboards/dashboard';
+@import 'pages/user/dashboards/student';

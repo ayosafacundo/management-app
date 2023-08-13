@@ -185,25 +185,47 @@ body {
 /* Layouts*/
 #root > header {
   grid-area: 1/2/2/3;
+  width: 100%;
   background-color: var(--bg-100);
   color: var(--text-100);
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 2.5rem;
 }
-#root > header button {
-  margin-right: 1em;
-  padding: 5px 10px 5px 10px;
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
-  background-color: #db4c2c;
-  border: 1px solid black;
-  border-bottom: 3px solid black;
+#root > header .dropdown {
+  position: relative;
+  display: inline-block;
 }
-#root > header button:active {
-  background-color: #e6836d;
-  border-bottom: 1px solid black;
+#root > header .dropdown .dropbtn {
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-100);
+  color: var(--text-100);
+  font-size: 24px;
+  padding: 0.5rem;
+  border: 2px solid var(--accent-100);
+  border-radius: 50%;
+}
+#root > header .dropdown .dropdown-content {
+  position: absolute;
+  right: 1.5rem;
+  background-color: var(--accent-100);
+  min-width: 120px;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  border-radius: 1.5rem;
+  border-top-right-radius: 0;
+  text-align: end;
+}
+#root > header .dropdown .dropdown-content > span {
+  padding: 5px 15px;
+}
+#root > header .dropdown .dropdown-content > span:hover {
+  background-color: var(--accent-200);
 }
 
 .imglogo {
