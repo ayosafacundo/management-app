@@ -111,7 +111,12 @@ Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanba
 
 DESIGNS TAKEN AS REFERENCE AND IMPROVISED OVER THEM.
 
-Design from [here](https://www.sideprojectors.com/project/13673/university-management-systemadminteacherstudent)  
+[Home Design](https://es.99designs.com/profiles/gegen/designs/985233);
+
+Campus Designs:
+    [Student Dashboard](https://dribbble.com/shots/16165604-University-dashboard);
+
+
 Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanbaevnbXtk.pdf)  
 Library Design from [here](https://www.behance.net/gallery/137500455/Book-Books-A-Books-Library-Web-App-Design?tracking_source=search_projects%7CLibrary+Webapp)
 
