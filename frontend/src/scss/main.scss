@@ -5,17 +5,28 @@
 @import 'base/reset';
 
 /* Layouts*/
-@import 'layout/header';
-@import 'layout/logo';
-@import 'layout/sidebar';
+// Home //
+// @import 'layout/logo';
+@import 'layout/HomeHeader';
+@import 'layout/HomeFooter';
+
+// Campus //
+@import 'layout/campus/sidebar';
 
 /* Modules or Components */
 @import 'components/logo';
-@import 'components/notify-bubble';
+@import 'components/notify-bubble'; //used in Login
+
+// Home //
+@import 'components/Home/Event';
+@import 'components/Home/Lesson';
+@import 'components/Home/Course';
+@import 'components/Home/button';
+// Campus //
 @import 'components/sidebar-link';
 @import 'components/accordion';
-@import 'components/chip';
-@import 'components/book';
+// @import 'components/chip';
+// @import 'components/book';
 
 /* Pages */
 @import 'pages/wip'; // Work in progress Placeholder

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
-import Sidebar from '../components/Sidebar/Sidebar';
+// import Sidebar from '../components/campus/Sidebar/Sidebar';
 import Logo from '../components/Logo';
-import Header from '../components/Header';
+import Header from '../components/campus/CHeader';
 
 function Wrapper(): React.ReactNode | null {
   const { state } = useLocation();
@@ -11,7 +11,7 @@ function Wrapper(): React.ReactNode | null {
     <>
       <Logo />
       <Header />
-      <Sidebar privileges={state.privilege} />
+      {/* <Sidebar privileges={state.privilege} /> */}
       <Outlet />
     </>
   ) : (

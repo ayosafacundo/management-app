@@ -1,0 +1,11 @@
+a.button {
+  margin: auto 0;
+  border: 0;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #e0bc43;
+  font-family: $fontSans;
+  padding: 1rem 2rem;
+  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}

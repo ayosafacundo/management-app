@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BsFillPersonFill } from 'react-icons/bs'
 
-function Header(): React.ReactElement {
+function CHeader(): React.ReactElement {
 
   const [Dropdown, setDropdown] = useState(false);
 
@@ -24,4 +24,4 @@ function Header(): React.ReactElement {
   )
 }
 
-export default Header
+export default CHeader

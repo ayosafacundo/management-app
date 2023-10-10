@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import Accordion from './Accordion';
 import SidebarLink from './SidebarLink';
-import { privilege } from '../../models/accounts.interface';
+import { privilege } from '../../../models/accounts.interface';
 
 /* Icons */
 import { SlScreenDesktop, SlGraduation, SlBookOpen, SlBriefcase } from 'react-icons/sl';

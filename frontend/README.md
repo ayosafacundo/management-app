@@ -105,7 +105,8 @@ To Be Designed
 
 ## Design:
 
-Design Made entirely by Ayosa Facundo.
+[Homepage](https://es.99designs.com/profiles/gegen/designs/985233)
+
 
 ## Guides that helped me:  
 
