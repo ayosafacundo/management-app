@@ -22,6 +22,9 @@
 @import 'components/Home/Lesson';
 @import 'components/Home/Course';
 @import 'components/Home/button';
+// AboutUs //
+@import 'components/AboutUs/Article';
+
 // Campus //
 @import 'components/sidebar-link';
 @import 'components/accordion';
@@ -29,10 +32,11 @@
 // @import 'components/book';
 
 /* Pages */
+@import 'pages/Homepage';
+@import 'pages/AboutUs';
 @import 'pages/wip'; // Work in progress Placeholder
 @import 'pages/Login';
 @import 'pages/library';
-@import 'pages/homepage';
 // Dashboards
 @import 'pages/user/dashboards/dashboard';
 @import 'pages/user/dashboards/student';

@@ -1,0 +1,104 @@
+main#aboutus {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .wallpaper {
+    height: 100dvh;
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .imglogo {
+      font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+      color: white;
+    }
+
+    q {
+      margin-top: 3rem;
+      font-size: clamp(2.25rem, 0.821rem + 2.232vw, 3.5rem);
+      width: 60%;
+      text-align: justify;
+      font-family: 'Lato', sans-serif;
+      color: white;
+    }
+
+    p {
+      font-size: clamp(2rem, 1.429rem + 0.893vw, 2.5rem);
+      margin-top: 0;
+      width: 60%;
+      text-align: end;
+      color: white;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .button {
+      position: absolute;
+      margin: 1rem;
+      bottom: 0;
+    }
+  }
+
+  #me {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    background-color: #f9f7f5;
+
+    .mysection {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+
+      .img {
+        aspect-ratio: 460px/320px;
+        min-width: 460px;
+        max-width: 460px;
+        min-height: 320px;
+        max-height: 320px;
+        background-color: grey;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        h3 {
+          color: rgb(3, 57, 78);
+          font-family: 'Lato', sans-serif;
+          font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+          margin: 0;
+        }
+
+        h4 {
+          font-family: 'Lato', sans-serif;
+          font-size: clamp(1.25rem, 0.964rem + 0.446vw, 1.5rem);
+          margin: 1rem 0;
+        }
+
+        p {
+          height: auto;
+          flex-grow: 1;
+          text-align: justify;
+          font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+        }
+
+        .button {
+          align-self: center;
+        }
+      }
+    }
+  }
+
+  .path {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -584,12 +584,125 @@ a.button {
   margin: auto 0;
   border: 0;
   color: white;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
   text-transform: uppercase;
   background-color: #e0bc43;
   font-family: "DM Sans", sans-serif;
   padding: 1rem 2rem;
   font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+
+.pathmodule {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+  min-height: 15rem;
+  box-sizing: border-box;
+  padding: 0 clamp(3.125rem, -11.161rem + 22.321vw, 15.625rem);
+}
+.pathmodule.start {
+  min-height: 5rem;
+  height: 5rem;
+}
+.pathmodule.start .route .icon {
+  margin: 0;
+}
+.pathmodule.grey {
+  background-color: #f9f7f5;
+}
+.pathmodule.end {
+  min-height: 5rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+.pathmodule.end .route .icon {
+  margin: auto 0 0 0;
+}
+.pathmodule .route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3rem;
+  max-width: 3rem;
+  height: auto;
+  position: relative;
+}
+.pathmodule .route .icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #e0bc43;
+  color: white;
+  z-index: 1;
+  margin-top: 1.5rem;
+}
+.pathmodule .route .icon.reverse {
+  transform: rotate(180deg);
+}
+.pathmodule .route div.verticalline {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  display: block;
+  width: 2px;
+  flex-grow: 1;
+  background-color: grey;
+  box-sizing: border-box;
+}
+.pathmodule .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pathmodule .content h3 {
+  position: relative;
+  margin: 1.5rem 0 1.5rem 1rem;
+  font-size: 36px;
+  font-family: "Lato", sans-serif;
+  background-color: #e0bc43;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 15px;
+}
+.pathmodule .content h3::before {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -4px;
+  content: " ";
+  display: block;
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  background: #e0bc43;
+  border: 4px solid #e0bc43;
+  z-index: -1;
+}
+.pathmodule .content .text {
+  display: flex;
+  flex-direction: column;
+}
+.pathmodule .content .text:has(img) {
+  flex-direction: row;
+}
+.pathmodule .content .text p {
+  margin: 0 0 0.5rem 0;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+}
+.pathmodule .content .text img {
+  display: flex;
+  aspect-ratio: 2/1;
+  width: 300px;
+  height: 150px;
+  margin: 0 3rem;
+  align-self: center;
 }
 
 li.link {
@@ -691,6 +804,206 @@ li.link:hover {
 }
 
 /* Pages */
+#Homepage {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+#Homepage > section {
+  height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+#Homepage > section > h2 {
+  font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+#Homepage > section > hr {
+  width: 4rem;
+  border: 0.2rem solid #aaa;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+#Homepage > section > span.subtitle {
+  font-family: "DM Serif Display", serif;
+  font-weight: 300;
+  color: #696969;
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
+}
+#Homepage .section-1 {
+  background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+  background-position: center -5rem;
+  background-size: cover;
+  justify-content: flex-end;
+  color: #fee;
+  padding: 5rem 0;
+}
+#Homepage .section-1 > span,
+#Homepage .section-1 > h1 {
+  padding: 0 5rem;
+  font-family: "Lato", sans-serif;
+}
+#Homepage .section-1 > span {
+  font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+}
+#Homepage .section-1 > h1 {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
+}
+#Homepage .section-1 > h1 > span {
+  font-weight: bold;
+}
+#Homepage .section-1 > hr {
+  margin-left: 7rem;
+  width: 60%;
+  height: 1;
+  border: 1px solid #aaa;
+}
+#Homepage .section-1 > .events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 5rem 1rem 5rem;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+#Homepage .section-2 {
+  align-items: center;
+  height: 85vh;
+  padding: 0 6rem;
+  padding-bottom: 5rem;
+}
+#Homepage .section-2 > p {
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  color: #696969;
+  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+#Homepage .section-2 .horizontal-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+#Homepage .section-3 {
+  background-color: #EEE;
+  align-items: center;
+}
+#Homepage .section-3 .courses {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+  width: 100%;
+}
+#Homepage .section-3 .courses .couple {
+  display: flex;
+  flex-direction: row;
+  min-width: 80%;
+  max-width: 80%;
+  gap: 2rem;
+}
+
+main#aboutus {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+main#aboutus .wallpaper {
+  height: 100dvh;
+  background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main#aboutus .wallpaper .imglogo {
+  font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+  color: white;
+}
+main#aboutus .wallpaper q {
+  margin-top: 3rem;
+  font-size: clamp(2.25rem, 0.821rem + 2.232vw, 3.5rem);
+  width: 60%;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  color: white;
+}
+main#aboutus .wallpaper p {
+  font-size: clamp(2rem, 1.429rem + 0.893vw, 2.5rem);
+  margin-top: 0;
+  width: 60%;
+  text-align: end;
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+main#aboutus .wallpaper .button {
+  position: absolute;
+  margin: 1rem;
+  bottom: 0;
+}
+main#aboutus #me {
+  display: flex;
+  justify-content: center;
+  padding: 5rem 0;
+  background-color: #f9f7f5;
+}
+main#aboutus #me .mysection {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  gap: 4rem;
+}
+main#aboutus #me .mysection .img {
+  aspect-ratio: 460px/320px;
+  min-width: 460px;
+  max-width: 460px;
+  min-height: 320px;
+  max-height: 320px;
+  background-color: grey;
+}
+main#aboutus #me .mysection .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main#aboutus #me .mysection .content h3 {
+  color: rgb(3, 57, 78);
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+  margin: 0;
+}
+main#aboutus #me .mysection .content h4 {
+  font-family: "Lato", sans-serif;
+  font-size: clamp(1.25rem, 0.964rem + 0.446vw, 1.5rem);
+  margin: 1rem 0;
+}
+main#aboutus #me .mysection .content p {
+  height: auto;
+  flex-grow: 1;
+  text-align: justify;
+  font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+}
+main#aboutus #me .mysection .content .button {
+  align-self: center;
+}
+main#aboutus .path {
+  display: flex;
+  flex-direction: column;
+}
+
 #wip {
   display: flex;
   flex-direction: column;
@@ -949,115 +1262,6 @@ li.link:hover {
 }
 #library > aside.shopping_list h3 {
   text-align: center;
-}
-
-#Homepage {
-  min-height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-#Homepage > section {
-  height: 100vh;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-#Homepage > section > h2 {
-  font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
-  font-family: "DM Sans", sans-serif;
-  font-weight: 200;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-#Homepage > section > hr {
-  width: 4rem;
-  border: 0.2rem solid #aaa;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
-}
-#Homepage > section > span.subtitle {
-  font-family: "DM Serif Display", serif;
-  font-weight: 300;
-  color: #696969;
-  margin-bottom: 1.5rem;
-  font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
-}
-#Homepage .section-1 {
-  background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
-  background-position: center -5rem;
-  background-size: cover;
-  justify-content: flex-end;
-  color: #fee;
-  padding: 5rem 0;
-}
-#Homepage .section-1 > span,
-#Homepage .section-1 > h1 {
-  padding: 0 5rem;
-  font-family: "Lato", sans-serif;
-}
-#Homepage .section-1 > span {
-  font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-}
-#Homepage .section-1 > h1 {
-  margin-top: 1rem;
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
-}
-#Homepage .section-1 > h1 > span {
-  font-weight: bold;
-}
-#Homepage .section-1 > hr {
-  margin-left: 7rem;
-  width: 60%;
-  height: 1;
-  border: 1px solid #aaa;
-}
-#Homepage .section-1 > .events {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  padding: 0 5rem 1rem 5rem;
-  gap: 0.5rem;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-}
-#Homepage .section-2 {
-  align-items: center;
-  height: 85vh;
-  padding: 0 6rem;
-  padding-bottom: 5rem;
-}
-#Homepage .section-2 > p {
-  text-align: center;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 300;
-  color: #696969;
-  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-}
-#Homepage .section-2 .horizontal-container {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-#Homepage .section-3 {
-  background-color: #EEE;
-  align-items: center;
-}
-#Homepage .section-3 .courses {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  align-items: center;
-  width: 100%;
-}
-#Homepage .section-3 .courses .couple {
-  display: flex;
-  flex-direction: row;
-  min-width: 80%;
-  max-width: 80%;
-  gap: 2rem;
 }
 
 #dashboard {

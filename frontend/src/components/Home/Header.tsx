@@ -12,7 +12,7 @@ function Header(): React.ReactElement {
       <div className={navDisplay ? "navs active" : "navs inactive"}>
         <a href='/#studywus'>Study in Claymore</a>
         <a href='/#courses'>Courses</a>
-        <a href='/aboutus'>About Us</a>
+        <a href='/aboutus'>About Claymore</a>
         <a>Blog</a>
         <a href='/login' className='campus'>My Campus</a>
       </div>

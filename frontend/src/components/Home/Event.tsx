@@ -1,5 +1,5 @@
 import React from 'react'
-import events from './Events.json';
+import events from '../../resources/Events.json';
 import { RandomDate } from '../../utils/RandomDate';
 
 function Event(): React.ReactElement {
