@@ -213,7 +213,6 @@ body {
 #HomeHeader .check {
   display: flex;
   flex-direction: row;
-  width: 100%;
   min-height: 5rem;
   justify-content: space-between;
   align-items: center;
@@ -226,8 +225,9 @@ body {
   height: 2rem;
 }
 #HomeHeader .navs {
-  width: 100%;
   justify-content: flex-end;
+  align-items: center;
+  flex-grow: 1;
 }
 #HomeHeader .navs.inactive {
   display: flex;
@@ -241,6 +241,11 @@ body {
   border-radius: 0.5rem;
   color: white;
   text-decoration: none;
+  text-align: center;
+  vertical-align: middle;
+}
+#HomeHeader .navs a.active {
+  color: #E76A00;
 }
 #HomeHeader .navs a:hover {
   background-color: rgba(255, 255, 255, 0.5333333333);
@@ -264,7 +269,7 @@ body {
   color: black;
   border: 1px solid black;
 }
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   #HomeHeader {
     flex-direction: column;
     background-color: rgb(3, 57, 78);
@@ -273,6 +278,8 @@ body {
   #HomeHeader .navs {
     flex-direction: column;
     text-align: end;
+    align-items: normal;
+    flex-grow: 0;
     background-color: rgb(3, 57, 78);
   }
   #HomeHeader .navs a {
@@ -426,6 +433,9 @@ body {
   border-right: 1px solid #979797;
   text-transform: capitalize;
   font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+#HomeFooter .last .nav > a.active {
+  color: #E76A00;
 }
 #HomeFooter .last .nav > a:last-of-type {
   border-right: 0;
@@ -947,6 +957,10 @@ li.link:hover {
   1280×720
   1024×768
 */
+#wip {
+  min-height: 100vh;
+}
+
 @media screen and (orientation: landscape) {
   /* Pages */
   #Homepage {

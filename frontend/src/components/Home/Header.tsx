@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../Logo';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { NavLink } from 'react-router-dom';
 
 function Header(): React.ReactElement {
 
@@ -14,11 +15,11 @@ function Header(): React.ReactElement {
         <input type="checkbox" name="displaynav" id="displaynav" onClick={() => { setNavDisplay(!navDisplay) }} />
       </div>
       <div className={navDisplay ? "navs active" : "navs inactive"}>
-        <a onClick={() => { setNavDisplay(false) }} href='/#studywus'>Study in Claymore</a>
-        <a onClick={() => { setNavDisplay(false) }} href='/#courses'>Courses</a>
-        <a onClick={() => { setNavDisplay(false) }} href='/aboutus'>About Claymore</a>
-        <a onClick={() => { setNavDisplay(false) }}>Blog</a>
-        <a onClick={() => { setNavDisplay(false) }} href='/login' className='campusbtn'>My Campus</a>
+        <NavLink onClick={() => { setNavDisplay(false) }} className={({ isActive }) => isActive ? "active" : ""} end to='/management-app'>Study in Claymore</NavLink>
+        <NavLink onClick={() => { setNavDisplay(false) }} className={({ isActive }) => isActive ? "active" : ""} to='courses'>Courses</NavLink>
+        <NavLink onClick={() => { setNavDisplay(false) }} className={({ isActive }) => isActive ? "active" : ""} to='aboutus'>About Claymore</NavLink>
+        <NavLink onClick={() => { setNavDisplay(false) }} className={({ isActive }) => isActive ? "active" : ""} to='wip'>Blog</NavLink>
+        <NavLink onClick={() => { setNavDisplay(false) }} className={({ isActive }) => isActive ? "campusbtn active" : "campusbtn"} to='login'>My Campus</NavLink>
       </div>
     </header>
   )

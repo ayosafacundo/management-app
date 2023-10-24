@@ -27,10 +27,12 @@ Idea from [sharpen.design](sharpen.design)
 
 - [X] Router  
 - [ ] Pages:  
-    - [X] Home Page
-    - [X] About Us
-    - [X] Login      
-    - [ ] Campus
+    - [X] Home Page  
+    - [X] About Us  
+    - [ ] Courses  
+    - [X] Login        
+    - [ ] Register        
+    - [ ] Campus  
         - [ ] Dashboard  
             - [ ] Admin Dashboard  
             - [ ] Teacher Dashboard  
