@@ -165,6 +165,9 @@
         text-transform: capitalize;
         font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
 
+        &.active {
+          color: #E76A00;
+        }
 
         &:last-of-type {
           border-right: 0;
