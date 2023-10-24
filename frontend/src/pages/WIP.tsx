@@ -1,6 +1,6 @@
 import React from 'react'
 
-function WIP() {
+function WIP(): React.ReactElement {
   return (
     <main id="wip">
       <p>Work In Progress</p>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Courses() {
+function Courses(): React.ReactElement {
   return (
     <main id='courses'>
       <p>Work In Progress!</p>
