@@ -1,0 +1,205 @@
+#login {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: $primary-100;
+  background-image: url("https://img.freepik.com/free-photo/online-assignment_1098-13105.jpg?w=1380&t=st=1697838724~exp=1697839324~hmac=6ebca29feb6349f0150e1b53b7af2c518b9b14b370bb56b370040f51fd437176");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  overflow: hidden;
+
+  .credentials {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 1rem;
+    left: 1rem;
+
+    label {
+      color: white;
+      font-size: 3rem;
+    }
+
+    input {
+      display: none;
+    }
+
+
+    .content {
+      position: absolute;
+      overflow: hidden;
+      left: 3.12rem;
+      bottom: 1rem;
+      background-color: $bg-100;
+      color: $text-100;
+      width: 30vw;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      h3 {
+        text-align: center;
+        font-family: $fontSans;
+        font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+        margin: 0;
+      }
+
+      table {
+        width: 80%;
+        border-collapse: collapse;
+        align-self: center;
+        margin: 1rem;
+
+        font-size: clamp(0.75rem, -0.107rem + 1.339vw, 1.5rem);
+
+        th,
+        td {
+          border: 1px solid white;
+          width: auto;
+          height: auto;
+          padding: 0;
+          margin: 0;
+
+          button {
+            border: 0;
+            background: none;
+            color: inherit;
+            padding: 5px;
+            font-size: inherit;
+            width: 100%;
+          }
+        }
+
+        th {
+          padding: 5px;
+        }
+
+
+      }
+
+      &.inactive {
+        height: 0;
+        width: 0;
+        transition: height 0.25s, width 0.25s;
+      }
+
+      &.active {
+        height: 40vh;
+        transition: height 0.25s, width 0.25s;
+      }
+    }
+  }
+
+  .welcome {
+    background: rgba($color: #fff, $alpha: 0.2);
+    box-sizing: border-box;
+    padding: 2vh 5vw;
+    height: 100%;
+    align-self: flex-start;
+    flex-shrink: 3;
+
+    h1 {
+      font-size: clamp(2.25rem, 1.083rem + 1.823vw, 4rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 0.667rem + 0.521vw, 1.5rem);
+    }
+  }
+
+  .form {
+    background-color: $bg-100;
+    height: 100%;
+    min-width: clamp(38.375rem, 27.375rem + 17.188vw, 48rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $text-100;
+
+    .person {
+      font-size: 64px;
+      font-family: $fontSans;
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: $text-100;
+    }
+
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 2rem;
+      gap: 1rem;
+      width: 80%;
+      align-items: center;
+
+      .input-container {
+        background: linear-gradient(135deg, $accent-100 0%, $accent-200 100%);
+        border-radius: 15rem;
+        display: flex;
+        padding: 0 0.75rem;
+        height: 2.5rem;
+        width: 50%;
+
+        >.notify-container {
+          margin: 0;
+          width: 100%;
+
+          >input {
+            background: transparent;
+            height: 95%;
+            width: 95%;
+            border: 0;
+            color: $text-100;
+            font-family: $fontSans;
+            font-size: 16px;
+
+            &:focus {
+              border: 0;
+              outline: 0;
+            }
+          }
+
+
+        }
+
+        >label {
+          display: flex;
+          align-items: center;
+          padding-right: 0.5rem;
+          font-size: 20px;
+        }
+      }
+
+      .line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1rem 0;
+        width: 75%;
+      }
+
+      .submit {
+        font-family: $fontSans;
+        color: $text-100;
+        font-size: 16px;
+        width: fit-content;
+        display: flex;
+        margin: auto;
+        border: 0;
+        background: linear-gradient(135deg, $primary-100 0%, $primary-300 100%);
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+}

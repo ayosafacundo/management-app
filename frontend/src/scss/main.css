@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Utilities */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&family=DM+Serif+Display&display=swap");
 /*
@@ -198,17 +199,38 @@ body {
   z-index: 1;
   position: absolute;
   width: 100%;
-  height: 5rem;
+  min-height: 5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 3rem;
   color: white;
+  padding: 0 3rem;
+}
+#HomeHeader input[type=checkbox] {
+  display: none;
+}
+#HomeHeader .check {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#HomeHeader .check .displaynav {
+  display: none;
+}
+#HomeHeader .check .displaynav svg {
+  width: 2rem;
+  height: 2rem;
+}
+#HomeHeader .navs {
+  width: 100%;
+  justify-content: flex-end;
 }
 #HomeHeader .navs.inactive {
-  display: none;
+  display: flex;
 }
 #HomeHeader .navs.active {
   display: flex;
@@ -225,29 +247,45 @@ body {
   cursor: pointer;
   color: black;
 }
-#HomeHeader .navs .campus {
+#HomeHeader .navs .campusbtn {
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
   background-color: black;
   color: white;
 }
-#HomeHeader .navs .campus:hover {
+#HomeHeader .navs .campusbtn:hover {
   background-color: white;
   color: black;
   border: 1px solid black;
 }
-#HomeHeader .navs .campus:active {
+#HomeHeader .navs .campusbtn:active {
   background-color: white;
   color: black;
   border: 1px solid black;
 }
-@media screen and (min-width: 1024px) {
-  #HomeHeader input[type=checkbox] {
-    display: none;
+@media screen and (max-width: 1024px) {
+  #HomeHeader {
+    flex-direction: column;
+    background-color: rgb(3, 57, 78);
+    justify-content: center;
+  }
+  #HomeHeader .navs {
+    flex-direction: column;
+    text-align: end;
+    background-color: rgb(3, 57, 78);
+  }
+  #HomeHeader .navs a {
+    border: 1px solid white;
+    margin: 0.25rem 0;
+  }
+  #HomeHeader .check .displaynav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   #HomeHeader .navs.inactive {
-    display: flex;
+    display: none;
   }
 }
 
@@ -282,6 +320,14 @@ body {
 #HomeFooter .registry > div > h5 {
   font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
 }
+@media screen and (orientation: portrait) {
+  #HomeFooter .registry div span {
+    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+  }
+  #HomeFooter .registry div h5 {
+    font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
+  }
+}
 #HomeFooter .emailregister {
   display: flex;
   align-items: center;
@@ -289,6 +335,8 @@ body {
   height: 20%;
   background-color: #E76A00;
   padding: 0 10rem;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 #HomeFooter .emailregister div {
   display: flex;
@@ -330,6 +378,28 @@ body {
 #HomeFooter .emailregister form input[type=submit]:hover {
   cursor: pointer;
 }
+@media screen and (orientation: portrait) {
+  #HomeFooter .emailregister {
+    max-width: 100%;
+    padding: 0;
+  }
+  #HomeFooter .emailregister div svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  #HomeFooter .emailregister div h5 {
+    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+  }
+  #HomeFooter .emailregister form input[type=Email] {
+    width: clamp(4.688rem, -3.884rem + 42.857vw, 7.5rem);
+    font-size: 10px;
+    height: 1rem;
+  }
+  #HomeFooter .emailregister form input[type=submit] {
+    font-size: 10px;
+    height: 2rem;
+  }
+}
 #HomeFooter .last {
   background-color: #242424;
   height: 45%;
@@ -337,6 +407,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 0 10%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 #HomeFooter .last .nav {
   padding: 0.5rem 0;
@@ -354,6 +426,9 @@ body {
   border-right: 1px solid #979797;
   text-transform: capitalize;
   font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+#HomeFooter .last .nav > a:last-of-type {
+  border-right: 0;
 }
 #HomeFooter .last .nav > a:hover {
   color: #E76A00;
@@ -392,6 +467,16 @@ body {
   height: 32px;
   color: white;
   background-color: #E76A00;
+}
+@media screen and (orientation: portrait) {
+  #HomeFooter .last .nav a {
+    padding: 0.25rem 0.5rem;
+    font-size: clamp(0.625rem, 0.244rem + 1.905vw, 0.75rem);
+  }
+  #HomeFooter .last .copynsocials .socials .links svg {
+    width: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
+    height: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
+  }
 }
 
 #CampusNav {
@@ -527,9 +612,13 @@ body {
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  min-width: 50%;
-  width: 50%;
-  max-width: 50%;
+}
+@media screen and (orientation: landscape) {
+  .course {
+    min-width: 50%;
+    width: 50%;
+    max-width: 50%;
+  }
 }
 .course .calendar {
   display: flex;
@@ -537,9 +626,9 @@ body {
   justify-content: flex-start;
 }
 .course .calendar svg {
-  width: 2rem;
-  height: 2rem;
-  padding: 1.5rem;
+  width: 1rem;
+  height: 1rem;
+  padding: 1rem;
   background-color: #58608D;
   color: white;
   aspect-ratio: 1/1;
@@ -550,7 +639,17 @@ body {
   padding: 0.5rem;
   text-transform: uppercase;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
+}
+@media screen and (orientation: landscape) {
+  .course .calendar svg {
+    width: 2rem;
+    height: 2rem;
+    padding: 1.5rem;
+  }
+  .course .calendar span {
+    font-size: 16px;
+  }
 }
 .course .info {
   display: flex;
@@ -584,12 +683,158 @@ a.button {
   margin: auto 0;
   border: 0;
   color: white;
+  width: -moz-fit-content;
+  width: fit-content;
   text-decoration: none;
   text-transform: uppercase;
   background-color: #e0bc43;
   font-family: "DM Sans", sans-serif;
   padding: 1rem 2rem;
-  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  font-size: clamp(0.5rem, -0.262rem + 3.81vw, 0.75rem);
+}
+@media screen and (orientation: landscape) {
+  a.button {
+    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  }
+}
+
+.pathmodule {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  width: 100%;
+  min-height: 15rem;
+  box-sizing: border-box;
+  padding: 0 clamp(3.125rem, -11.161rem + 22.321vw, 15.625rem);
+}
+.pathmodule.start {
+  min-height: 5rem;
+  height: 5rem;
+}
+.pathmodule.start .route .icon {
+  margin: 0;
+}
+.pathmodule.grey {
+  background-color: #f9f7f5;
+}
+.pathmodule.end {
+  min-height: 5rem;
+  height: 5rem;
+  margin-bottom: 2rem;
+}
+.pathmodule.end .route .icon {
+  margin: auto 0 0 0;
+}
+.pathmodule .route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 3rem;
+  max-width: 3rem;
+  height: auto;
+  position: relative;
+}
+.pathmodule .route .icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  padding: 5px;
+  background-color: #e0bc43;
+  color: white;
+  z-index: 1;
+  margin-top: 1.5rem;
+}
+.pathmodule .route .icon.reverse {
+  transform: rotate(180deg);
+}
+.pathmodule .route div.verticalline {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  display: block;
+  width: 2px;
+  flex-grow: 1;
+  background-color: grey;
+  box-sizing: border-box;
+}
+.pathmodule .content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.pathmodule .content h3 {
+  position: relative;
+  margin: 1.5rem 0 1.5rem 1rem;
+  font-size: 36px;
+  font-family: "Lato", sans-serif;
+  background-color: #e0bc43;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 15px;
+}
+.pathmodule .content h3::before {
+  position: absolute;
+  top: calc(50% - 12px);
+  left: -4px;
+  content: " ";
+  display: block;
+  width: 8px;
+  height: 8px;
+  rotate: 45deg;
+  background: #e0bc43;
+  border: 4px solid #e0bc43;
+  z-index: -1;
+}
+.pathmodule .content .text {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1024px) {
+  .pathmodule .content .text:has(img) {
+    flex-direction: row;
+  }
+}
+.pathmodule .content .text p {
+  margin: 0 0 0.5rem 0;
+  text-align: justify;
+  font-family: "Lato", sans-serif;
+  font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+}
+.pathmodule .content .text img {
+  display: flex;
+  aspect-ratio: 2/1;
+  width: 300px;
+  height: 150px;
+  margin: 0 3rem;
+  align-self: center;
+}
+@media screen and (max-width: 1024px) {
+  .pathmodule {
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .pathmodule .content {
+    max-width: calc(100% - 3rem);
+  }
+  .pathmodule .content h3 {
+    font-size: clamp(1rem, 0.643rem + 1.786vw, 1.5rem);
+  }
+  .pathmodule .content h3::before {
+    top: calc(50% - clamp(1rem, 0.643rem + 1.786vw, 1.5rem) / 2);
+    left: -3px;
+  }
+  .pathmodule .content .text img {
+    margin: 0;
+    width: 70%;
+    height: 70%;
+  }
+  .pathmodule .content .text p {
+    font-size: 8px;
+    padding-right: 1rem;
+  }
 }
 
 li.link {
@@ -690,441 +935,787 @@ li.link:hover {
   padding: 0;
 }
 
-/* Pages */
-#wip {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#login {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  background-color: var(--primary-100);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(325,960,461)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%234FE'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='300' height='250' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.04'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  /* Background from svgbackgrounds.com */
-}
-#login .welcome {
-  background: rgba(255, 255, 255, 0.2);
-  box-sizing: border-box;
-  padding: 2vh 5vw;
-  height: 100%;
-  width: auto;
-  align-self: flex-start;
-  flex-shrink: 3;
-}
-#login .welcome h1 {
-  font-size: clamp(2.25rem, 1.083rem + 1.823vw, 4rem);
-}
-#login .welcome p {
-  font-size: clamp(1rem, 0.667rem + 0.521vw, 1.5rem);
-}
-#login .form {
-  background-color: var(--bg-100);
-  width: 50vw;
-  height: 100%;
-  min-width: 45vw;
-  display: flex;
-  flex-grow: 4;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-100);
-}
-#login .form .person {
-  font-size: 64px;
-  font-family: "DM Sans", sans-serif;
-  margin: 0;
-  margin-bottom: 1rem;
-}
-#login .form a {
-  color: var(--text-100);
-}
-#login .form form {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 2rem;
-  gap: 1rem;
-  width: 80%;
-  align-items: center;
-}
-#login .form form .input-container {
-  background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
-  border-radius: 15rem;
-  display: flex;
-  padding: 0 0.75rem;
-  height: 2.5rem;
-  width: 50%;
-}
-#login .form form .input-container > .notify-container {
-  margin: 0;
-  width: 100%;
-}
-#login .form form .input-container > .notify-container > input {
-  background: transparent;
-  height: 95%;
-  width: 95%;
-  border: 0;
-  color: var(--text-100);
-  font-family: "DM Sans", sans-serif;
-}
-#login .form form .input-container > .notify-container > input:focus {
-  border: 0;
-  outline: 0;
-}
-#login .form form .input-container > label {
-  display: flex;
-  align-items: center;
-  padding-right: 0.5rem;
-  font-size: 20px;
-}
-#login .form form .line {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 1rem 0;
-  width: 75%;
-}
-#login .form form .submit {
-  font-family: "DM Sans", sans-serif;
-  color: var(--text-100);
-  font-size: 16px;
-  width: -moz-fit-content;
-  width: fit-content;
-  display: flex;
-  margin: auto;
-  border: 0;
-  background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-}
-
-#library {
-  display: grid;
-  grid-template-columns: 0.25fr 1fr 0.25fr;
-  grid-template-rows: 10rem repeat(4, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  overflow: hidden;
-  background-color: var(--bg-100);
-}
-#library > header {
-  grid-area: 1/1/2/4;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: var(--bg-200);
-  padding: 15px;
-}
-#library > header h2 {
-  color: var(--text-100);
-  margin-left: 3rem;
-  text-align: left;
-  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-  font-family: monospace;
-  align-self: center;
-}
-#library > aside.tags {
-  grid-area: 2/1/6/2;
-  background-color: var(--bg-200);
-  color: var(--text-200);
-}
-#library > aside.tags h3 {
-  text-align: center;
-}
-#library > aside.tags .form {
-  display: flex;
-  flex-direction: row;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  border-radius: 2rem;
-  outline: 3px solid var(--accent-100);
-  transition: outline 1s;
-}
-#library > aside.tags .form:focus,
-#library > aside.tags .form .input:focus, #library > aside.tags .form:hover,
-#library > aside.tags .form button:hover,
-#library > aside.tags .form button:focus {
-  outline: 3px solid var(--accent-100);
-  transition: outline 1s;
-}
-#library > aside.tags .form:focus button,
-#library > aside.tags .form .input:focus button, #library > aside.tags .form:hover button,
-#library > aside.tags .form button:hover button,
-#library > aside.tags .form button:focus button {
-  outline: 0;
-}
-#library > aside.tags .form input.input {
-  background-color: var(--bg-300);
-  color: var(--text-100);
-  border: 0;
-  padding: 0.5rem;
-  border-bottom-left-radius: 2rem;
-  border-top-left-radius: 2rem;
-  width: calc(100% - 3rem);
-}
-#library > aside.tags .form input.input:focus {
-  outline: 0;
-}
-#library > aside.tags .form button {
-  padding-left: 1rem;
-  width: 3rem;
-  padding-right: 1rem;
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
-  background-color: var(--bg-300);
-  border: 0;
-}
-#library > aside.tags .form button:hover {
-  background-color: var(--primary-300);
-  cursor: pointer;
-}
-#library > aside.tags .form button:focus {
-  outline: 0;
-}
-#library > aside.tags h5 {
-  padding-left: clamp(1rem, 10%, 3rem);
-}
-#library > aside.tags ul {
-  list-style: none;
-  padding: 0 clamp(0px, 0px + 1vw, 3rem);
-}
-#library > aside.tags ul li {
-  display: block;
-  width: minmax(auto, 55%);
-  text-align: center;
-  padding: 0.2rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--primary-100);
-  margin-bottom: 0.3rem;
-  transition: background-color 150ms ease-in-out;
-  transition: border 250ms ease-in-out;
-}
-#library > aside.tags ul li:last-of-type {
-  margin-bottom: 0;
-}
-#library > aside.tags ul li:hover {
-  background-color: var(--accent-200);
-  border: 1px solid var(--accent-100);
-  cursor: pointer;
-  transition: background-color 150ms ease-in-out;
-  transition: border 0ms ease-in-out;
-}
-#library > aside.tags ul li:active {
-  background-color: var(--accent-200);
-  border: 1px solid var(--accent-100);
-}
-#library > aside.tags ul li::-moz-selection {
-  background-color: rgba(0, 0, 0, 0);
-}
-#library > aside.tags ul li::selection {
-  background-color: rgba(0, 0, 0, 0);
-}
-#library > section {
-  grid-area: 2/2/6/3;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  border-radius: 1rem;
-  padding: 1rem;
-  margin: 1rem;
-  overflow: scroll;
-  overflow-x: hidden;
-  gap: 0.5rem;
-  background-color: var(--primary-300);
-}
-#library > aside.shopping_list {
-  background-color: var(--bg-200);
-  color: var(--text-100);
-  grid-area: 2/3/6/4;
-}
-#library > aside.shopping_list h3 {
-  text-align: center;
-}
-
-#Homepage {
-  min-height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-#Homepage > section {
-  height: 100vh;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-}
-#Homepage > section > h2 {
-  font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
-  font-family: "DM Sans", sans-serif;
-  font-weight: 200;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-#Homepage > section > hr {
-  width: 4rem;
-  border: 0.2rem solid #aaa;
-  border-radius: 0.5rem;
-  margin-bottom: 2rem;
-}
-#Homepage > section > span.subtitle {
-  font-family: "DM Serif Display", serif;
-  font-weight: 300;
-  color: #696969;
-  margin-bottom: 1.5rem;
-  font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
-}
-#Homepage .section-1 {
-  background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
-  background-position: center -5rem;
-  background-size: cover;
-  justify-content: flex-end;
-  color: #fee;
-  padding: 5rem 0;
-}
-#Homepage .section-1 > span,
-#Homepage .section-1 > h1 {
-  padding: 0 5rem;
-  font-family: "Lato", sans-serif;
-}
-#Homepage .section-1 > span {
-  font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-}
-#Homepage .section-1 > h1 {
-  margin-top: 1rem;
-  text-transform: uppercase;
-  font-weight: 200;
-  font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
-}
-#Homepage .section-1 > h1 > span {
-  font-weight: bold;
-}
-#Homepage .section-1 > hr {
-  margin-left: 7rem;
-  width: 60%;
-  height: 1;
-  border: 1px solid #aaa;
-}
-#Homepage .section-1 > .events {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  padding: 0 5rem 1rem 5rem;
-  gap: 0.5rem;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-}
-#Homepage .section-2 {
-  align-items: center;
-  height: 85vh;
-  padding: 0 6rem;
-  padding-bottom: 5rem;
-}
-#Homepage .section-2 > p {
-  text-align: center;
-  font-family: "DM Sans", sans-serif;
-  font-weight: 300;
-  color: #696969;
-  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-}
-#Homepage .section-2 .horizontal-container {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
-}
-#Homepage .section-3 {
-  background-color: #EEE;
-  align-items: center;
-}
-#Homepage .section-3 .courses {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  align-items: center;
-  width: 100%;
-}
-#Homepage .section-3 .courses .couple {
-  display: flex;
-  flex-direction: row;
-  min-width: 80%;
-  max-width: 80%;
-  gap: 2rem;
-}
-
-#dashboard {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#dashboard h1 {
-  margin: 2rem 0 0 0;
-}
-#dashboard h2 {
-  margin: 0;
-  color: gray;
-}
-
-main#student {
-  display: grid;
-  grid-template-columns: 1fr 0.5fr;
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 0.5rem;
-  max-width: 100%;
-  max-height: 100%;
-}
-main#student section {
-  display: flex;
-  flex-direction: column;
-  margin: 0.5rem;
-  background-color: var(--bg-100);
-  color: var(--text-100);
-  padding: 1rem;
-  border-radius: 1rem;
-}
-main#student section h2 {
-  display: block;
-  margin: 0;
-  padding: 0.5rem;
-}
-main#student section.courses {
-  grid-area: 1/1/2/2;
-  display: flex;
-  flex-direction: column;
-}
-main#student section.courses .content {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  gap: 2rem;
-  flex-wrap: nowrap;
-  overflow: scroll;
-  scroll-snap-align: center;
-  scrollbar-width: none;
-}
-main#student section.courses .content::-webkit-scrollbar {
-  width: 0;
-}
-main#student section.courses .content .course {
-  width: 15rem;
-  border: 3px solid black;
-  border-radius: 1rem;
-}
-main#student section.timetable {
-  grid-area: 2/1/3/2;
-}
-main#student section.announcements {
-  grid-area: 1/2/2/3;
-}
-main#student section.feesannouncements {
-  grid-area: 2/2/3/3;
+/* Landscape view */
+/* Support for resolutions in px:
+  1920×1080
+  1600×900
+  1536×864
+  1440×900
+  1366×768
+  1280×1024
+  1280×800
+  1280×720
+  1024×768
+*/
+@media screen and (orientation: landscape) {
+  /* Pages */
+  #Homepage {
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  #Homepage > section {
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  #Homepage > section > h2 {
+    font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  #Homepage > section > hr {
+    width: 4rem;
+    border: 0.2rem solid #aaa;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  #Homepage > section > span.subtitle {
+    font-family: "DM Serif Display", serif;
+    font-weight: 300;
+    color: #696969;
+    margin-bottom: 1.5rem;
+    font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
+  }
+  #Homepage #home {
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+    background-position: center -5rem;
+    background-size: cover;
+    justify-content: flex-end;
+    color: #fee;
+    padding: 5rem 0;
+  }
+  #Homepage #home > span,
+  #Homepage #home > h1 {
+    padding: 0 5rem;
+    font-family: "Lato", sans-serif;
+  }
+  #Homepage #home > span {
+    font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+  }
+  #Homepage #home > h1 {
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
+  }
+  #Homepage #home > h1 > .bold {
+    font-weight: bold;
+  }
+  #Homepage #home > hr {
+    margin-left: 7rem;
+    width: 60%;
+    height: 1;
+    border: 1px solid #aaa;
+  }
+  #Homepage #home > .events {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0 5rem 1rem 5rem;
+    gap: 0.5rem;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+  }
+  #Homepage #studywus {
+    align-items: center;
+    height: 85vh;
+    padding: 0 6rem;
+    padding-bottom: 5rem;
+  }
+  #Homepage #studywus > p {
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    color: #696969;
+    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  }
+  #Homepage #studywus .horizontal-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  #Homepage .section-3 {
+    background-color: #EEE;
+    align-items: center;
+  }
+  #Homepage .section-3 .courses {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    align-items: center;
+    width: 100%;
+  }
+  #Homepage .section-3 .courses .couple {
+    display: flex;
+    flex-direction: row;
+    min-width: 80%;
+    max-width: 80%;
+    gap: 2rem;
+  }
+  main#aboutus {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  main#aboutus .wallpaper {
+    height: 100dvh;
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+  }
+  main#aboutus .wallpaper .imglogo {
+    font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+  }
+  main#aboutus .wallpaper q {
+    margin-top: 3rem;
+    font-size: clamp(2.25rem, 0.821rem + 2.232vw, 3.5rem);
+    width: 60%;
+    text-align: justify;
+    font-family: "Lato", sans-serif;
+  }
+  main#aboutus .wallpaper p {
+    font-size: clamp(2rem, 1.429rem + 0.893vw, 2.5rem);
+    margin-top: 0;
+    width: 60%;
+    text-align: end;
+    font-family: "Lato", sans-serif;
+  }
+  main#aboutus .wallpaper .button {
+    position: absolute;
+    margin: 1rem;
+    bottom: 0;
+  }
+  main#aboutus #me {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    background-color: #f9f7f5;
+  }
+  main#aboutus #me .mysection {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+  }
+  main#aboutus #me .mysection .img {
+    background-image: url("https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9639.jpg?w=1380&t=st=1698093113~exp=1698093713~hmac=2aa87b6f555c1875cee69406cc7704670852e50be7747b5c011eba5e320e8296");
+    background-position: -12rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 460px;
+    border: 0.5rem solid #e0bc43;
+  }
+  main#aboutus #me .mysection .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  main#aboutus #me .mysection .content div h3 {
+    color: rgb(3, 57, 78);
+    font-family: "Lato", sans-serif;
+    font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+    margin: 0;
+  }
+  main#aboutus #me .mysection .content div h4 {
+    font-family: "Lato", sans-serif;
+    font-size: clamp(1.25rem, 0.964rem + 0.446vw, 1.5rem);
+    margin: 1rem 0;
+  }
+  main#aboutus #me .mysection .content div p {
+    height: auto;
+    flex-grow: 1;
+    text-align: justify;
+    font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+  }
+  main#aboutus #me .mysection .content .button {
+    align-self: center;
+    margin: 0;
+  }
+  main#aboutus .path {
+    display: flex;
+    flex-direction: column;
+  }
+  #wip {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #login {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    background-color: var(--primary-100);
+    background-image: url("https://img.freepik.com/free-photo/online-assignment_1098-13105.jpg?w=1380&t=st=1697838724~exp=1697839324~hmac=6ebca29feb6349f0150e1b53b7af2c518b9b14b370bb56b370040f51fd437176");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: left;
+    overflow: hidden;
+  }
+  #login .credentials {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 1rem;
+    left: 1rem;
+  }
+  #login .credentials label {
+    color: white;
+    font-size: 3rem;
+  }
+  #login .credentials input {
+    display: none;
+  }
+  #login .credentials .content {
+    position: absolute;
+    overflow: hidden;
+    left: 3.12rem;
+    bottom: 1rem;
+    background-color: var(--bg-100);
+    color: var(--text-100);
+    width: 30vw;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #login .credentials .content h3 {
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+    margin: 0;
+  }
+  #login .credentials .content table {
+    width: 80%;
+    border-collapse: collapse;
+    align-self: center;
+    margin: 1rem;
+    font-size: clamp(0.75rem, -0.107rem + 1.339vw, 1.5rem);
+  }
+  #login .credentials .content table th,
+  #login .credentials .content table td {
+    border: 1px solid white;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+  }
+  #login .credentials .content table th button,
+  #login .credentials .content table td button {
+    border: 0;
+    background: none;
+    color: inherit;
+    padding: 5px;
+    font-size: inherit;
+    width: 100%;
+  }
+  #login .credentials .content table th {
+    padding: 5px;
+  }
+  #login .credentials .content.inactive {
+    height: 0;
+    width: 0;
+    transition: height 0.25s, width 0.25s;
+  }
+  #login .credentials .content.active {
+    height: 40vh;
+    transition: height 0.25s, width 0.25s;
+  }
+  #login .welcome {
+    background: rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    padding: 2vh 5vw;
+    height: 100%;
+    align-self: flex-start;
+    flex-shrink: 3;
+  }
+  #login .welcome h1 {
+    font-size: clamp(2.25rem, 1.083rem + 1.823vw, 4rem);
+  }
+  #login .welcome p {
+    font-size: clamp(1rem, 0.667rem + 0.521vw, 1.5rem);
+  }
+  #login .form {
+    background-color: var(--bg-100);
+    height: 100%;
+    min-width: clamp(38.375rem, 27.375rem + 17.188vw, 48rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-100);
+  }
+  #login .form .person {
+    font-size: 64px;
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+  #login .form a {
+    color: var(--text-100);
+  }
+  #login .form form {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
+    gap: 1rem;
+    width: 80%;
+    align-items: center;
+  }
+  #login .form form .input-container {
+    background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
+    border-radius: 15rem;
+    display: flex;
+    padding: 0 0.75rem;
+    height: 2.5rem;
+    width: 50%;
+  }
+  #login .form form .input-container > .notify-container {
+    margin: 0;
+    width: 100%;
+  }
+  #login .form form .input-container > .notify-container > input {
+    background: transparent;
+    height: 95%;
+    width: 95%;
+    border: 0;
+    color: var(--text-100);
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+  }
+  #login .form form .input-container > .notify-container > input:focus {
+    border: 0;
+    outline: 0;
+  }
+  #login .form form .input-container > label {
+    display: flex;
+    align-items: center;
+    padding-right: 0.5rem;
+    font-size: 20px;
+  }
+  #login .form form .line {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem 0;
+    width: 75%;
+  }
+  #login .form form .submit {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text-100);
+    font-size: 16px;
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+    margin: auto;
+    border: 0;
+    background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+  }
+  #library {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
+    grid-template-rows: 10rem repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    overflow: hidden;
+    background-color: var(--bg-100);
+  }
+  #library > header {
+    grid-area: 1/1/2/4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--bg-200);
+    padding: 15px;
+  }
+  #library > header h2 {
+    color: var(--text-100);
+    margin-left: 3rem;
+    text-align: left;
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-family: monospace;
+    align-self: center;
+  }
+  #library > aside.tags {
+    grid-area: 2/1/6/2;
+    background-color: var(--bg-200);
+    color: var(--text-200);
+  }
+  #library > aside.tags h3 {
+    text-align: center;
+  }
+  #library > aside.tags .form {
+    display: flex;
+    flex-direction: row;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border-radius: 2rem;
+    outline: 3px solid var(--accent-100);
+    transition: outline 1s;
+  }
+  #library > aside.tags .form:focus,
+  #library > aside.tags .form .input:focus, #library > aside.tags .form:hover,
+  #library > aside.tags .form button:hover,
+  #library > aside.tags .form button:focus {
+    outline: 3px solid var(--accent-100);
+    transition: outline 1s;
+  }
+  #library > aside.tags .form:focus button,
+  #library > aside.tags .form .input:focus button, #library > aside.tags .form:hover button,
+  #library > aside.tags .form button:hover button,
+  #library > aside.tags .form button:focus button {
+    outline: 0;
+  }
+  #library > aside.tags .form input.input {
+    background-color: var(--bg-300);
+    color: var(--text-100);
+    border: 0;
+    padding: 0.5rem;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    width: calc(100% - 3rem);
+  }
+  #library > aside.tags .form input.input:focus {
+    outline: 0;
+  }
+  #library > aside.tags .form button {
+    padding-left: 1rem;
+    width: 3rem;
+    padding-right: 1rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    background-color: var(--bg-300);
+    border: 0;
+  }
+  #library > aside.tags .form button:hover {
+    background-color: var(--primary-300);
+    cursor: pointer;
+  }
+  #library > aside.tags .form button:focus {
+    outline: 0;
+  }
+  #library > aside.tags h5 {
+    padding-left: clamp(1rem, 10%, 3rem);
+  }
+  #library > aside.tags ul {
+    list-style: none;
+    padding: 0 clamp(0px, 0px + 1vw, 3rem);
+  }
+  #library > aside.tags ul li {
+    display: block;
+    width: minmax(auto, 55%);
+    text-align: center;
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary-100);
+    margin-bottom: 0.3rem;
+    transition: background-color 150ms ease-in-out;
+    transition: border 250ms ease-in-out;
+  }
+  #library > aside.tags ul li:last-of-type {
+    margin-bottom: 0;
+  }
+  #library > aside.tags ul li:hover {
+    background-color: var(--accent-200);
+    border: 1px solid var(--accent-100);
+    cursor: pointer;
+    transition: background-color 150ms ease-in-out;
+    transition: border 0ms ease-in-out;
+  }
+  #library > aside.tags ul li:active {
+    background-color: var(--accent-200);
+    border: 1px solid var(--accent-100);
+  }
+  #library > aside.tags ul li::-moz-selection {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #library > aside.tags ul li::selection {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  #library > section {
+    grid-area: 2/2/6/3;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    overflow: scroll;
+    overflow-x: hidden;
+    gap: 0.5rem;
+    background-color: var(--primary-300);
+  }
+  #library > aside.shopping_list {
+    background-color: var(--bg-200);
+    color: var(--text-100);
+    grid-area: 2/3/6/4;
+  }
+  #library > aside.shopping_list h3 {
+    text-align: center;
+  }
+  #dashboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dashboard h1 {
+    margin: 2rem 0 0 0;
+  }
+  #dashboard h2 {
+    margin: 0;
+    color: gray;
+  }
+  main#student {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  main#student section {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    background-color: var(--bg-100);
+    color: var(--text-100);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+  main#student section h2 {
+    display: block;
+    margin: 0;
+    padding: 0.5rem;
+  }
+  main#student section.courses {
+    grid-area: 1/1/2/2;
+    display: flex;
+    flex-direction: column;
+  }
+  main#student section.courses .content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    gap: 2rem;
+    flex-wrap: nowrap;
+    overflow: scroll;
+    scroll-snap-align: center;
+    scrollbar-width: none;
+  }
+  main#student section.courses .content::-webkit-scrollbar {
+    width: 0;
+  }
+  main#student section.courses .content .course {
+    width: 15rem;
+    border: 3px solid black;
+    border-radius: 1rem;
+  }
+  main#student section.timetable {
+    grid-area: 2/1/3/2;
+  }
+  main#student section.announcements {
+    grid-area: 1/2/2/3;
+  }
+  main#student section.feesannouncements {
+    grid-area: 2/2/3/3;
+  }
+}
+/* Portrait view */
+/* Support for resolutions in px:
+  480×800
+  640×1136
+  720×1280
+  750×1334
+  768×1024
+  800×1280
+  810×1080
+*/
+@media screen and (orientation: portrait) {
+  #Homepage section {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+  }
+  #Homepage section h2 {
+    font-size: clamp(1.75rem, 0.226rem + 7.619vw, 2.25rem);
+    font-family: "DM Sans", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  #Homepage section hr {
+    width: 4rem;
+    border: 0.2rem solid #aaa;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+  }
+  #Homepage section span.subtitle {
+    font-family: "DM Serif Display", serif;
+    font-weight: 300;
+    color: #696969;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1rem, 0.238rem + 3.81vw, 1.25rem);
+  }
+  #Homepage section#home {
+    padding-bottom: 25%;
+    justify-content: flex-end;
+    align-items: normal;
+    background-image: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+    background-size: cover;
+    background-position: center;
+    color: white;
+  }
+  #Homepage section#home span {
+    font-size: 24px;
+  }
+  #Homepage section#home .events {
+    align-self: flex-end;
+    max-width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    scroll-snap-type: mandatory;
+    overflow-x: scroll;
+  }
+  #Homepage section#studywus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 1rem;
+  }
+  #Homepage section#studywus p {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 300;
+    color: #696969;
+    text-align: justify;
+  }
+  #Homepage section#studywus .horizontal-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+  #Homepage section#studywus .horizontal-container article {
+    padding: 0 1rem;
+  }
+  #Homepage section#courses {
+    margin-top: 2rem;
+    background-color: #EEE;
+    padding: 0 1rem;
+  }
+  #Homepage section#courses .courses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+  #Homepage section#courses .courses .couple {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #Homepage section#courses a {
+    margin: 1rem 0;
+  }
+  #aboutus .wallpaper {
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+  }
+  #aboutus .wallpaper q {
+    margin-top: 3rem;
+    width: 60%;
+    text-align: justify;
+    font-family: "Lato", sans-serif;
+  }
+  #aboutus .wallpaper p {
+    margin-top: 0;
+    width: 60%;
+    text-align: end;
+    font-family: "Lato", sans-serif;
+  }
+  #aboutus .wallpaper .button {
+    position: absolute;
+    margin: 1rem;
+    bottom: 0;
+  }
+  #aboutus #me {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    background-color: #f9f7f5;
+  }
+  #aboutus #me .mysection {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #aboutus #me .mysection img {
+    background-image: url("https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9639.jpg?w=1380&t=st=1698093113~exp=1698093713~hmac=2aa87b6f555c1875cee69406cc7704670852e50be7747b5c011eba5e320e8296");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0.25rem solid #e0bc43;
+    width: clamp(12.5rem, 1.339rem + 55.804vw, 28.125rem);
+    margin: 0 auto;
+  }
+  #aboutus #me .mysection .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #aboutus #me .mysection .content div h3 {
+    color: rgb(3, 57, 78);
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    text-align: center;
+  }
+  #aboutus #me .mysection .content div h4 {
+    font-family: "Lato", sans-serif;
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+  #aboutus #me .mysection .content div p {
+    height: auto;
+    flex-grow: 1;
+    text-align: justify;
+    font-size: 12px;
+  }
+  #aboutus #me .mysection .content a {
+    margin: 0 auto;
+  }
+  #aboutus .path {
+    display: flex;
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=main.css.map */

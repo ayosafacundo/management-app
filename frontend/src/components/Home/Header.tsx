@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Logo from '../Logo';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 function Header(): React.ReactElement {
 
@@ -7,14 +8,17 @@ function Header(): React.ReactElement {
 
   return (
     <header id="HomeHeader">
-      <Logo />
-      <input type="checkbox" name="displaynav" id="displaynav" onClick={() => { setNavDisplay(!navDisplay) }} />
+      <div className='check'>
+        <Logo />
+        <label htmlFor="displaynav" className='displaynav'><GiHamburgerMenu /></label>
+        <input type="checkbox" name="displaynav" id="displaynav" onClick={() => { setNavDisplay(!navDisplay) }} />
+      </div>
       <div className={navDisplay ? "navs active" : "navs inactive"}>
-        <a href='/#studywus'>Study in Claymore</a>
-        <a href='/#courses'>Courses</a>
-        <a href='/aboutus'>About Us</a>
-        <a>Blog</a>
-        <a href='/login' className='campus'>My Campus</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/#studywus'>Study in Claymore</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/#courses'>Courses</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/aboutus'>About Claymore</a>
+        <a onClick={() => { setNavDisplay(false) }}>Blog</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/login' className='campusbtn'>My Campus</a>
       </div>
     </header>
   )

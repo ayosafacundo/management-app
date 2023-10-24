@@ -35,7 +35,7 @@
 
   }
 
-  .section-1 {
+  #home {
     background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
     background-position: center -5rem;
     background-size: cover;
@@ -59,7 +59,7 @@
       font-weight: 200;
       font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
 
-      >span {
+      >.bold {
         font-weight: bold;
       }
     }
@@ -82,7 +82,7 @@
     }
   }
 
-  .section-2 {
+  #studywus {
     align-items: center;
     height: 85vh;
     padding: 0 6rem;

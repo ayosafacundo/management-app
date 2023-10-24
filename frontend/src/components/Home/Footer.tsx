@@ -30,7 +30,7 @@ function Footer(): React.ReactElement {
           <Link to="#home">Home</Link>
           <Link to="#studywus">Online Course</Link>
           <Link to="#courses">Physical Course</Link>
-          <Link to="/aboutus">About Us</Link>
+          <Link to="/aboutus">About Claymore</Link>
           <Link to="/login">Login</Link>
           <Link to="#">Register</Link>
         </div>

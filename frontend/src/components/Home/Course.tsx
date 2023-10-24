@@ -2,7 +2,7 @@ import React from 'react';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { BsCalendarFill, BsFillPersonFill } from 'react-icons/bs';
 import { RandomDate } from '../../utils/RandomDate';
-import events from './Events.json';
+import events from '../../resources/Events.json';
 
 function Course(): React.ReactElement {
 

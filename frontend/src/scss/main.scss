@@ -22,17 +22,55 @@
 @import 'components/Home/Lesson';
 @import 'components/Home/Course';
 @import 'components/Home/button';
+// AboutUs //
+@import 'components/AboutUs/Article';
+
 // Campus //
 @import 'components/sidebar-link';
 @import 'components/accordion';
 // @import 'components/chip';
 // @import 'components/book';
 
-/* Pages */
-@import 'pages/wip'; // Work in progress Placeholder
-@import 'pages/Login';
-@import 'pages/library';
-@import 'pages/homepage';
-// Dashboards
-@import 'pages/user/dashboards/dashboard';
-@import 'pages/user/dashboards/student';
+
+/* Landscape view */
+/* Support for resolutions in px:
+  1920×1080
+  1600×900
+  1536×864
+  1440×900
+  1366×768
+  1280×1024
+  1280×800
+  1280×720
+  1024×768
+*/
+@media screen and (orientation: landscape) {
+  /* Pages */
+  @import 'pages/Landscape/Homepage';
+  @import 'pages/Landscape/AboutUs';
+  @import 'pages/Landscape/wip'; // Work in progress Placeholder
+  @import 'pages/Landscape/Login';
+  @import 'pages/Landscape/library';
+
+  // Dashboards
+  @import 'pages/Landscape/dashboards/dashboard';
+  @import 'pages/Landscape/dashboards/student';
+}
+
+/* Portrait view */
+/* Support for resolutions in px:
+  480×800
+  640×1136
+  720×1280
+  750×1334
+  768×1024
+  800×1280
+  810×1080
+*/
+@media screen and (orientation: portrait) {
+  @import 'pages/Portrait/Homepage';
+  @import 'pages/Portrait/AboutUs';
+  //@import 'pages/Portrait/wip'; // Work in progress Placeholder
+  //@import 'pages/Portrait/Login';
+  //@import 'pages/Portrait/library';
+}

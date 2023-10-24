@@ -8,7 +8,7 @@ function Homepage(): React.ReactElement {
     <main id='Homepage'>
       <section id="home" className='section-1'>
         <span>Lorem ipsum dolor sit amet consectetur adipisicing elit.</span>
-        <h1>Providing interdisciplinary <br /><span>Online & Presential Courses and tests</span></h1>
+        <h1>Providing interdisciplinary <br /><span className='bold'>Online & Presential Courses and tests</span></h1>
         <hr />
         <div className="events">
           <Event />
