@@ -2,6 +2,7 @@ import React from 'react';
 import Event from '../components/Home/Event';
 import Course from '../components/Home/Course';
 import Lessons from '../components/Home/Lessons';
+import { NavLink } from 'react-router-dom';
 
 function Homepage(): React.ReactElement {
   return (
@@ -44,7 +45,7 @@ function Homepage(): React.ReactElement {
             <Course />
           </div>
         </div>
-        <a href='#' className="button">See more courses</a>
+        <NavLink to='courses' className="button">See more courses</NavLink>
       </section>
     </main>
   )

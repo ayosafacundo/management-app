@@ -27,40 +27,45 @@ Idea from [sharpen.design](sharpen.design)
 
 - [X] Router  
 - [ ] Pages:  
-    - [X] Login      
-    - [ ] Dashboard  
-        - [ ] Admin Dashboard  
-        - [ ] Teacher Dashboard  
-        - [ ] Librarian Dashboard  
-        - [ ] Student Dashboard  
-    - [ ] Admin Panel    
-        - [ ] Home
-        - [ ] Settings
+    - [X] Home Page  
+    - [X] About Us  
+    - [ ] Courses  
+    - [X] Login        
+    - [ ] Register        
+    - [ ] Campus  
+        - [ ] Dashboard  
+            - [ ] Admin Dashboard  
+            - [ ] Teacher Dashboard  
+            - [ ] Librarian Dashboard  
+            - [ ] Student Dashboard  
+        - [ ] Admin Panel    
+            - [ ] Home
+            - [ ] Settings
+                - [ ] Courses  
+                - [ ] Exams  
+                - [ ] Fees  
+                - [ ] Events  
+        - [ ] Teachers  
+            - [ ] Home  
             - [ ] Courses  
-            - [ ] Exams  
-            - [ ] Fees  
-            - [ ] Events  
-    - [ ] Teachers  
-        - [ ] Home  
-        - [ ] Courses  
-            - [ ] Exams  
-            - [ ] Calendar  
-        - [ ] Settings  
-    - [ ] Students  
-        - [ ] Home  
-        - [ ] Courses  
-            - [ ] Exams  
-            - [ ] Calendar  
-        - [ ] Settings  
-    - [ ] Librarian
-        - [ ] Home
-        - [ ] Books
-            - [ ] Add Book
-            - [ ] Remove Book
-            - [ ] Edit Book
-        - [ ] Settings
-    - [ ] Fees    
-    - [X] Library
+                - [ ] Exams  
+                - [ ] Calendar  
+            - [ ] Settings  
+        - [ ] Students  
+            - [ ] Home  
+            - [ ] Courses  
+                - [ ] Exams  
+                - [ ] Calendar  
+            - [ ] Settings  
+        - [ ] Librarian
+            - [ ] Home
+            - [ ] Books
+                - [ ] Add Book
+                - [ ] Remove Book
+                - [ ] Edit Book
+            - [ ] Settings
+        - [ ] Fees    
+        - [X] Library
 
 - [ ] Models:
     - [X] User       

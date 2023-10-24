@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 function Lessons(): React.ReactElement {
   return (
@@ -9,7 +10,7 @@ function Lessons(): React.ReactElement {
         </div>
         <hr />
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas asperiores neque dolor labore alias, iure ipsam ipsum doloremque voluptates consequatur repellendus</p>
-        <a href="/aboutus" className="button">Learn More about us</a>
+        <NavLink to="aboutus" className="button">Learn More about us</NavLink>
       </article>
       <article className="box home">
         <div className="minibox">
