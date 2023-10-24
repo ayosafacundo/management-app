@@ -12,7 +12,7 @@ import AboutUs from '../pages/AboutUs.tsx';
 function routes(): React.ReactElement {
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='management-app'>
       <Routes>
         <Route path='/' element={<HomeWrapper />} >
           <Route index element={<Homepage />} />
