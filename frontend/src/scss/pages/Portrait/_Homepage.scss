@@ -1,0 +1,107 @@
+#Homepage {
+
+  section {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    align-items: center;
+
+    h2 {
+      font-size: clamp(1.75rem, 0.226rem + 7.619vw, 2.25rem);
+      font-family: $fontSans;
+      font-weight: 200;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      width: 4rem;
+      border: 0.2rem solid #aaa;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    span.subtitle {
+      font-family: $fontSerif;
+      font-weight: 300;
+      color: #696969;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 0.238rem + 3.81vw, 1.25rem);
+    }
+
+    &#home {
+      padding-bottom: 25%;
+      justify-content: flex-end;
+      align-items: normal;
+      background-image: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+      background-size: cover;
+      background-position: center;
+      color: white;
+
+      span {
+        font-size: 24px;
+      }
+
+      .events {
+        align-self: flex-end;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        scroll-snap-type: mandatory;
+        overflow-x: scroll;
+      }
+    }
+
+    &#studywus {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 1rem;
+
+      p {
+        font-family: $fontSans;
+        font-weight: 300;
+        color: #696969;
+        text-align: justify;
+      }
+
+      .horizontal-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+
+        article {
+          padding: 0 1rem;
+        }
+      }
+    }
+
+    &#courses {
+      margin-top: 2rem;
+      background-color: #EEE;
+      padding: 0 1rem;
+
+      .courses {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+
+        .couple {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
+
+      a {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

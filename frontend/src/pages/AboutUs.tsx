@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../components/Logo'
 import Article from '../components/AboutUs/Article';
+import { ProfilePicture } from '../resources/images';
 
 function AboutUs(): React.ReactElement {
   return (
@@ -14,11 +15,13 @@ function AboutUs(): React.ReactElement {
         </section>
         <section id='me'>
           <div className="mysection">
-            <div className="img">.</div>
+            <img src={ProfilePicture} alt="Ayosa Facundo's pretty face" className="img" />
             <div className="content">
-              <h3>Creator & Designer</h3>
-              <h4>Ayosa, Facundo Ezequiel, Front End Developer</h4>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet odit, quod unde ab earum necessitatibus esse laborum amet assumenda debitis fugiat nisi ad harum ex? Autem consequuntur eveniet ipsam nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet odit, quod unde ab earum necessitatibus esse laborum amet assumenda debitis fugiat nisi ad harum ex? Autem consequuntur eveniet ipsam nesciunt?</p>
+              <div>
+                <h3>Creator & Designer</h3>
+                <h4>Ayosa, Facundo Ezequiel, Front End Developer</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet odit, quod unde ab earum necessitatibus esse laborum amet assumenda debitis fugiat nisi ad harum ex? Autem consequuntur eveniet ipsam nesciunt? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet odit, quod unde ab earum necessitatibus esse laborum amet assumenda debitis fugiat nisi ad harum ex? Autem consequuntur eveniet ipsam nesciunt?</p>
+              </div>
               <a href="https://ayosafacundo.github.io/portfolio/" className="button">Portfolio</a>
             </div>
           </div>

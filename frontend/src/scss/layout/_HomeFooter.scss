@@ -33,6 +33,20 @@
         font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
       }
     }
+
+    @media screen and (orientation: portrait) {
+      div {
+
+        span {
+          font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+        }
+
+        h5 {
+          font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
+        }
+
+      }
+    }
   }
 
   .emailregister {
@@ -42,6 +56,8 @@
     height: 20%;
     background-color: #E76A00;
     padding: 0 10rem;
+    max-width: 100%;
+    overflow-x: hidden;
 
     div {
       display: flex;
@@ -90,6 +106,36 @@
         }
       }
     }
+
+    @media screen and (orientation: portrait) {
+      max-width: 100%;
+      padding: 0;
+
+      div {
+
+        svg {
+          width: 2.5em;
+          height: 2.5em;
+        }
+
+        h5 {
+          font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+        }
+      }
+
+      form {
+        input[type="Email"] {
+          width: clamp(4.688rem, -3.884rem + 42.857vw, 7.5rem);
+          font-size: 10px;
+          height: 1rem;
+        }
+
+        input[type="submit"] {
+          font-size: 10px;
+          height: 2rem;
+        }
+      }
+    }
   }
 
   .last {
@@ -99,6 +145,8 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 0 10%;
+    max-width: 100%;
+    overflow-x: hidden;
 
     .nav {
       padding: 0.5rem 0;
@@ -116,6 +164,11 @@
         border-right: 1px solid #979797;
         text-transform: capitalize;
         font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+
+
+        &:last-of-type {
+          border-right: 0;
+        }
 
         &:hover {
           color: #E76A00;
@@ -164,6 +217,22 @@
             color: white;
             background-color: #E76A00;
           }
+        }
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      .nav {
+        a {
+          padding: 0.25rem 0.5rem;
+          font-size: clamp(0.625rem, 0.244rem + 1.905vw, 0.75rem);
+        }
+      }
+
+      .copynsocials .socials {
+        .links svg {
+          width: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
+          height: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
         }
       }
     }

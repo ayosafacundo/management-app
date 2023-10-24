@@ -8,5 +8,9 @@ a.button {
   background-color: #e0bc43;
   font-family: $fontSans;
   padding: 1rem 2rem;
-  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  font-size: clamp(0.5rem, -0.262rem + 3.81vw, 0.75rem);
+
+  @media screen and (orientation:landscape) {
+    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  }
 }

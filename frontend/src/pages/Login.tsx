@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom';
 import accounts from '../accounts.json';
 import { BsPersonFill } from 'react-icons/bs';
-import { AiFillLock } from 'react-icons/ai';
+import { AiFillInfoCircle, AiFillLock } from 'react-icons/ai';
 
 interface values {
   email: string
@@ -12,7 +12,18 @@ interface values {
 
 function Login(): React.ReactElement {
 
-  const { register, handleSubmit, formState: { errors } } = useForm<values>();
+  const [active, setActive] = useState(false)
+
+  const { register, handleSubmit, formState: { errors }, setValue } = useForm<values>();
+
+  const SelectValue = (e: React.MouseEvent<HTMLElement>) => {
+    if (e.currentTarget.textContent === "Abc123!") {
+      setValue("password", "Abc123!")
+    } else {
+      setValue("email", e.currentTarget.textContent as string);
+    }
+  }
+
 
   const Navigate = useNavigate();
 
@@ -35,6 +46,54 @@ function Login(): React.ReactElement {
 
   return (
     <main id="login">
+      <div className="credentials">
+        <input type="checkbox" name="moreinfo" id="moreinfo" onClick={() => setActive(!active)} />
+        <label htmlFor='moreinfo'><AiFillInfoCircle /></label>
+        <div className={active ? "content active" : "content inactive"}>
+          <h3>Valid credentials</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Privileges</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><button onClick={SelectValue}>Student@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Student</td>
+              </tr>
+              <tr>
+                <td><button onClick={SelectValue}>Teacher@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Teacher</td>
+              </tr>
+              <tr>
+                <td><button onClick={SelectValue}>Advisor@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Advisor & Teacher</td>
+              </tr>
+              <tr>
+                <td><button onClick={SelectValue}>Librarian@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Librarian & Teacher</td>
+              </tr>
+              <tr>
+                <td><button onClick={SelectValue}>treasurer@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Treasurer</td>
+              </tr>
+              <tr>
+                <td><button onClick={SelectValue}>admin@placeholder.com</button></td>
+                <td><button onClick={SelectValue}>Abc123!</button></td>
+                <td>Admin</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
       <div className="welcome">
         <h1>Welcome to Claymore University</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, eos! Magni maiores fugiat tenetur et suscipit voluptates dolores deserunt dicta ipsa quidem vitae ut quis quas aliquid repudiandae, assumenda quos?</p>

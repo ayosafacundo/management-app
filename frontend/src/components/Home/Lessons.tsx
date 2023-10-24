@@ -9,7 +9,7 @@ function Lessons(): React.ReactElement {
         </div>
         <hr />
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas asperiores neque dolor labore alias, iure ipsam ipsum doloremque voluptates consequatur repellendus</p>
-        <a href="#" className="button">Learn More about us</a>
+        <a href="/aboutus" className="button">Learn More about us</a>
       </article>
       <article className="box home">
         <div className="minibox">

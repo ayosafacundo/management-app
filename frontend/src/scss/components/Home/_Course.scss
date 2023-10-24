@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: row;
   gap: 1rem;
-  min-width: 50%;
-  width: 50%;
-  max-width: 50%;
+
+  @media screen and (orientation: landscape) {
+    min-width: 50%;
+    width: 50%;
+    max-width: 50%;
+  }
 
   .calendar {
     display: flex;
@@ -12,12 +15,13 @@
     justify-content: flex-start;
 
     svg {
-      width: 2rem;
-      height: 2rem;
-      padding: 1.5rem;
+      width: 1rem;
+      height: 1rem;
+      padding: 1rem;
       background-color: #58608D;
       color: white;
       aspect-ratio: 1/1;
+
     }
 
     >span {
@@ -26,7 +30,19 @@
       padding: 0.5rem;
       text-transform: uppercase;
       text-align: center;
-      font-size: 16px;
+      font-size: 12px;
+    }
+
+    @media screen and (orientation: landscape) {
+      svg {
+        width: 2rem;
+        height: 2rem;
+        padding: 1.5rem;
+      }
+
+      span {
+        font-size: 16px;
+      }
     }
 
   }
