@@ -69,7 +69,7 @@
 */
 @media screen and (orientation: portrait) {
   @import 'pages/Portrait/Homepage';
-  //@import 'pages/Portrait/AboutUs';
+  @import 'pages/Portrait/AboutUs';
   //@import 'pages/Portrait/wip'; // Work in progress Placeholder
   //@import 'pages/Portrait/Login';
   //@import 'pages/Portrait/library';

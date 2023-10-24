@@ -102,8 +102,10 @@
       display: flex;
       flex-direction: column;
 
-      &:has(img) {
-        flex-direction: row;
+      @media screen and (min-width: 1024px) {
+        &:has(img) {
+          flex-direction: row;
+        }
       }
 
 
@@ -121,6 +123,38 @@
         height: 150px;
         margin: 0 3rem;
         align-self: center;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    .content {
+      max-width: calc(100% - 3rem);
+
+      h3 {
+        font-size: clamp(1rem, 0.643rem + 1.786vw, 1.5rem);
+
+        &::before {
+          top: calc(50% - (clamp(1rem, 0.643rem + 1.786vw, 1.5rem) / 2));
+          left: -3px;
+        }
+      }
+
+      .text {
+        img {
+          margin: 0;
+          width: 70%;
+          height: 70%;
+        }
+
+        p {
+          font-size: 8px;
+          padding-right: 1rem;
+        }
       }
     }
   }

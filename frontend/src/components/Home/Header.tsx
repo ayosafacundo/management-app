@@ -14,11 +14,11 @@ function Header(): React.ReactElement {
         <input type="checkbox" name="displaynav" id="displaynav" onClick={() => { setNavDisplay(!navDisplay) }} />
       </div>
       <div className={navDisplay ? "navs active" : "navs inactive"}>
-        <a onClick={() => { setNavDisplay(!navDisplay) }} href='/#studywus'>Study in Claymore</a>
-        <a onClick={() => { setNavDisplay(!navDisplay) }} href='/#courses'>Courses</a>
-        <a onClick={() => { setNavDisplay(!navDisplay) }} href='/aboutus'>About Claymore</a>
-        <a onClick={() => { setNavDisplay(!navDisplay) }}>Blog</a>
-        <a onClick={() => { setNavDisplay(!navDisplay) }} href='/login' className='campusbtn'>My Campus</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/#studywus'>Study in Claymore</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/#courses'>Courses</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/aboutus'>About Claymore</a>
+        <a onClick={() => { setNavDisplay(false) }}>Blog</a>
+        <a onClick={() => { setNavDisplay(false) }} href='/login' className='campusbtn'>My Campus</a>
       </div>
     </header>
   )

@@ -791,8 +791,10 @@ a.button {
   display: flex;
   flex-direction: column;
 }
-.pathmodule .content .text:has(img) {
-  flex-direction: row;
+@media screen and (min-width: 1024px) {
+  .pathmodule .content .text:has(img) {
+    flex-direction: row;
+  }
 }
 .pathmodule .content .text p {
   margin: 0 0 0.5rem 0;
@@ -807,6 +809,32 @@ a.button {
   height: 150px;
   margin: 0 3rem;
   align-self: center;
+}
+@media screen and (max-width: 1024px) {
+  .pathmodule {
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .pathmodule .content {
+    max-width: calc(100% - 3rem);
+  }
+  .pathmodule .content h3 {
+    font-size: clamp(1rem, 0.643rem + 1.786vw, 1.5rem);
+  }
+  .pathmodule .content h3::before {
+    top: calc(50% - clamp(1rem, 0.643rem + 1.786vw, 1.5rem) / 2);
+    left: -3px;
+  }
+  .pathmodule .content .text img {
+    margin: 0;
+    width: 70%;
+    height: 70%;
+  }
+  .pathmodule .content .text p {
+    font-size: 8px;
+    padding-right: 1rem;
+  }
 }
 
 li.link {
@@ -1044,10 +1072,10 @@ li.link:hover {
     justify-content: center;
     align-items: center;
     position: relative;
+    color: white;
   }
   main#aboutus .wallpaper .imglogo {
     font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
-    color: white;
   }
   main#aboutus .wallpaper q {
     margin-top: 3rem;
@@ -1055,14 +1083,12 @@ li.link:hover {
     width: 60%;
     text-align: justify;
     font-family: "Lato", sans-serif;
-    color: white;
   }
   main#aboutus .wallpaper p {
     font-size: clamp(2rem, 1.429rem + 0.893vw, 2.5rem);
     margin-top: 0;
     width: 60%;
     text-align: end;
-    color: white;
     font-family: "Lato", sans-serif;
   }
   main#aboutus .wallpaper .button {
@@ -1613,5 +1639,83 @@ li.link:hover {
   }
   #Homepage section#courses a {
     margin: 1rem 0;
+  }
+  #aboutus .wallpaper {
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+  }
+  #aboutus .wallpaper q {
+    margin-top: 3rem;
+    width: 60%;
+    text-align: justify;
+    font-family: "Lato", sans-serif;
+  }
+  #aboutus .wallpaper p {
+    margin-top: 0;
+    width: 60%;
+    text-align: end;
+    font-family: "Lato", sans-serif;
+  }
+  #aboutus .wallpaper .button {
+    position: absolute;
+    margin: 1rem;
+    bottom: 0;
+  }
+  #aboutus #me {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    background-color: #f9f7f5;
+  }
+  #aboutus #me .mysection {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #aboutus #me .mysection img {
+    background-image: url("https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9639.jpg?w=1380&t=st=1698093113~exp=1698093713~hmac=2aa87b6f555c1875cee69406cc7704670852e50be7747b5c011eba5e320e8296");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0.25rem solid #e0bc43;
+    width: clamp(12.5rem, 1.339rem + 55.804vw, 28.125rem);
+    margin: 0 auto;
+  }
+  #aboutus #me .mysection .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  #aboutus #me .mysection .content div h3 {
+    color: rgb(3, 57, 78);
+    margin: 0;
+    font-family: "Lato", sans-serif;
+    font-size: 20px;
+    text-align: center;
+  }
+  #aboutus #me .mysection .content div h4 {
+    font-family: "Lato", sans-serif;
+    margin: 1rem 0;
+    font-size: 18px;
+  }
+  #aboutus #me .mysection .content div p {
+    height: auto;
+    flex-grow: 1;
+    text-align: justify;
+    font-size: 12px;
+  }
+  #aboutus #me .mysection .content a {
+    margin: 0 auto;
+  }
+  #aboutus .path {
+    display: flex;
+    flex-direction: column;
   }
 }/*# sourceMappingURL=main.css.map */
