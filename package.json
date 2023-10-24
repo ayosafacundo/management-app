@@ -10,7 +10,7 @@
     "client": "cd .\\frontend\\ && yarn dev",
     "build": "cd .\\frontend\\ && yarn build",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "client deploy": "cd .\\frontend\\ && npm run deploy"
+    "deploy": "cd .\\frontend\\ && yarn deploy"
   },
   "repository": {
     "type": "git",
