@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../components/Logo'
-import Article from '../components/AboutUs/Article';
+import Article from '../components/website/AboutUs/Article';
 import { ProfilePicture } from '../resources/images';
 
 function AboutUs(): React.ReactElement {

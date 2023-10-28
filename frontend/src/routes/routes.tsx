@@ -2,13 +2,21 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 /* Pages */
-import Login from '../pages/Login.tsx';
 import Wrapper from '../layout/CampusWrapper.tsx';
-import Student from '../pages/Dashboard/Student.tsx';
-import Homepage from '../pages/Homepage.tsx';
 import HomeWrapper from '../layout/HomeWrapper.tsx';
-import AboutUs from '../pages/AboutUs.tsx';
-import WIP from '../pages/WIP.tsx';
+import {
+  WIP,
+  Homepage,
+  AboutUs,
+  Courses,
+  Engineering,
+  Socials,
+  Laws,
+  Medicine,
+  Login,
+  // Register,
+  Student,
+} from '../pages';
 
 function routes(): React.ReactElement {
 
@@ -19,8 +27,14 @@ function routes(): React.ReactElement {
           <Route element={<HomeWrapper />}>
             <Route index element={<Homepage />} />
             <Route path='aboutus' element={<AboutUs />} />
-            <Route path='courses' element={<WIP />} />
-            <Route path='WIP' element={<WIP />} />
+            <Route path='courses'>
+              <Route index element={<Courses />} />
+              <Route path='engineering' element={<Engineering />} />
+              <Route path='socials' element={<Socials />} />
+              <Route path='laws' element={<Laws />} />
+              <Route path='medicine' element={<Medicine />} />
+            </Route>
+            <Route path='*' element={<WIP />} />
           </Route>
           <Route path='login' element={<Login />} />
         </Route>

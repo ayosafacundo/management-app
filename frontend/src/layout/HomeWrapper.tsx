@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/Home/Header'
+import Header from '../components/website/Home/Header'
 import { Outlet } from 'react-router-dom'
-import Footer from '../components/Home/Footer'
+import Footer from '../components/website/Home/Footer'
 
 function HomeWrapper(): React.ReactElement {
   return (

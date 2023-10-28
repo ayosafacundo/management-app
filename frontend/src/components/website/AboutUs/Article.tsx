@@ -2,7 +2,7 @@ import React from 'react';
 import { AiFillRocket, AiFillStar } from 'react-icons/ai';
 import { GiBrain } from 'react-icons/gi';
 import { FaWrench } from 'react-icons/fa';
-import * as resources from '../../resources/images/';
+import * as resources from '../../../resources/images';
 
 
 function Article(): React.ReactElement {

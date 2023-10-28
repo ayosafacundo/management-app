@@ -1,8 +1,8 @@
 import React from 'react';
 import { AiOutlineClockCircle } from 'react-icons/ai';
 import { BsCalendarFill, BsFillPersonFill } from 'react-icons/bs';
-import { RandomDate } from '../../utils/RandomDate';
-import events from '../../resources/Events.json';
+import { RandomDate } from '../../../utils/RandomDate';
+import events from '../../../resources/Events.json';
 
 function Course(): React.ReactElement {
 
@@ -16,7 +16,7 @@ function Course(): React.ReactElement {
     <article className="course">
       <div className="calendar">
         <BsCalendarFill />
-        <span>{`${date[0]} ${date[1].substring(0, 3)}`}</span>
+        <span>{date.day + " " + date.month.substring(0, 3)}</span>
       </div>
       <div className="info">
         <h3>{event.title}</h3>
