@@ -1,5 +1,4 @@
 #HomeFooter {
-  height: 50vh;
 
   h5 {
     text-transform: uppercase;
@@ -9,138 +8,9 @@
 
   }
 
-  .registry {
-    background: linear-gradient(rgba(88, 96, 141, 0.7), rgba(88, 96, 141, 0.7)), url(https://img.freepik.com/free-photo/nobody-empty-call-center-workstation-with-computers-audio-instruments-no-people-customer-service-office-desks-with-telecommunications-technology-offering-helpline-assistance_482257-44179.jpg?w=1380&t=st=1696719611~exp=1696720211~hmac=366d7a48e8ff9274d758c4bf701a97fb95db5c009ce2bf61ac4d831e628b24bc);
-    background-position-y: -550px;
-    background-size: cover;
-    height: 35%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-
-    >div {
-      width: 60%;
-
-      >span {
-        text-transform: uppercase;
-        font-family: "DM Sans", sans-serif;
-        font-size: clamp(0.75rem, 0.179rem + 0.893vw, 1.25rem);
-        color: #8EB8BA;
-      }
-
-      >h5 {
-        font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
-      }
-    }
-
-    @media screen and (orientation: portrait) {
-      div {
-
-        span {
-          font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-        }
-
-        h5 {
-          font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
-        }
-
-      }
-    }
-  }
-
-  .emailregister {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 20%;
-    background-color: #E76A00;
-    padding: 0 10rem;
-    max-width: 100%;
-    overflow-x: hidden;
-
-    div {
-      display: flex;
-      flex-direction: row;
-
-      >svg {
-        aspect-ratio: 1/1;
-        width: 50px;
-        height: 50px;
-        color: white;
-      }
-
-      >h5 {
-        font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-        align-self: center;
-      }
-    }
-
-    form {
-      display: flex;
-      flex-direction: row;
-
-      input[type="Email"] {
-        width: clamp(12.5rem, -1.786rem + 22.321vw, 25rem);
-        height: 2rem;
-        font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-        margin: 0;
-        padding: 0.5rem;
-        border: 0;
-
-      }
-
-      input[type="submit"] {
-        height: 3rem;
-        margin: 0;
-        padding: 0 1.5rem;
-        text-transform: uppercase;
-        border: 0;
-        background-color: rgb(88, 96, 141);
-        font-family: "DM Sans", sans-serif;
-        font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-        color: white;
-
-        &:hover {
-          cursor: pointer;
-        }
-      }
-    }
-
-    @media screen and (orientation: portrait) {
-      max-width: 100%;
-      padding: 0;
-
-      div {
-
-        svg {
-          width: 2.5em;
-          height: 2.5em;
-        }
-
-        h5 {
-          font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-        }
-      }
-
-      form {
-        input[type="Email"] {
-          width: clamp(4.688rem, -3.884rem + 42.857vw, 7.5rem);
-          font-size: 10px;
-          height: 1rem;
-        }
-
-        input[type="submit"] {
-          font-size: 10px;
-          height: 2rem;
-        }
-      }
-    }
-  }
-
   .last {
     background-color: #242424;
-    height: 45%;
+    height: 22.5vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

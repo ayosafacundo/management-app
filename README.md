@@ -120,7 +120,7 @@ DESIGNS TAKEN AS REFERENCE AND IMPROVISED OVER THEM.
 
 Campus Designs:
     [Student Dashboard](https://dribbble.com/shots/16165604-University-dashboard);
-
+    [Library](https://dribbble.com/shots/6829125-Book-Store)
 
 Database Design from [here](https://www.onomastics.kz/uploads/books/abai-qunanbaevnbXtk.pdf)  
 Library Design from [here](https://www.behance.net/gallery/137500455/Book-Books-A-Books-Library-Web-App-Design?tracking_source=search_projects%7CLibrary+Webapp)

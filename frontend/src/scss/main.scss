@@ -48,15 +48,17 @@
 @import 'pages/Wip';
 @media screen and (orientation: landscape) {
   /* Pages */
+  @import 'pages/Landscape/wip'; // Work in progress Placeholder
   @import 'pages/Landscape/Homepage';
   @import 'pages/Landscape/AboutUs';
-  @import 'pages/Landscape/wip'; // Work in progress Placeholder
+  @import 'pages/Landscape/Courses';
+  @import 'pages/Landscape/CoursePages';
   @import 'pages/Landscape/Login';
-  @import 'pages/Landscape/library';
+  @import 'pages/library';
 
   // Dashboards
-  @import 'pages/Landscape/dashboards/dashboard';
-  @import 'pages/Landscape/dashboards/student';
+  @import 'pages/Campus/dashboards/dashboard';
+  @import 'pages/Campus/dashboards/student';
 }
 
 /* Portrait view */
@@ -72,6 +74,8 @@
 @media screen and (orientation: portrait) {
   @import 'pages/Portrait/Homepage';
   @import 'pages/Portrait/AboutUs';
+  @import 'pages/Portrait/Courses';
+  @import 'pages/Portrait/CoursePages';
   //@import 'pages/Portrait/wip'; // Work in progress Placeholder
   //@import 'pages/Portrait/Login';
   //@import 'pages/Portrait/library';

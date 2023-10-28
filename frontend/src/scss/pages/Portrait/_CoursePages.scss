@@ -1,0 +1,202 @@
+#engineering,
+#socials,
+#laws,
+#medicine {
+
+  h3 {
+    text-transform: uppercase;
+    font-family: $fontSans;
+    font-size: clamp(1.25rem, 0.357rem + 4.464vw, 2.5rem);
+    margin: 0;
+  }
+
+  hr {
+    margin: 1rem 0 3rem 0;
+    width: 3rem;
+    border: 2px solid #ffd670;
+    border-radius: 1rem;
+  }
+
+  .type {
+    padding-top: 4rem;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+
+    h1 {
+      text-transform: uppercase;
+      color: white;
+      font-family: $fontSans;
+      margin: 0;
+    }
+  }
+
+  .motto {
+    height: 35vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+
+    h2 {
+      margin: 0;
+      text-align: center;
+      color: white;
+      text-transform: uppercase;
+      font-family: $fontSans;
+
+      span {
+        color: #ffd670;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f7f5;
+    padding-top: 2.5rem;
+
+    .parts {
+      display: flex;
+      flex-direction: row;
+
+
+      padding: 0 1rem;
+      align-items: center;
+      justify-content: center;
+
+      &:last-of-type {
+        margin-bottom: 1.5rem;
+      }
+
+      .option {
+        display: flex;
+        flex-direction: row;
+        font-family: $fontSans;
+        width: 27vw;
+        gap: 0.5rem;
+        align-items: center;
+        padding: 1rem;
+
+        svg {
+          height: 4rem;
+          min-width: 4rem;
+          width: 4rem;
+        }
+      }
+
+      @media (max-width: 425px) {
+        flex-direction: column;
+
+        .option {
+          width: 70vw;
+        }
+      }
+    }
+  }
+
+  .pedagogic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem 2rem;
+
+    >div {
+      display: flex;
+      gap: 1rem;
+
+      &.textone {
+        flex-direction: row;
+      }
+
+      &.texttwo {
+        flex-direction: row-reverse;
+      }
+
+      .img {
+        display: flex;
+        align-items: center;
+
+        img {
+          max-width: 35vw;
+        }
+      }
+
+      @media (max-width: 425px) {
+        .img {
+          display: none;
+        }
+      }
+
+
+      p {
+        text-align: justify;
+      }
+
+    }
+  }
+
+  .end {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    height: 5rem;
+
+    .long {
+      width: 50%;
+      border-color: #b4b3b1;
+    }
+  }
+}
+
+
+#engineering {
+  .type {
+    background-color: #1D8755;
+  }
+
+  .motto {
+    background-image: url("https://img.freepik.com/free-photo/men-working-machinery-robotic-arm-fun-generated-by-ai_188544-24600.jpg?t=st=1698460855~exp=1698464455~hmac=3d65e29810d82a1268c48961b5942723717ec3bb0d557e6e95020727202a45a6&w=1380");
+  }
+}
+
+#socials {
+  .type {
+    background-color: #2F78C6;
+  }
+
+  .motto {
+    background-image: url("https://img.freepik.com/free-photo/two-businessmen-casual-clothing-discussing-expertise-generated-by-ai_188544-20431.jpg?t=st=1698507143~exp=1698510743~hmac=70b580d00fa69207bb164fe7ffb67fc1bb71393fbdbc6f04b12fa89b13e4b864&w=1380");
+  }
+}
+
+#laws {
+  .type {
+    background-color: #A06931;
+  }
+
+  .motto {
+    background-image: url("https://img.freepik.com/free-photo/back-school-concept-with-woman-studying-library_23-2148172347.jpg?w=1380&t=st=1698516553~exp=1698517153~hmac=dc9b69dfae6832f20cc3184685e8e13f7c8bd4ff81213116b5fb5349b9abe7ea");
+  }
+}
+
+#medicine {
+  .type {
+    background-color: #DF0C83;
+  }
+
+  .motto {
+    background-image: url("https://img.freepik.com/free-photo/young-female-doctor-talking-by-phone-corridor-hospital_1303-21222.jpg?w=1380&t=st=1698512541~exp=1698513141~hmac=e40ac60c23e3591471c1e1e20b43a91d5effbb8b6c09eb89fb6c4c2e6b1dfe5b");
+  }
+}

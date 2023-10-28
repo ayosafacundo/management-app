@@ -1,8 +1,9 @@
 import React from 'react';
-import Event from '../components/Home/Event';
-import Course from '../components/Home/Course';
-import Lessons from '../components/Home/Lessons';
+import Event from '../components/website/Home/Event';
+import Course from '../components/website/Home/Course';
+import Lessons from '../components/website/Home/Lessons';
 import { NavLink } from 'react-router-dom';
+import { IoIosMailOpen } from 'react-icons/io';
 
 function Homepage(): React.ReactElement {
   return (
@@ -46,6 +47,23 @@ function Homepage(): React.ReactElement {
           </div>
         </div>
         <NavLink to='courses' className="button">See more courses</NavLink>
+      </section>
+      <section className='registry'>
+        <div>
+          <span>ONE STOP OnlInE CoUrSe SolUtiOnS</span>
+          <h5>Where yout Needs and Courses Meet</h5>
+        </div>
+        <NavLink to='login' className='button'>Register Now</NavLink>
+      </section>
+      <section className="emailregister">
+        <div>
+          <IoIosMailOpen />
+          <h5>NEVER MISS IMPORTANT UPDATES & promotions</h5>
+        </div>
+        <form action="POST">
+          <input type="email" placeholder='Enter your email address here...' />
+          <input type="submit" value="Submit" />
+        </form>
       </section>
     </main>
   )

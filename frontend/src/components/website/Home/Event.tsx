@@ -1,6 +1,6 @@
 import React from 'react'
-import events from '../../resources/Events.json';
-import { RandomDate } from '../../utils/RandomDate';
+import events from '../../../resources/Events.json';
+import { RandomDate } from '../../../utils/RandomDate';
 
 function Event(): React.ReactElement {
 
@@ -10,7 +10,7 @@ function Event(): React.ReactElement {
 
   return (
     <div className='event-component'>
-      <span>{date.join(" ")}</span>
+      <span>{"" + date.day + " " + date.month + " " + date.year}</span>
       <h3>{event.title}</h3>
       <p>{event.description}</p>
       <a href="#">Learn more</a>
