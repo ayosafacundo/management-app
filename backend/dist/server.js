@@ -21,6 +21,8 @@ app.listen(port, function () {
 app.get('/', (req, res) => {
     res.status(200).send("<h1>Server Online.</h1> </br> <h3>Status code: 200</h3>");
 });
+app.get('/openapi/events', (req, res) => {
+});
 app.get('/login', (req, res) => {
     const { email, password } = req.body;
 });
