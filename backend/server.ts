@@ -29,6 +29,10 @@ app.get('/', (req: Request, res: Response) => {
   res.status(200).send("<h1>Server Online.</h1> </br> <h3>Status code: 200</h3>");
 });
 
+app.get('/openapi/events', (req: Request, res: Response) => {
+
+})
+
 app.get('/login', (req: Request, res: Response) => {
   const { email, password } = req.body;
 

@@ -1,0 +1,161 @@
+#library {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
+    grid-template-rows: 10rem repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    overflow: hidden;
+    background-color: $bg-100;
+
+    >header {
+        grid-area: 1 / 1 / 2 / 4;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: $bg-200;
+        padding: 15px;
+
+        h2 {
+            color: $text-100;
+            margin-left: 3rem;
+            text-align: left;
+            font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+            font-family: monospace;
+            align-self: center;
+        }
+    }
+
+    >aside.tags {
+        grid-area: 2 / 1 / 6 / 2;
+        background-color: $bg-200;
+        color: $text-200;
+
+        h3 {
+            text-align: center;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: row;
+            margin-left: 2rem;
+            margin-right: 2rem;
+            border-radius: 2rem;
+            outline: 3px solid $accent-100;
+            transition: outline 1s;
+
+            &:focus,
+            .input:focus,
+            &:hover,
+            button:hover,
+            button:focus {
+                outline: 3px solid $accent-100;
+                transition: outline 1s;
+
+                button {
+                    outline: 0;
+                }
+            }
+
+            input.input {
+                background-color: $bg-300;
+                color: $text-100;
+                border: 0;
+                padding: 0.5rem;
+                border-bottom-left-radius: 2rem;
+                border-top-left-radius: 2rem;
+                width: calc(100% - 3rem);
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+
+            button {
+                padding-left: 1rem;
+                width: 3rem;
+                padding-right: 1rem;
+                border-top-right-radius: 2rem;
+                border-bottom-right-radius: 2rem;
+                background-color: $bg-300;
+                border: 0;
+
+                &:hover {
+                    background-color: $primary-300;
+                    cursor: pointer;
+                }
+
+                &:focus {
+                    outline: 0;
+                }
+            }
+
+        }
+
+        h5 {
+            padding-left: clamp(1rem, 10%, 3rem);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 clamp(0px, 0px + 1vw, 3rem);
+
+            li {
+                display: block;
+                width: minmax(auto, 55%);
+                text-align: center;
+                padding: 0.2rem;
+                border-radius: 0.5rem;
+                border: 1px solid $primary-100;
+                margin-bottom: 0.3rem;
+                transition: background-color 150ms ease-in-out;
+                transition: border 250ms ease-in-out;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                &:hover {
+                    background-color: $accent-200;
+                    border: 1px solid $accent-100;
+                    cursor: pointer;
+                    transition: background-color 150ms ease-in-out;
+                    transition: border 0ms ease-in-out;
+                }
+
+                &:active {
+                    background-color: $accent-200;
+                    border: 1px solid $accent-100;
+                }
+
+                &::selection {
+                    background-color: rgba(0, 0, 0, 0);
+                }
+            }
+        }
+    }
+
+    >section {
+        grid-area: 2 / 2 / 6 / 3;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        border-radius: 1rem;
+        padding: 1rem;
+        margin: 1rem;
+        overflow: scroll;
+        overflow-x: hidden;
+        gap: 0.5rem;
+        background-color: $primary-300;
+    }
+
+    >aside.shopping_list {
+        background-color: $bg-200;
+        color: $text-100;
+        grid-area: 2 / 3 / 6 / 4;
+
+        h3 {
+            text-align: center;
+        }
+    }
+}
