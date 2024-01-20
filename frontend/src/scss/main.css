@@ -518,43 +518,31 @@ body {
   flex-direction: row;
   gap: 1rem;
 }
-@media screen and (orientation: landscape) {
-  .course {
-    min-width: 50%;
-    width: 50%;
-    max-width: 50%;
-  }
-}
 .course .calendar {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  box-sizing: border-box;
+  min-width: 3rem;
+  max-width: 3rem;
+  height: 5rem;
 }
 .course .calendar svg {
-  width: 1rem;
-  height: 1rem;
-  padding: 1rem;
   background-color: #58608D;
+  box-sizing: border-box;
   color: white;
   aspect-ratio: 1/1;
+  flex-grow: 1;
+  width: 100%;
+  padding: 0.5rem;
 }
 .course .calendar > span {
   background-color: #E76A00;
   color: white;
-  padding: 0.5rem;
   text-transform: uppercase;
   text-align: center;
-  font-size: 12px;
-}
-@media screen and (orientation: landscape) {
-  .course .calendar svg {
-    width: 2rem;
-    height: 2rem;
-    padding: 1.5rem;
-  }
-  .course .calendar span {
-    font-size: 16px;
-  }
+  padding: 0.1rem 0;
+  font-size: 14px;
+  font-family: "DM Sans", sans-serif;
 }
 .course .info {
   display: flex;
@@ -582,6 +570,13 @@ body {
 .course .info .extra span {
   padding: 0 0.5rem;
   font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+@media screen and (orientation: landscape) {
+  .course {
+    min-width: 50%;
+    width: 50%;
+    max-width: 50%;
+  }
 }
 
 a.button {
@@ -840,7 +835,7 @@ li.link:hover {
   padding: 0;
 }
 
-/* Landscape view */
+/* University Website Pages */
 /* Support for resolutions in px:
   1920×1080
   1600×900
@@ -851,246 +846,917 @@ li.link:hover {
   1280×800
   1280×720
   1024×768
+  810×1080
+  800×1280
+  768×1024
+  750×1334
+  720×1280
+  640×1136
+  480×800
 */
 #wip {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Homepage {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+#Homepage > section {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section {
+    align-items: center;
+  }
+}
+#Homepage > section > h2 {
+  font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section > h2 {
+    font-size: clamp(1.75rem, 0.226rem + 7.619vw, 2.25rem);
+  }
+}
+#Homepage > section > hr {
+  width: 4rem;
+  border: 0.2rem solid #aaa;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+#Homepage > section > span.subtitle {
+  font-family: "DM Serif Display", serif;
+  font-weight: 300;
+  color: #696969;
+  margin-bottom: 1.5rem;
+  font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section > span.subtitle {
+    font-size: clamp(1rem, 0.238rem + 3.81vw, 1.25rem);
+  }
+}
+#Homepage > section#home {
+  background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+  background-position: center -5rem;
+  background-size: cover;
+  justify-content: flex-end;
+  color: #fee;
+  padding: 5rem 0;
+  min-height: 100vh;
+}
+#Homepage > section#home > span,
+#Homepage > section#home > h1 {
+  padding: 0 5rem;
+  font-family: "Lato", sans-serif;
+}
+#Homepage > section#home > span {
+  font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+}
+#Homepage > section#home > h1 {
+  margin-top: 1rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
+}
+#Homepage > section#home > h1 > .bold {
+  font-weight: bold;
+}
+#Homepage > section#home > hr {
+  margin-left: 7rem;
+  width: 60%;
+  height: 1;
+  border: 1px solid #aaa;
+}
+#Homepage > section#home > .events {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section#home {
+    align-items: baseline;
+    background-position: center;
+  }
+  #Homepage > section#home > span,
+  #Homepage > section#home > h1 {
+    padding: 0 1rem;
+  }
+  #Homepage > section#home > span {
+    font-size: clamp(1rem, 0.464rem + 2.679vw, 1.75rem);
+  }
+  #Homepage > section#home h1 {
+    font-size: clamp(1.5rem, 0.964rem + 2.679vw, 2.25rem);
+  }
+  #Homepage > section#home > span {
+    font-size: 24px;
+  }
+}
+#Homepage > section#studywus {
+  align-items: center;
+  height: 85vh;
+  padding: 0 6rem;
+  padding-bottom: 5rem;
+}
+#Homepage > section#studywus > p {
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 300;
+  color: #696969;
+  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+}
+#Homepage > section#studywus .horizontal-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section#studywus {
+    height: auto;
+    padding: 0 1rem;
+  }
+  #Homepage > section#studywus > p {
+    text-align: justify;
+  }
+  #Homepage > section#studywus .horizontal-container {
+    flex-direction: column-reverse;
+  }
+}
+#Homepage > section#courses {
+  background-color: #EEE;
+  align-items: center;
+}
+#Homepage > section#courses .courses {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+#Homepage > section#courses .courses .couple {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  max-width: 100%;
+  gap: 2rem;
+}
+#Homepage > section#courses a {
+  margin-bottom: 2rem;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section#courses {
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+  #Homepage > section#courses .courses {
+    gap: 1rem;
+    align-items: baseline;
+  }
+  #Homepage > section#courses .courses .couple {
+    min-width: auto;
+    max-width: auto;
+    flex-direction: column;
+  }
+}
+#Homepage > section.registry {
+  background: linear-gradient(rgba(88, 96, 141, 0.7), rgba(88, 96, 141, 0.7)), url(https://img.freepik.com/free-photo/nobody-empty-call-center-workstation-with-computers-audio-instruments-no-people-customer-service-office-desks-with-telecommunications-technology-offering-helpline-assistance_482257-44179.jpg?w=1380&t=st=1696719611~exp=1696720211~hmac=366d7a48e8ff9274d758c4bf701a97fb95db5c009ce2bf61ac4d831e628b24bc);
+  background-position-y: -550px;
+  background-size: cover;
+  min-height: 0;
+  height: 17.5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#Homepage > section.registry > div {
+  width: 60%;
+}
+#Homepage > section.registry > div > span {
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.75rem, 0.179rem + 0.893vw, 1.25rem);
+  color: #8EB8BA;
+}
+#Homepage > section.registry > div > h5 {
+  font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  color: white;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section.registry {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #Homepage > section.registry div {
+    width: 100%;
+    text-align: center;
+  }
+  #Homepage > section.registry div span {
+    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+  }
+  #Homepage > section.registry div h5 {
+    font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
+  }
+  #Homepage > section.registry a {
+    margin: 0;
+  }
+}
+#Homepage > section.emailregister {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 0;
+  height: 10vh;
+  background-color: #E76A00;
+  padding: 0 10rem;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+#Homepage > section.emailregister div {
+  display: flex;
+  flex-direction: row;
+}
+#Homepage > section.emailregister div > svg {
+  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
+  color: white;
+}
+#Homepage > section.emailregister div > h5 {
+  font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+  align-self: center;
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  color: white;
+}
+#Homepage > section.emailregister form {
+  display: flex;
+  flex-direction: row;
+}
+#Homepage > section.emailregister form input[type=Email] {
+  width: clamp(12.5rem, -1.786rem + 22.321vw, 25rem);
+  height: 2rem;
+  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  margin: 0;
+  padding: 0.5rem;
+  border: 0;
+}
+#Homepage > section.emailregister form input[type=submit] {
+  height: 3rem;
+  margin: 0;
+  padding: 0 1.5rem;
+  text-transform: uppercase;
+  border: 0;
+  background-color: rgb(88, 96, 141);
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  color: white;
+}
+#Homepage > section.emailregister form input[type=submit]:hover {
+  cursor: pointer;
+}
+@media screen and (orientation: portrait) {
+  #Homepage > section.emailregister {
+    max-width: 100%;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  #Homepage > section.emailregister div svg {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  #Homepage > section.emailregister div h5 {
+    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+    text-transform: uppercase;
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    color: white;
+  }
+  #Homepage > section.emailregister form input[type=Email] {
+    width: 50%;
+    font-size: 10px;
+    height: 1rem;
+  }
+  #Homepage > section.emailregister form input[type=submit] {
+    font-size: 10px;
+    height: 2rem;
+  }
+}
+
+#courses section {
+  width: 100%;
+}
+#courses #home {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a3c4f3;
+  background-image: linear-gradient(rgba(3, 57, 78, 0.5), rgba(3, 57, 78, 0.5)), url("https://img.freepik.com/premium-photo/green-environment-office-buildings-science-technology-park-chongqing-china_1112-9189.jpg?w=1380");
+  background-size: cover;
+  background-position: bottom;
+}
+#courses #home h1 {
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+  font-size: 52px;
+  text-transform: uppercase;
+  color: #ffd670;
+  animation: normal;
+  animation-name: opening;
+  animation-duration: 0.5s;
+  animation-iteration-count: 1;
+}
+#courses #home h1 span {
+  color: white;
+}
+#courses #levels {
+  margin-top: -75px;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#courses #levels .levelbox {
+  aspect-ratio: 3/2;
+  padding: 1rem;
+  width: clamp(10.938rem, 5.58rem + 8.371vw, 15.625rem);
+  height: 166px;
+  color: white;
+  transition: margin 0.25s;
+  text-decoration: none;
+}
+#courses #levels .levelbox:hover {
+  transition: margin 0.25s;
+  margin-top: -75px;
+}
+#courses #levels .levelbox.Engineering {
+  background-color: #1D8755;
+}
+#courses #levels .levelbox.Socials {
+  background-color: #2F78C6;
+}
+#courses #levels .levelbox.Laws {
+  background-color: #A06931;
+}
+#courses #levels .levelbox.Medicine {
+  background-color: #DF0C83;
+}
+#courses #levels .levelbox svg {
+  width: 44px;
+  height: 44px;
+}
+#courses #levels .levelbox h2 {
+  font-family: "DM Sans", sans-serif;
+  margin: 0 3rem 2rem 0;
+}
+#courses #diary {
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40vh;
+  background-color: #414b4f;
+}
+#courses #diary h2 {
+  margin: 2rem 0 3rem 0;
+  color: white;
+  font-family: "DM Sans", sans-serif;
+  font-size: 40px;
+}
+#courses #diary .dates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+#courses #diary .dates .date {
+  background-color: #fcb900;
+  padding: 2rem;
+  min-width: clamp(7.813rem, 6.027rem + 2.79vw, 9.375rem);
+  max-width: clamp(7.813rem, 6.027rem + 2.79vw, 9.375rem);
+  scale: 1;
+  transition: scale 0.25s;
+}
+#courses #diary .dates .date h4 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 26px;
+}
+#courses #diary .dates .date p {
+  text-align: center;
+  margin: 0;
+  margin-top: 0.25rem;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+}
+#courses #diary .dates .date:hover {
+  scale: 1.1;
+  transition: scale 0.25s;
+}
+#courses #alumni {
+  height: 40vh;
+  background-image: url("https://img.freepik.com/free-photo/chinese-city_1127-3682.jpg?w=1380&t=st=1698440673~exp=1698441273~hmac=17a514ac582cf3238902fead75b27e7ba9641c018a280d2a3868e8112ff087de");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2.5rem, -3.214rem + 8.929vw, 7.5rem);
+}
+#courses #alumni .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  gap: 1rem;
+}
+#courses #alumni .box svg {
+  width: 60px;
+  height: 60px;
+}
+#courses #alumni .box span {
+  font-size: 32px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+}
+#courses #alumni .box span.number {
+  color: #fcb900;
+}
+@media (max-width: 769px) {
+  #courses #home {
+    height: 50vh;
+    background-position: center;
+  }
+  #courses #home h1 {
+    font-size: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
+  }
+  #courses #levels {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin: 0;
+    align-items: center;
+  }
+  #courses #levels .levelbox {
+    width: 60%;
+  }
+  #courses #levels .levelbox:hover {
+    transition: none;
+    margin-top: 0;
+  }
+  #courses #diary {
+    padding: 2.5rem 0 5rem 0;
+    height: auto;
+  }
+  #courses #diary h2 {
+    margin: 0 0 3rem 0;
+  }
+  #courses #diary .dates {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  #courses #diary .dates .date {
+    padding: 2rem;
+  }
+  #courses #alumni {
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+    padding: 2.5rem 0;
+  }
+  #courses #alumni .box {
+    width: 60%;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: center;
+    border-radius: 15px;
+    font-family: "DM Sans", sans-serif;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+  #courses #alumni .box svg {
+    width: clamp(2rem, 1.263rem + 3.684vw, 3.75rem);
+    height: clamp(2rem, 1.263rem + 3.684vw, 3.75rem);
+  }
+  #courses #alumni .box span {
+    font-size: clamp(1.5rem, 1.289rem + 1.053vw, 2rem);
+  }
+}
+
+#engineering h3,
+#socials h3,
+#laws h3,
+#medicine h3 {
+  text-transform: uppercase;
+  font-family: "DM Sans", sans-serif;
+  font-size: 40px;
+  margin: 0;
+}
+#engineering hr,
+#socials hr,
+#laws hr,
+#medicine hr {
+  margin: 1rem 0 3rem 0;
+  width: 3rem;
+  border: 2px solid #ffd670;
+  border-radius: 1rem;
+}
+#engineering .type,
+#socials .type,
+#laws .type,
+#medicine .type {
+  padding-top: 5rem;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#engineering .type h1,
+#socials .type h1,
+#laws .type h1,
+#medicine .type h1 {
+  text-transform: uppercase;
+  font-size: 64px;
+  font-family: "DM Sans", sans-serif;
+  margin: 2rem 0;
+  color: white;
+}
+#engineering .motto,
+#socials .motto,
+#laws .motto,
+#medicine .motto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 55vh;
+  background-size: cover;
+  background-position: center;
+  text-transform: uppercase;
+}
+#engineering .motto h2,
+#socials .motto h2,
+#laws .motto h2,
+#medicine .motto h2 {
+  width: 50%;
+  text-align: center;
+  margin: 0;
+  color: white;
+  font-size: clamp(2.5rem, 1.786rem + 1.116vw, 3.125rem);
+  font-family: "DM Sans", sans-serif;
+}
+#engineering .motto h2 span,
+#socials .motto h2 span,
+#laws .motto h2 span,
+#medicine .motto h2 span {
+  color: #ffd670;
+}
+#engineering .info,
+#socials .info,
+#laws .info,
+#medicine .info {
+  background-color: #f9f7f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+#engineering .info .parts,
+#socials .info .parts,
+#laws .info .parts,
+#medicine .info .parts {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+#engineering .info .parts .option,
+#socials .info .parts .option,
+#laws .info .parts .option,
+#medicine .info .parts .option {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: clamp(15rem, 9.286rem + 8.929vw, 20rem);
+  height: 5rem;
+  color: #03394e;
+}
+#engineering .info .parts .option h4,
+#socials .info .parts .option h4,
+#laws .info .parts .option h4,
+#medicine .info .parts .option h4 {
+  margin: 0.25rem 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: clamp(1.25rem, 0.679rem + 0.893vw, 1.75rem);
+}
+#engineering .info .parts .option svg,
+#socials .info .parts .option svg,
+#laws .info .parts .option svg,
+#medicine .info .parts .option svg {
+  min-width: clamp(3rem, 0.714rem + 3.571vw, 5rem);
+  height: clamp(3rem, 0.714rem + 3.571vw, 5rem);
+}
+#engineering .pedagogic,
+#socials .pedagogic,
+#laws .pedagogic,
+#medicine .pedagogic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: clamp(57.6rem, 41.143rem + 25.714vw, 72rem);
+}
+#engineering .pedagogic h3,
+#socials .pedagogic h3,
+#laws .pedagogic h3,
+#medicine .pedagogic h3 {
+  margin-top: 3rem;
+}
+#engineering .pedagogic > div,
+#socials .pedagogic > div,
+#laws .pedagogic > div,
+#medicine .pedagogic > div {
+  display: flex;
+}
+#engineering .pedagogic > div:nth-of-type(1),
+#socials .pedagogic > div:nth-of-type(1),
+#laws .pedagogic > div:nth-of-type(1),
+#medicine .pedagogic > div:nth-of-type(1) {
+  flex-direction: row;
+}
+#engineering .pedagogic > div:nth-of-type(2),
+#socials .pedagogic > div:nth-of-type(2),
+#laws .pedagogic > div:nth-of-type(2),
+#medicine .pedagogic > div:nth-of-type(2) {
+  flex-direction: row-reverse;
+}
+#engineering .pedagogic > div p,
+#socials .pedagogic > div p,
+#laws .pedagogic > div p,
+#medicine .pedagogic > div p {
+  max-width: 60%;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-family: "Open Sans";
+  font-size: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
+  text-align: justify;
+}
+#engineering .pedagogic > div .img,
+#socials .pedagogic > div .img,
+#laws .pedagogic > div .img,
+#medicine .pedagogic > div .img {
+  max-width: 40%;
+  margin: auto 0;
+}
+#engineering .pedagogic > div .img img,
+#socials .pedagogic > div .img img,
+#laws .pedagogic > div .img img,
+#medicine .pedagogic > div .img img {
+  width: 100%;
+}
+#engineering .end,
+#socials .end,
+#laws .end,
+#medicine .end {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  height: 5rem;
+}
+#engineering .end .long,
+#socials .end .long,
+#laws .end .long,
+#medicine .end .long {
+  width: 50%;
+  border-color: #b4b3b1;
+}
+@media screen and (orientation: portrait) {
+  #engineering h3,
+  #socials h3,
+  #laws h3,
+  #medicine h3 {
+    font-size: clamp(1.25rem, 0.357rem + 4.464vw, 2.5rem);
+  }
+  #engineering .type,
+  #socials .type,
+  #laws .type,
+  #medicine .type {
+    padding-top: 4rem;
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+  }
+  #engineering .type h1,
+  #socials .type h1,
+  #laws .type h1,
+  #medicine .type h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  #engineering .motto,
+  #socials .motto,
+  #laws .motto,
+  #medicine .motto {
+    height: 35vh;
+  }
+  #engineering .motto h2,
+  #socials .motto h2,
+  #laws .motto h2,
+  #medicine .motto h2 {
+    width: 100%;
+    font-size: 24px;
+  }
+  #engineering .info,
+  #socials .info,
+  #laws .info,
+  #medicine .info {
+    height: auto;
+    padding-top: 2.5rem;
+  }
+  #engineering .info .parts,
+  #socials .info .parts,
+  #laws .info .parts,
+  #medicine .info .parts {
+    padding: 0 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0;
+    margin-bottom: 0;
+  }
+  #engineering .info .parts:last-of-type,
+  #socials .info .parts:last-of-type,
+  #laws .info .parts:last-of-type,
+  #medicine .info .parts:last-of-type {
+    margin-bottom: 1.5rem;
+  }
+  #engineering .info .parts .option,
+  #socials .info .parts .option,
+  #laws .info .parts .option,
+  #medicine .info .parts .option {
+    gap: 0.5rem;
+    width: 27vw;
+    align-items: center;
+    padding: 1rem;
+  }
+  #engineering .info .parts .option h4,
+  #socials .info .parts .option h4,
+  #laws .info .parts .option h4,
+  #medicine .info .parts .option h4 {
+    font-size: 16px;
+  }
+  #engineering .info .parts .option svg,
+  #socials .info .parts .option svg,
+  #laws .info .parts .option svg,
+  #medicine .info .parts .option svg {
+    height: 4rem;
+    min-width: 4rem;
+    width: 4rem;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 425px) {
+  #engineering .info .parts,
+  #socials .info .parts,
+  #laws .info .parts,
+  #medicine .info .parts {
+    flex-direction: column;
+  }
+  #engineering .info .parts .option,
+  #socials .info .parts .option,
+  #laws .info .parts .option,
+  #medicine .info .parts .option {
+    width: 70vw;
+  }
+}
+@media screen and (orientation: portrait) {
+  #engineering .pedagogic,
+  #socials .pedagogic,
+  #laws .pedagogic,
+  #medicine .pedagogic {
+    justify-content: center;
+  }
+  #engineering .pedagogic > div,
+  #socials .pedagogic > div,
+  #laws .pedagogic > div,
+  #medicine .pedagogic > div {
+    gap: 1rem;
+  }
+  #engineering .pedagogic > div.textone,
+  #socials .pedagogic > div.textone,
+  #laws .pedagogic > div.textone,
+  #medicine .pedagogic > div.textone {
+    flex-direction: row;
+  }
+  #engineering .pedagogic > div.texttwo,
+  #socials .pedagogic > div.texttwo,
+  #laws .pedagogic > div.texttwo,
+  #medicine .pedagogic > div.texttwo {
+    flex-direction: row-reverse;
+  }
+  #engineering .pedagogic > div .img,
+  #socials .pedagogic > div .img,
+  #laws .pedagogic > div .img,
+  #medicine .pedagogic > div .img {
+    display: flex;
+    align-items: center;
+  }
+  #engineering .pedagogic > div .img img,
+  #socials .pedagogic > div .img img,
+  #laws .pedagogic > div .img img,
+  #medicine .pedagogic > div .img img {
+    max-width: 35vw;
+  }
+}
+@media screen and (orientation: portrait) and (max-width: 425px) {
+  #engineering .pedagogic > div .img,
+  #socials .pedagogic > div .img,
+  #laws .pedagogic > div .img,
+  #medicine .pedagogic > div .img {
+    display: none;
+  }
+  #engineering .pedagogic > div p,
+  #socials .pedagogic > div p,
+  #laws .pedagogic > div p,
+  #medicine .pedagogic > div p {
+    max-width: 100%;
+  }
+}
+@media screen and (orientation: portrait) {
+  #engineering .pedagogic > div p,
+  #socials .pedagogic > div p,
+  #laws .pedagogic > div p,
+  #medicine .pedagogic > div p {
+    text-align: justify;
+  }
+}
+
+#engineering .type {
+  background-color: #1D8755;
+}
+#engineering .motto {
+  background-image: url("https://img.freepik.com/free-photo/men-working-machinery-robotic-arm-fun-generated-by-ai_188544-24600.jpg?t=st=1698460855~exp=1698464455~hmac=3d65e29810d82a1268c48961b5942723717ec3bb0d557e6e95020727202a45a6&w=1380");
+}
+
+#socials .type {
+  background-color: #2F78C6;
+}
+#socials .motto {
+  background-image: url("https://img.freepik.com/free-photo/two-businessmen-casual-clothing-discussing-expertise-generated-by-ai_188544-20431.jpg?t=st=1698507143~exp=1698510743~hmac=70b580d00fa69207bb164fe7ffb67fc1bb71393fbdbc6f04b12fa89b13e4b864&w=1380");
+}
+
+#laws .type {
+  background-color: #A06931;
+}
+#laws .motto {
+  background-image: url("https://img.freepik.com/free-photo/back-school-concept-with-woman-studying-library_23-2148172347.jpg?w=1380&t=st=1698516553~exp=1698517153~hmac=dc9b69dfae6832f20cc3184685e8e13f7c8bd4ff81213116b5fb5349b9abe7ea");
+  background-position: 0 -120px;
+}
+
+#medicine .type {
+  background-color: #DF0C83;
+}
+#medicine .motto {
+  background-image: url("https://img.freepik.com/free-photo/young-female-doctor-talking-by-phone-corridor-hospital_1303-21222.jpg?w=1380&t=st=1698512541~exp=1698513141~hmac=e40ac60c23e3591471c1e1e20b43a91d5effbb8b6c09eb89fb6c4c2e6b1dfe5b");
+  background-position: 0 -120px;
 }
 
 @media screen and (orientation: landscape) {
   /* Pages */
-  #wip {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #Homepage {
-    min-height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  }
-  #Homepage > section {
-    height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-  }
-  #Homepage > section > h2 {
-    font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
-    font-family: "DM Sans", sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  #Homepage > section > hr {
-    width: 4rem;
-    border: 0.2rem solid #aaa;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-  }
-  #Homepage > section > span.subtitle {
-    font-family: "DM Serif Display", serif;
-    font-weight: 300;
-    color: #696969;
-    margin-bottom: 1.5rem;
-    font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
-  }
-  #Homepage #home {
-    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
-    background-position: center -5rem;
-    background-size: cover;
-    justify-content: flex-end;
-    color: #fee;
-    padding: 5rem 0;
-  }
-  #Homepage #home > span,
-  #Homepage #home > h1 {
-    padding: 0 5rem;
-    font-family: "Lato", sans-serif;
-  }
-  #Homepage #home > span {
-    font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-  }
-  #Homepage #home > h1 {
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-weight: 200;
-    font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
-  }
-  #Homepage #home > h1 > .bold {
-    font-weight: bold;
-  }
-  #Homepage #home > hr {
-    margin-left: 7rem;
-    width: 60%;
-    height: 1;
-    border: 1px solid #aaa;
-  }
-  #Homepage #home > .events {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding: 0 5rem 1rem 5rem;
-    gap: 0.5rem;
-    overflow-x: scroll;
-    scroll-behavior: smooth;
-  }
-  #Homepage #studywus {
-    align-items: center;
-    height: 85vh;
-    padding: 0 6rem;
-    padding-bottom: 5rem;
-  }
-  #Homepage #studywus > p {
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    color: #696969;
-    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-  }
-  #Homepage #studywus .horizontal-container {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-  }
-  #Homepage .section-3 {
-    background-color: #EEE;
-    align-items: center;
-  }
-  #Homepage .section-3 .courses {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    align-items: center;
-    width: 100%;
-  }
-  #Homepage .section-3 .courses .couple {
-    display: flex;
-    flex-direction: row;
-    min-width: 80%;
-    max-width: 80%;
-    gap: 2rem;
-  }
-  #Homepage .registry {
-    background: linear-gradient(rgba(88, 96, 141, 0.7), rgba(88, 96, 141, 0.7)), url(https://img.freepik.com/free-photo/nobody-empty-call-center-workstation-with-computers-audio-instruments-no-people-customer-service-office-desks-with-telecommunications-technology-offering-helpline-assistance_482257-44179.jpg?w=1380&t=st=1696719611~exp=1696720211~hmac=366d7a48e8ff9274d758c4bf701a97fb95db5c009ce2bf61ac4d831e628b24bc);
-    background-position-y: -550px;
-    background-size: cover;
-    height: 17.5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #Homepage .registry > div {
-    width: 60%;
-  }
-  #Homepage .registry > div > span {
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(0.75rem, 0.179rem + 0.893vw, 1.25rem);
-    color: #8EB8BA;
-  }
-  #Homepage .registry > div > h5 {
-    font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-}
-@media screen and (orientation: landscape) and (orientation: portrait) {
-  #Homepage .registry div span {
-    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-  }
-  #Homepage .registry div h5 {
-    font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
-  }
-}
-@media screen and (orientation: landscape) {
-  #Homepage .emailregister {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    height: 10vh;
-    background-color: #E76A00;
-    padding: 0 10rem;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  #Homepage .emailregister div {
-    display: flex;
-    flex-direction: row;
-  }
-  #Homepage .emailregister div > svg {
-    aspect-ratio: 1/1;
-    width: 50px;
-    height: 50px;
-    color: white;
-  }
-  #Homepage .emailregister div > h5 {
-    font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-    align-self: center;
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-  #Homepage .emailregister form {
-    display: flex;
-    flex-direction: row;
-  }
-  #Homepage .emailregister form input[type=Email] {
-    width: clamp(12.5rem, -1.786rem + 22.321vw, 25rem);
-    height: 2rem;
-    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-    margin: 0;
-    padding: 0.5rem;
-    border: 0;
-  }
-  #Homepage .emailregister form input[type=submit] {
-    height: 3rem;
-    margin: 0;
-    padding: 0 1.5rem;
-    text-transform: uppercase;
-    border: 0;
-    background-color: rgb(88, 96, 141);
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-    color: white;
-  }
-  #Homepage .emailregister form input[type=submit]:hover {
-    cursor: pointer;
-  }
-}
-@media screen and (orientation: landscape) and (orientation: portrait) {
-  #Homepage .emailregister {
-    max-width: 100%;
-    padding: 0;
-  }
-  #Homepage .emailregister div svg {
-    width: 2.5em;
-    height: 2.5em;
-  }
-  #Homepage .emailregister div h5 {
-    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-  #Homepage .emailregister form input[type=Email] {
-    width: clamp(4.688rem, -3.884rem + 42.857vw, 7.5rem);
-    font-size: 10px;
-    height: 1rem;
-  }
-  #Homepage .emailregister form input[type=submit] {
-    font-size: 10px;
-    height: 2rem;
-  }
-}
-@media screen and (orientation: landscape) {
   main#aboutus {
     box-sizing: border-box;
     display: flex;
@@ -1180,369 +1846,6 @@ li.link:hover {
     display: flex;
     flex-direction: column;
   }
-  #courses section {
-    width: 100%;
-  }
-  #courses #home {
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #a3c4f3;
-    background-image: linear-gradient(rgba(3, 57, 78, 0.5), rgba(3, 57, 78, 0.5)), url("https://img.freepik.com/premium-photo/green-environment-office-buildings-science-technology-park-chongqing-china_1112-9189.jpg?w=1380");
-    background-size: cover;
-    background-position: bottom;
-  }
-  #courses #home h1 {
-    font-family: "DM Sans", sans-serif;
-    text-align: center;
-    font-size: 52px;
-    text-transform: uppercase;
-    color: #ffd670;
-    animation: normal;
-    animation-name: opening;
-    animation-duration: 0.5s;
-    animation-iteration-count: 1;
-  }
-  #courses #home h1 span {
-    color: white;
-  }
-  #courses #levels {
-    margin-top: -75px;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  #courses #levels .levelbox {
-    aspect-ratio: 3/2;
-    padding: 1rem;
-    width: clamp(10.938rem, 5.58rem + 8.371vw, 15.625rem);
-    height: 166px;
-    color: white;
-    transition: margin 0.25s;
-    text-decoration: none;
-  }
-  #courses #levels .levelbox:hover {
-    transition: margin 0.25s;
-    margin-top: -75px;
-  }
-  #courses #levels .levelbox.Engineering {
-    background-color: #1D8755;
-  }
-  #courses #levels .levelbox.Socials {
-    background-color: #2F78C6;
-  }
-  #courses #levels .levelbox.Laws {
-    background-color: #A06931;
-  }
-  #courses #levels .levelbox.Medicine {
-    background-color: #DF0C83;
-  }
-  #courses #levels .levelbox svg {
-    width: 44px;
-    height: 44px;
-  }
-  #courses #levels .levelbox h2 {
-    font-family: "DM Sans", sans-serif;
-    margin: 0 3rem 2rem 0;
-  }
-  #courses #diary {
-    padding-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 40vh;
-    background-color: #414b4f;
-  }
-  #courses #diary h2 {
-    margin: 2rem 0 3rem 0;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    font-size: 40px;
-  }
-  #courses #diary .dates {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-  #courses #diary .dates .date {
-    background-color: #fcb900;
-    padding: 2rem;
-    min-width: clamp(7.813rem, 6.027rem + 2.79vw, 9.375rem);
-    max-width: clamp(7.813rem, 6.027rem + 2.79vw, 9.375rem);
-    scale: 1;
-    transition: scale 0.25s;
-  }
-  #courses #diary .dates .date h4 {
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    padding: 0;
-    font-size: 26px;
-  }
-  #courses #diary .dates .date p {
-    text-align: center;
-    margin: 0;
-    margin-top: 0.25rem;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 400;
-  }
-  #courses #diary .dates .date:hover {
-    scale: 1.1;
-    transition: scale 0.25s;
-  }
-  #courses #alumni {
-    height: 40vh;
-    background-image: url("https://img.freepik.com/free-photo/chinese-city_1127-3682.jpg?w=1380&t=st=1698440673~exp=1698441273~hmac=17a514ac582cf3238902fead75b27e7ba9641c018a280d2a3868e8112ff087de");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: clamp(2.5rem, -3.214rem + 8.929vw, 7.5rem);
-  }
-  #courses #alumni .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-    gap: 1rem;
-  }
-  #courses #alumni .box svg {
-    width: 60px;
-    height: 60px;
-  }
-  #courses #alumni .box span {
-    font-size: 32px;
-    font-family: "DM Sans", sans-serif;
-    font-weight: 700;
-  }
-  #courses #alumni .box span.number {
-    color: #fcb900;
-  }
-  #engineering h3,
-  #socials h3,
-  #laws h3,
-  #medicine h3 {
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    font-size: 40px;
-    margin: 0;
-  }
-  #engineering hr,
-  #socials hr,
-  #laws hr,
-  #medicine hr {
-    margin: 1rem 0 3rem 0;
-    width: 3rem;
-    border: 2px solid #ffd670;
-    border-radius: 1rem;
-  }
-  #engineering .type,
-  #socials .type,
-  #laws .type,
-  #medicine .type {
-    padding-top: 5rem;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #engineering .type h1,
-  #socials .type h1,
-  #laws .type h1,
-  #medicine .type h1 {
-    text-transform: uppercase;
-    font-size: 64px;
-    font-family: "DM Sans", sans-serif;
-    margin: 2rem 0;
-    color: white;
-  }
-  #engineering .motto,
-  #socials .motto,
-  #laws .motto,
-  #medicine .motto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 55vh;
-    background-size: cover;
-    background-position: center;
-    text-transform: uppercase;
-  }
-  #engineering .motto h2,
-  #socials .motto h2,
-  #laws .motto h2,
-  #medicine .motto h2 {
-    width: 50%;
-    text-align: center;
-    margin: 0;
-    color: white;
-    font-size: clamp(2.5rem, 1.786rem + 1.116vw, 3.125rem);
-    font-family: "DM Sans", sans-serif;
-  }
-  #engineering .motto h2 span,
-  #socials .motto h2 span,
-  #laws .motto h2 span,
-  #medicine .motto h2 span {
-    color: #ffd670;
-  }
-  #engineering .info,
-  #socials .info,
-  #laws .info,
-  #medicine .info {
-    background-color: #f9f7f5;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-  }
-  #engineering .info .parts,
-  #socials .info .parts,
-  #laws .info .parts,
-  #medicine .info .parts {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    margin-bottom: 4rem;
-  }
-  #engineering .info .parts .option,
-  #socials .info .parts .option,
-  #laws .info .parts .option,
-  #medicine .info .parts .option {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-    width: clamp(15rem, 9.286rem + 8.929vw, 20rem);
-    height: 5rem;
-    color: #03394e;
-  }
-  #engineering .info .parts .option h4,
-  #socials .info .parts .option h4,
-  #laws .info .parts .option h4,
-  #medicine .info .parts .option h4 {
-    margin: 0.25rem 0;
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(1.25rem, 0.679rem + 0.893vw, 1.75rem);
-  }
-  #engineering .info .parts .option svg,
-  #socials .info .parts .option svg,
-  #laws .info .parts .option svg,
-  #medicine .info .parts .option svg {
-    min-width: clamp(3rem, 0.714rem + 3.571vw, 5rem);
-    height: clamp(3rem, 0.714rem + 3.571vw, 5rem);
-  }
-  #engineering .pedagogic,
-  #socials .pedagogic,
-  #laws .pedagogic,
-  #medicine .pedagogic {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    max-width: clamp(57.6rem, 41.143rem + 25.714vw, 72rem);
-  }
-  #engineering .pedagogic h3,
-  #socials .pedagogic h3,
-  #laws .pedagogic h3,
-  #medicine .pedagogic h3 {
-    margin-top: 3rem;
-  }
-  #engineering .pedagogic > div,
-  #socials .pedagogic > div,
-  #laws .pedagogic > div,
-  #medicine .pedagogic > div {
-    display: flex;
-  }
-  #engineering .pedagogic > div:nth-of-type(1),
-  #socials .pedagogic > div:nth-of-type(1),
-  #laws .pedagogic > div:nth-of-type(1),
-  #medicine .pedagogic > div:nth-of-type(1) {
-    flex-direction: row;
-  }
-  #engineering .pedagogic > div:nth-of-type(2),
-  #socials .pedagogic > div:nth-of-type(2),
-  #laws .pedagogic > div:nth-of-type(2),
-  #medicine .pedagogic > div:nth-of-type(2) {
-    flex-direction: row-reverse;
-  }
-  #engineering .pedagogic > div p,
-  #socials .pedagogic > div p,
-  #laws .pedagogic > div p,
-  #medicine .pedagogic > div p {
-    max-width: 60%;
-    box-sizing: border-box;
-    padding: 1rem;
-    font-family: "Open Sans";
-    font-size: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
-    text-align: justify;
-  }
-  #engineering .pedagogic > div .img,
-  #socials .pedagogic > div .img,
-  #laws .pedagogic > div .img,
-  #medicine .pedagogic > div .img {
-    max-width: 40%;
-    margin: auto 0;
-  }
-  #engineering .pedagogic > div .img img,
-  #socials .pedagogic > div .img img,
-  #laws .pedagogic > div .img img,
-  #medicine .pedagogic > div .img img {
-    width: 100%;
-  }
-  #engineering .end,
-  #socials .end,
-  #laws .end,
-  #medicine .end {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    height: 5rem;
-  }
-  #engineering .end .long,
-  #socials .end .long,
-  #laws .end .long,
-  #medicine .end .long {
-    width: 50%;
-    border-color: #b4b3b1;
-  }
-  #engineering .type {
-    background-color: #1D8755;
-  }
-  #engineering .motto {
-    background-image: url("https://img.freepik.com/free-photo/men-working-machinery-robotic-arm-fun-generated-by-ai_188544-24600.jpg?t=st=1698460855~exp=1698464455~hmac=3d65e29810d82a1268c48961b5942723717ec3bb0d557e6e95020727202a45a6&w=1380");
-  }
-  #socials .type {
-    background-color: #2F78C6;
-  }
-  #socials .motto {
-    background-image: url("https://img.freepik.com/free-photo/two-businessmen-casual-clothing-discussing-expertise-generated-by-ai_188544-20431.jpg?t=st=1698507143~exp=1698510743~hmac=70b580d00fa69207bb164fe7ffb67fc1bb71393fbdbc6f04b12fa89b13e4b864&w=1380");
-  }
-  #laws .type {
-    background-color: #A06931;
-  }
-  #laws .motto {
-    background-image: url("https://img.freepik.com/free-photo/back-school-concept-with-woman-studying-library_23-2148172347.jpg?w=1380&t=st=1698516553~exp=1698517153~hmac=dc9b69dfae6832f20cc3184685e8e13f7c8bd4ff81213116b5fb5349b9abe7ea");
-    background-position: 0 -120px;
-  }
-  #medicine .type {
-    background-color: #DF0C83;
-  }
-  #medicine .motto {
-    background-image: url("https://img.freepik.com/free-photo/young-female-doctor-talking-by-phone-corridor-hospital_1303-21222.jpg?w=1380&t=st=1698512541~exp=1698513141~hmac=e40ac60c23e3591471c1e1e20b43a91d5effbb8b6c09eb89fb6c4c2e6b1dfe5b");
-    background-position: 0 -120px;
-  }
   #login {
     position: relative;
     height: 100%;
@@ -1566,7 +1869,7 @@ li.link:hover {
     left: 1rem;
   }
   #login .credentials label {
-    color: white;
+    color: var(--text-100);
     font-size: 3rem;
   }
   #login .credentials input {
@@ -1575,48 +1878,56 @@ li.link:hover {
   #login .credentials .content {
     position: absolute;
     overflow: hidden;
-    left: 3.12rem;
-    bottom: 1rem;
+    left: 0;
+    bottom: 4rem;
     background-color: var(--bg-100);
     color: var(--text-100);
-    width: 30vw;
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
+    width: calc(clamp(15.625rem, 4.911rem + 16.741vw, 25rem) + 6rem);
   }
   #login .credentials .content h3 {
     text-align: center;
     font-family: "DM Sans", sans-serif;
     font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
-    margin: 0;
+    margin: 1rem 0;
   }
-  #login .credentials .content table {
-    width: 80%;
-    border-collapse: collapse;
-    align-self: center;
-    margin: 1rem;
-    font-size: clamp(0.75rem, -0.107rem + 1.339vw, 1.5rem);
+  #login .credentials .content .table {
+    width: clamp(15.625rem, 4.911rem + 16.741vw, 25rem);
   }
-  #login .credentials .content table th,
-  #login .credentials .content table td {
-    border: 1px solid white;
-    width: auto;
-    height: auto;
+  #login .credentials .content .table .head,
+  #login .credentials .content .table .body > button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--primary-100);
+    background-color: transparent;
+    width: 100%;
+    text-align: left;
+    color: var(--text-100);
+    height: 2rem;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
   }
-  #login .credentials .content table th button,
-  #login .credentials .content table td button {
-    border: 0;
-    background: none;
-    color: inherit;
-    padding: 5px;
-    font-size: inherit;
-    width: 100%;
+  #login .credentials .content .table .head > span,
+  #login .credentials .content .table .body > button > span {
+    width: 45%;
+    padding: 0 0.25rem;
+    text-align: center;
   }
-  #login .credentials .content table th {
-    padding: 5px;
+  #login .credentials .content .table .body > button {
+    cursor: pointer;
+  }
+  #login .credentials .content .table .body > button:hover {
+    background-color: var(--accent-100);
+  }
+  #login .credentials .content .table .body > button:active {
+    background-color: var(--accent-200);
   }
   #login .credentials .content.inactive {
     height: 0;
@@ -1930,227 +2241,6 @@ li.link:hover {
     grid-area: 2/2/3/3;
   }
 }
-/* Portrait view */
-/* Support for resolutions in px:
-  480×800
-  640×1136
-  720×1280
-  750×1334
-  768×1024
-  800×1280
-  810×1080
-*/
-@media screen and (orientation: portrait) {
-  #Homepage section {
-    min-height: 100vh;
-    width: 100vw;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    align-items: center;
-  }
-  #Homepage section h2 {
-    font-size: clamp(1.75rem, 0.226rem + 7.619vw, 2.25rem);
-    font-family: "DM Sans", sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  #Homepage section hr {
-    width: 4rem;
-    border: 0.2rem solid #aaa;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-  }
-  #Homepage section span.subtitle {
-    font-family: "DM Serif Display", serif;
-    font-weight: 300;
-    color: #696969;
-    margin-bottom: 1.5rem;
-    font-size: clamp(1rem, 0.238rem + 3.81vw, 1.25rem);
-  }
-  #Homepage section#home {
-    padding-bottom: 25%;
-    justify-content: flex-end;
-    align-items: normal;
-    background-image: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
-    background-size: cover;
-    background-position: center;
-    color: white;
-  }
-  #Homepage section#home span {
-    font-size: 24px;
-  }
-  #Homepage section#home .events {
-    align-self: flex-end;
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.5rem;
-    scroll-snap-type: mandatory;
-    overflow-x: scroll;
-  }
-  #Homepage section#studywus {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 1rem;
-  }
-  #Homepage section#studywus p {
-    font-family: "DM Sans", sans-serif;
-    font-weight: 300;
-    color: #696969;
-    text-align: justify;
-  }
-  #Homepage section#studywus .horizontal-container {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 2rem;
-  }
-  #Homepage section#studywus .horizontal-container article {
-    padding: 0 1rem;
-  }
-  #Homepage section#courses {
-    margin-top: 2rem;
-    background-color: #EEE;
-    padding: 0 1rem;
-  }
-  #Homepage section#courses .courses {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    gap: 1rem;
-  }
-  #Homepage section#courses .courses .couple {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  #Homepage section#courses a {
-    margin: 1rem 0;
-  }
-  #Homepage .registry {
-    background: linear-gradient(rgba(88, 96, 141, 0.7), rgba(88, 96, 141, 0.7)), url(https://img.freepik.com/free-photo/nobody-empty-call-center-workstation-with-computers-audio-instruments-no-people-customer-service-office-desks-with-telecommunications-technology-offering-helpline-assistance_482257-44179.jpg?w=1380&t=st=1696719611~exp=1696720211~hmac=366d7a48e8ff9274d758c4bf701a97fb95db5c009ce2bf61ac4d831e628b24bc);
-    background-position-y: -550px;
-    background-size: cover;
-    min-height: 0;
-    height: 17.5vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  #Homepage .registry > div {
-    width: 60%;
-  }
-  #Homepage .registry > div > span {
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(0.75rem, 0.179rem + 0.893vw, 1.25rem);
-    color: #8EB8BA;
-  }
-  #Homepage .registry > div > h5 {
-    font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-}
-@media screen and (orientation: portrait) and (orientation: portrait) {
-  #Homepage .registry div span {
-    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-  }
-  #Homepage .registry div h5 {
-    font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
-  }
-}
-@media screen and (orientation: portrait) {
-  #Homepage .emailregister {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 0;
-    height: 10vh;
-    background-color: #E76A00;
-    padding: 0 10rem;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  #Homepage .emailregister div {
-    display: flex;
-    flex-direction: row;
-  }
-  #Homepage .emailregister div > svg {
-    aspect-ratio: 1/1;
-    width: 50px;
-    height: 50px;
-    color: white;
-  }
-  #Homepage .emailregister div > h5 {
-    font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
-    align-self: center;
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-  #Homepage .emailregister form {
-    display: flex;
-    flex-direction: row;
-  }
-  #Homepage .emailregister form input[type=Email] {
-    width: clamp(12.5rem, -1.786rem + 22.321vw, 25rem);
-    height: 2rem;
-    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-    margin: 0;
-    padding: 0.5rem;
-    border: 0;
-  }
-  #Homepage .emailregister form input[type=submit] {
-    height: 3rem;
-    margin: 0;
-    padding: 0 1.5rem;
-    text-transform: uppercase;
-    border: 0;
-    background-color: rgb(88, 96, 141);
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
-    color: white;
-  }
-  #Homepage .emailregister form input[type=submit]:hover {
-    cursor: pointer;
-  }
-}
-@media screen and (orientation: portrait) and (orientation: portrait) {
-  #Homepage .emailregister {
-    max-width: 100%;
-    padding: 0;
-  }
-  #Homepage .emailregister div svg {
-    width: 2.5em;
-    height: 2.5em;
-  }
-  #Homepage .emailregister div h5 {
-    font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-    color: white;
-  }
-  #Homepage .emailregister form input[type=Email] {
-    width: clamp(4.688rem, -3.884rem + 42.857vw, 7.5rem);
-    font-size: 10px;
-    height: 1rem;
-  }
-  #Homepage .emailregister form input[type=submit] {
-    font-size: 10px;
-    height: 2rem;
-  }
-}
 @media screen and (orientation: portrait) {
   #aboutus .wallpaper {
     background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
@@ -2229,393 +2319,5 @@ li.link:hover {
   #aboutus .path {
     display: flex;
     flex-direction: column;
-  }
-  #courses #home {
-    height: 50vh;
-    background-image: linear-gradient(rgba(3, 57, 78, 0.5), rgba(3, 57, 78, 0.5)), url("https://img.freepik.com/premium-photo/green-environment-office-buildings-science-technology-park-chongqing-china_1112-9189.jpg?w=1380");
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  #courses #home h1 {
-    text-align: center;
-    font-family: "DM Sans", sans-serif;
-    color: #ffd670;
-    font-size: clamp(1.5rem, 1.143rem + 1.786vw, 2rem);
-    text-transform: uppercase;
-  }
-  #courses #home h1 span {
-    color: white;
-  }
-  #courses #levels {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-  #courses #levels .levelbox {
-    text-decoration: none;
-    width: 50%;
-    padding: 0.5rem;
-    color: white;
-  }
-  #courses #levels .levelbox svg {
-    width: 32px;
-    height: 32px;
-  }
-  #courses #levels .levelbox h2 {
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-    margin: 0 0 1rem 0;
-  }
-  #courses #levels .levelbox.Engineering {
-    background-color: #1D8755;
-  }
-  #courses #levels .levelbox.Socials {
-    background-color: #2F78C6;
-  }
-  #courses #levels .levelbox.Laws {
-    background-color: #A06931;
-  }
-  #courses #levels .levelbox.Medicine {
-    background-color: #DF0C83;
-  }
-}
-@media screen and (orientation: portrait) and (min-width: 426px) {
-  #courses #levels {
-    flex-direction: row;
-    padding: 0 1rem;
-    margin-top: -25px;
-    padding-bottom: 2.5rem;
-  }
-}
-@media screen and (orientation: portrait) {
-  #courses #diary {
-    background-color: #414b4f;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #courses #diary h2 {
-    margin: 0 0 3rem 0;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    font-size: 40px;
-  }
-  #courses #diary .dates {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  #courses #diary .dates .date {
-    background-color: #fcb900;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: "DM Sans", sans-serif;
-    padding: 1rem;
-  }
-  #courses #diary .dates .date h4 {
-    color: white;
-    text-transform: uppercase;
-    font-size: 24px;
-    margin-bottom: 0;
-  }
-  #courses #diary .dates .date p {
-    color: black;
-    text-align: center;
-  }
-}
-@media screen and (orientation: portrait) and (min-width: 426px) {
-  #courses #diary .dates {
-    flex-direction: row;
-    padding: 0 1rem;
-    margin-top: -25px;
-    padding-bottom: 2.5rem;
-    gap: 0;
-  }
-  #courses #diary .dates .date {
-    height: 170px;
-  }
-  #courses #diary .dates .date h4 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-  }
-  #courses #diary .dates .date p {
-    font-size: 12px;
-    margin: 0;
-  }
-}
-@media screen and (orientation: portrait) {
-  #courses #alumni {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-image: url("https://img.freepik.com/free-photo/chinese-city_1127-3682.jpg?w=1380&t=st=1698440673~exp=1698441273~hmac=17a514ac582cf3238902fead75b27e7ba9641c018a280d2a3868e8112ff087de");
-    background-size: cover;
-    background-position: center;
-    gap: 1rem;
-    padding: 2.5rem 0;
-  }
-  #courses #alumni .box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    width: 150px;
-    height: 100px;
-    justify-content: center;
-    border-radius: 15px;
-    font-family: "DM Sans", sans-serif;
-    gap: 0.5rem;
-    font-weight: 700;
-  }
-  #courses #alumni .box svg {
-    width: 32px;
-    height: 32px;
-  }
-  #courses #alumni .box .number {
-    color: #fcb900;
-  }
-  #engineering h3,
-  #socials h3,
-  #laws h3,
-  #medicine h3 {
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-    font-size: clamp(1.25rem, 0.357rem + 4.464vw, 2.5rem);
-    margin: 0;
-  }
-  #engineering hr,
-  #socials hr,
-  #laws hr,
-  #medicine hr {
-    margin: 1rem 0 3rem 0;
-    width: 3rem;
-    border: 2px solid #ffd670;
-    border-radius: 1rem;
-  }
-  #engineering .type,
-  #socials .type,
-  #laws .type,
-  #medicine .type {
-    padding-top: 4rem;
-    height: 25vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-position: center;
-    background-size: cover;
-  }
-  #engineering .type h1,
-  #socials .type h1,
-  #laws .type h1,
-  #medicine .type h1 {
-    text-transform: uppercase;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    margin: 0;
-  }
-  #engineering .motto,
-  #socials .motto,
-  #laws .motto,
-  #medicine .motto {
-    height: 35vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-position: center;
-    background-size: cover;
-  }
-  #engineering .motto h2,
-  #socials .motto h2,
-  #laws .motto h2,
-  #medicine .motto h2 {
-    margin: 0;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-    font-family: "DM Sans", sans-serif;
-  }
-  #engineering .motto h2 span,
-  #socials .motto h2 span,
-  #laws .motto h2 span,
-  #medicine .motto h2 span {
-    color: #ffd670;
-  }
-  #engineering .info,
-  #socials .info,
-  #laws .info,
-  #medicine .info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f9f7f5;
-    padding-top: 2.5rem;
-  }
-  #engineering .info .parts,
-  #socials .info .parts,
-  #laws .info .parts,
-  #medicine .info .parts {
-    display: flex;
-    flex-direction: row;
-    padding: 0 1rem;
-    align-items: center;
-    justify-content: center;
-  }
-  #engineering .info .parts:last-of-type,
-  #socials .info .parts:last-of-type,
-  #laws .info .parts:last-of-type,
-  #medicine .info .parts:last-of-type {
-    margin-bottom: 1.5rem;
-  }
-  #engineering .info .parts .option,
-  #socials .info .parts .option,
-  #laws .info .parts .option,
-  #medicine .info .parts .option {
-    display: flex;
-    flex-direction: row;
-    font-family: "DM Sans", sans-serif;
-    width: 27vw;
-    gap: 0.5rem;
-    align-items: center;
-    padding: 1rem;
-  }
-  #engineering .info .parts .option svg,
-  #socials .info .parts .option svg,
-  #laws .info .parts .option svg,
-  #medicine .info .parts .option svg {
-    height: 4rem;
-    min-width: 4rem;
-    width: 4rem;
-  }
-}
-@media screen and (orientation: portrait) and (max-width: 425px) {
-  #engineering .info .parts,
-  #socials .info .parts,
-  #laws .info .parts,
-  #medicine .info .parts {
-    flex-direction: column;
-  }
-  #engineering .info .parts .option,
-  #socials .info .parts .option,
-  #laws .info .parts .option,
-  #medicine .info .parts .option {
-    width: 70vw;
-  }
-}
-@media screen and (orientation: portrait) {
-  #engineering .pedagogic,
-  #socials .pedagogic,
-  #laws .pedagogic,
-  #medicine .pedagogic {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2.5rem 2rem;
-  }
-  #engineering .pedagogic > div,
-  #socials .pedagogic > div,
-  #laws .pedagogic > div,
-  #medicine .pedagogic > div {
-    display: flex;
-    gap: 1rem;
-  }
-  #engineering .pedagogic > div.textone,
-  #socials .pedagogic > div.textone,
-  #laws .pedagogic > div.textone,
-  #medicine .pedagogic > div.textone {
-    flex-direction: row;
-  }
-  #engineering .pedagogic > div.texttwo,
-  #socials .pedagogic > div.texttwo,
-  #laws .pedagogic > div.texttwo,
-  #medicine .pedagogic > div.texttwo {
-    flex-direction: row-reverse;
-  }
-  #engineering .pedagogic > div .img,
-  #socials .pedagogic > div .img,
-  #laws .pedagogic > div .img,
-  #medicine .pedagogic > div .img {
-    display: flex;
-    align-items: center;
-  }
-  #engineering .pedagogic > div .img img,
-  #socials .pedagogic > div .img img,
-  #laws .pedagogic > div .img img,
-  #medicine .pedagogic > div .img img {
-    max-width: 35vw;
-  }
-}
-@media screen and (orientation: portrait) and (max-width: 425px) {
-  #engineering .pedagogic > div .img,
-  #socials .pedagogic > div .img,
-  #laws .pedagogic > div .img,
-  #medicine .pedagogic > div .img {
-    display: none;
-  }
-}
-@media screen and (orientation: portrait) {
-  #engineering .pedagogic > div p,
-  #socials .pedagogic > div p,
-  #laws .pedagogic > div p,
-  #medicine .pedagogic > div p {
-    text-align: justify;
-  }
-  #engineering .end,
-  #socials .end,
-  #laws .end,
-  #medicine .end {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 3rem;
-    height: 5rem;
-  }
-  #engineering .end .long,
-  #socials .end .long,
-  #laws .end .long,
-  #medicine .end .long {
-    width: 50%;
-    border-color: #b4b3b1;
-  }
-  #engineering .type {
-    background-color: #1D8755;
-  }
-  #engineering .motto {
-    background-image: url("https://img.freepik.com/free-photo/men-working-machinery-robotic-arm-fun-generated-by-ai_188544-24600.jpg?t=st=1698460855~exp=1698464455~hmac=3d65e29810d82a1268c48961b5942723717ec3bb0d557e6e95020727202a45a6&w=1380");
-  }
-  #socials .type {
-    background-color: #2F78C6;
-  }
-  #socials .motto {
-    background-image: url("https://img.freepik.com/free-photo/two-businessmen-casual-clothing-discussing-expertise-generated-by-ai_188544-20431.jpg?t=st=1698507143~exp=1698510743~hmac=70b580d00fa69207bb164fe7ffb67fc1bb71393fbdbc6f04b12fa89b13e4b864&w=1380");
-  }
-  #laws .type {
-    background-color: #A06931;
-  }
-  #laws .motto {
-    background-image: url("https://img.freepik.com/free-photo/back-school-concept-with-woman-studying-library_23-2148172347.jpg?w=1380&t=st=1698516553~exp=1698517153~hmac=dc9b69dfae6832f20cc3184685e8e13f7c8bd4ff81213116b5fb5349b9abe7ea");
-  }
-  #medicine .type {
-    background-color: #DF0C83;
-  }
-  #medicine .motto {
-    background-image: url("https://img.freepik.com/free-photo/young-female-doctor-talking-by-phone-corridor-hospital_1303-21222.jpg?w=1380&t=st=1698512541~exp=1698513141~hmac=e40ac60c23e3591471c1e1e20b43a91d5effbb8b6c09eb89fb6c4c2e6b1dfe5b");
   }
 }/*# sourceMappingURL=main.css.map */

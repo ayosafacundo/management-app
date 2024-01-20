@@ -21,7 +21,7 @@
     left: 1rem;
 
     label {
-      color: white;
+      color: $text-100;
       font-size: 3rem;
     }
 
@@ -33,54 +33,62 @@
     .content {
       position: absolute;
       overflow: hidden;
-      left: 3.12rem;
-      bottom: 1rem;
+      left: 0;
+      bottom: 4rem;
       background-color: $bg-100;
       color: $text-100;
-      width: 30vw;
       border-radius: 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
+      align-items: center;
+      width: calc(clamp(15.625rem, 4.911rem + 16.741vw, 25rem) + 6rem);
 
       h3 {
         text-align: center;
         font-family: $fontSans;
         font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
-        margin: 0;
+        margin: 1rem 0;
       }
 
-      table {
-        width: 80%;
-        border-collapse: collapse;
-        align-self: center;
-        margin: 1rem;
+      .table {
+        width: clamp(15.625rem, 4.911rem + 16.741vw, 25rem);
 
-        font-size: clamp(0.75rem, -0.107rem + 1.339vw, 1.5rem);
-
-        th,
-        td {
-          border: 1px solid white;
-          width: auto;
-          height: auto;
+        .head,
+        .body>button {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid $primary-100;
+          background-color: transparent;
+          width: 100%;
+          text-align: left;
+          color: $text-100;
+          height: 2rem;
           padding: 0;
           margin: 0;
+          box-sizing: border-box;
 
-          button {
-            border: 0;
-            background: none;
-            color: inherit;
-            padding: 5px;
-            font-size: inherit;
-            width: 100%;
+          >span {
+            width: 45%;
+            padding: 0 0.25rem;
+            text-align: center;
+          }
+
+        }
+
+        .body>button {
+          cursor: pointer;
+
+          &:hover {
+            background-color: $accent-100;
+          }
+
+          &:active {
+            background-color: $accent-200;
           }
         }
-
-        th {
-          padding: 5px;
-        }
-
-
       }
 
       &.inactive {

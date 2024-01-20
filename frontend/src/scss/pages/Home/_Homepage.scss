@@ -1,0 +1,350 @@
+#Homepage {
+  min-height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  >section {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (orientation: portrait) {
+      align-items: center;
+    }
+
+    >h2 {
+      font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+      font-family: $fontSans;
+      font-weight: 200;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+      @media screen and (orientation: portrait) {
+        font-size: clamp(1.75rem, 0.226rem + 7.619vw, 2.25rem);
+      }
+    }
+
+    >hr {
+      width: 4rem;
+      border: 0.2rem solid #aaa;
+      border-radius: 0.5rem;
+      margin-bottom: 2rem;
+    }
+
+    >span.subtitle {
+      font-family: $fontSerif;
+      font-weight: 300;
+      color: #696969;
+      margin-bottom: 1.5rem;
+      font-size: clamp(0.875rem, 0.446rem + 0.67vw, 1.25rem);
+
+      @media screen and (orientation: portrait) {
+        font-size: clamp(1rem, 0.238rem + 3.81vw, 1.25rem);
+      }
+    }
+
+    &#home {
+      background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/foto-gratis/grupo-multietnico-jovenes-estudiantes-alegres-caminando_171337-11709.jpg?w=1380&t=st=1691914388~exp=1691914988~hmac=2ec1095f94db067bd441e9589431519acd341469858dad487f7069de8a196fdd);
+      background-position: center -5rem;
+      background-size: cover;
+      justify-content: flex-end;
+      color: #fee;
+      padding: 5rem 0;
+      min-height: 100vh;
+
+      >span,
+      >h1 {
+        padding: 0 5rem;
+        font-family: 'Lato', sans-serif;
+      }
+
+      >span {
+        font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+      }
+
+      >h1 {
+        margin-top: 1rem;
+        text-transform: uppercase;
+        font-weight: 200;
+        font-size: clamp(2rem, 0.714rem + 2.009vw, 3.125rem);
+
+        >.bold {
+          font-weight: bold;
+        }
+      }
+
+      >hr {
+        margin-left: 7rem;
+        width: 60%;
+        height: 1;
+        border: 1px solid #aaa;
+      }
+
+      >.events {
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+      }
+
+      @media screen and (orientation: portrait) {
+
+        >span,
+        >h1 {
+          padding: 0 1rem;
+        }
+
+        >span {
+          font-size: clamp(1rem, 0.464rem + 2.679vw, 1.75rem);
+        }
+
+        h1 {
+          font-size: clamp(1.5rem, 0.964rem + 2.679vw, 2.25rem);
+        }
+
+        align-items: baseline;
+        background-position: center;
+
+        >span {
+          font-size: 24px;
+        }
+      }
+    }
+
+    &#studywus {
+      align-items: center;
+      height: 85vh;
+      padding: 0 6rem;
+      padding-bottom: 5rem;
+
+
+      >p {
+        text-align: center;
+        font-family: $fontSans;
+        font-weight: 300;
+        color: #696969;
+        font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+      }
+
+      .horizontal-container {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+      }
+
+      @media screen and (orientation: portrait) {
+        height: auto;
+        padding: 0 1rem;
+
+        >p {
+          text-align: justify;
+        }
+
+        .horizontal-container {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    &#courses {
+      background-color: #EEE;
+      align-items: center;
+
+      .courses {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+
+        .couple {
+          display: flex;
+          flex-direction: row;
+          min-width: 100%;
+          max-width: 100%;
+          gap: 2rem;
+        }
+      }
+
+      a {
+        margin-bottom: 2rem;
+      }
+
+      @media screen and (orientation: portrait) {
+        margin-top: 2rem;
+        padding: 0 1rem;
+
+        .courses {
+          gap: 1rem;
+          align-items: baseline;
+
+          .couple {
+            min-width: auto;
+            max-width: auto;
+            flex-direction: column;
+          }
+        }
+      }
+    }
+
+    &.registry {
+      background: linear-gradient(rgba(88, 96, 141, 0.7), rgba(88, 96, 141, 0.7)), url(https://img.freepik.com/free-photo/nobody-empty-call-center-workstation-with-computers-audio-instruments-no-people-customer-service-office-desks-with-telecommunications-technology-offering-helpline-assistance_482257-44179.jpg?w=1380&t=st=1696719611~exp=1696720211~hmac=366d7a48e8ff9274d758c4bf701a97fb95db5c009ce2bf61ac4d831e628b24bc);
+      background-position-y: -550px;
+      background-size: cover;
+      min-height: 0;
+      height: 17.5vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      >div {
+        width: 60%;
+
+        >span {
+          text-transform: uppercase;
+          font-family: "DM Sans", sans-serif;
+          font-size: clamp(0.75rem, 0.179rem + 0.893vw, 1.25rem);
+          color: #8EB8BA;
+        }
+
+        >h5 {
+          font-size: clamp(1.5rem, 0.643rem + 1.339vw, 2.25rem);
+          text-transform: uppercase;
+          font-family: "DM Sans", sans-serif;
+          margin: 0;
+          color: white;
+        }
+      }
+
+      @media screen and (orientation: portrait) {
+
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        div {
+          width: 100%;
+          text-align: center;
+
+          span {
+            font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+          }
+
+          h5 {
+            font-size: clamp(0.625rem, -0.137rem + 3.81vw, 0.875rem);
+          }
+        }
+
+        a {
+          margin: 0;
+        }
+      }
+    }
+
+    &.emailregister {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 0;
+      height: 10vh;
+      background-color: #E76A00;
+      padding: 0 10rem;
+      max-width: 100%;
+      overflow-x: hidden;
+
+      div {
+        display: flex;
+        flex-direction: row;
+
+        >svg {
+          aspect-ratio: 1/1;
+          width: 50px;
+          height: 50px;
+          color: white;
+        }
+
+        >h5 {
+          font-size: clamp(1rem, 0.429rem + 0.893vw, 1.5rem);
+          align-self: center;
+          text-transform: uppercase;
+          font-family: "DM Sans", sans-serif;
+          margin: 0;
+          color: white;
+        }
+      }
+
+      form {
+        display: flex;
+        flex-direction: row;
+
+        input[type="Email"] {
+          width: clamp(12.5rem, -1.786rem + 22.321vw, 25rem);
+          height: 2rem;
+          font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+          margin: 0;
+          padding: 0.5rem;
+          border: 0;
+
+        }
+
+        input[type="submit"] {
+          height: 3rem;
+          margin: 0;
+          padding: 0 1.5rem;
+          text-transform: uppercase;
+          border: 0;
+          background-color: rgb(88, 96, 141);
+          font-family: "DM Sans", sans-serif;
+          font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+          color: white;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      @media screen and (orientation: portrait) {
+        max-width: 100%;
+        padding: 0;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        div {
+
+          svg {
+            width: 2.5em;
+            height: 2.5em;
+          }
+
+          h5 {
+            font-size: clamp(0.5rem, 0.119rem + 1.905vw, 0.625rem);
+            text-transform: uppercase;
+            font-family: "DM Sans", sans-serif;
+            margin: 0;
+            color: white;
+          }
+        }
+
+        form {
+          input[type="Email"] {
+            width: 50%;
+            font-size: 10px;
+            height: 1rem;
+          }
+
+          input[type="submit"] {
+            font-size: 10px;
+            height: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

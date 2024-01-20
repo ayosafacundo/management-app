@@ -17,11 +17,8 @@ function Login(): React.ReactElement {
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<values>();
 
   const SelectValue = (e: React.MouseEvent<HTMLElement>) => {
-    if (e.currentTarget.textContent === "Abc123!") {
-      setValue("password", "Abc123!")
-    } else {
-      setValue("email", e.currentTarget.textContent as string);
-    }
+    setValue("email", e.currentTarget.getElementsByTagName("span")[0].textContent?.concat("@claymoreuni.com").toLowerCase() as string);
+    setValue("password", "Abc123!")
   }
 
 
@@ -50,48 +47,39 @@ function Login(): React.ReactElement {
         <input type="checkbox" name="moreinfo" id="moreinfo" onClick={() => setActive(!active)} />
         <label htmlFor='moreinfo'><AiFillInfoCircle /></label>
         <div className={active ? "content active" : "content inactive"}>
-          <h3>Valid credentials</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>Email</th>
-                <th>Password</th>
-                <th>Privileges</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><button onClick={SelectValue}>Student@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Student</td>
-              </tr>
-              <tr>
-                <td><button onClick={SelectValue}>Teacher@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Teacher</td>
-              </tr>
-              <tr>
-                <td><button onClick={SelectValue}>Advisor@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Advisor & Teacher</td>
-              </tr>
-              <tr>
-                <td><button onClick={SelectValue}>Librarian@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Librarian & Teacher</td>
-              </tr>
-              <tr>
-                <td><button onClick={SelectValue}>treasurer@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Treasurer</td>
-              </tr>
-              <tr>
-                <td><button onClick={SelectValue}>admin@placeholder.com</button></td>
-                <td><button onClick={SelectValue}>Abc123!</button></td>
-                <td>Admin</td>
-              </tr>
-            </tbody>
-          </table>
+          <h3>Predefined Logins</h3>
+          <div className="table">
+            <div className="head">
+              <span>User</span>
+              <span>Privileges</span>
+            </div>
+            <div className='body'>
+              <button onClick={SelectValue}>
+                <span>Student</span>
+                <span>Student</span>
+              </button>
+              <button onClick={SelectValue}>
+                <span>Teacher</span>
+                <span>Teacher</span>
+              </button>
+              <button onClick={SelectValue}>
+                <span>Advisor</span>
+                <span>Advisor & Teacher</span>
+              </button>
+              <button onClick={SelectValue}>
+                <span>Librarian</span>
+                <span>Librarian & Teacher</span>
+              </button>
+              <button onClick={SelectValue}>
+                <span>Treasurer</span>
+                <span>Treasurer</span>
+              </button>
+              <button onClick={SelectValue}>
+                <span>Admin</span>
+                <span>Admin</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <div className="welcome">
@@ -105,7 +93,7 @@ function Login(): React.ReactElement {
           <div className='input-container email'>
             <label htmlFor="email"><BsPersonFill /></label>
             <div className='notify-container input'>
-              <input id="email" {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })}></input>
+              <input autoComplete="email" id="email" {...register("email", { required: true, pattern: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/i })}></input>
               {/** error handler **/}
               {errors.email && <span className='notify-bubble'>!</span>}
             </div>
@@ -114,7 +102,7 @@ function Login(): React.ReactElement {
           <div className='input-container password'>
             <label htmlFor="password"><AiFillLock /></label>
             <div className='notify-container input'>
-              <input id="password" {...register("password", { required: true, pattern: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,32}$/ })}></input>
+              <input autoComplete='password' id="password" {...register("password", { required: true, pattern: /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,32}$/ })}></input>
               {/** error handler **/}
               {errors.password && <span className='notify-bubble'>!</span>}
             </div>
