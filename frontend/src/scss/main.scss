@@ -31,8 +31,8 @@
 // @import 'components/chip';
 // @import 'components/book';
 
+/* University Website Pages */
 
-/* Landscape view */
 /* Support for resolutions in px:
   1920×1080
   1600×900
@@ -43,16 +43,26 @@
   1280×800
   1280×720
   1024×768
+  810×1080
+  800×1280
+  768×1024
+  750×1334
+  720×1280
+  640×1136
+  480×800
 */
 
 @import 'pages/Wip';
+@import 'pages/Home/Homepage';
+@import 'pages/Home/Courses';
+@import 'pages/Home/CoursePages';
+
+
 @media screen and (orientation: landscape) {
   /* Pages */
-  @import 'pages/Landscape/wip'; // Work in progress Placeholder
-  @import 'pages/Landscape/Homepage';
   @import 'pages/Landscape/AboutUs';
-  @import 'pages/Landscape/Courses';
-  @import 'pages/Landscape/CoursePages';
+  // @import 'pages/Landscape/Courses';
+  // @import 'pages/Landscape/CoursePages';
   @import 'pages/Landscape/Login';
   @import 'pages/library';
 
@@ -61,21 +71,11 @@
   @import 'pages/Campus/dashboards/student';
 }
 
-/* Portrait view */
-/* Support for resolutions in px:
-  480×800
-  640×1136
-  720×1280
-  750×1334
-  768×1024
-  800×1280
-  810×1080
-*/
 @media screen and (orientation: portrait) {
-  @import 'pages/Portrait/Homepage';
+  // @import 'pages/Portrait/Homepage';
   @import 'pages/Portrait/AboutUs';
-  @import 'pages/Portrait/Courses';
-  @import 'pages/Portrait/CoursePages';
+  // @import 'pages/Portrait/Courses';
+  // @import 'pages/Portrait/CoursePages';
   //@import 'pages/Portrait/wip'; // Work in progress Placeholder
   //@import 'pages/Portrait/Login';
   //@import 'pages/Portrait/library';

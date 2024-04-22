@@ -3,7 +3,7 @@
         "_id": 1,
         "username": "Admin",
         "type": "admin",
-        "email": "admin@placeholder.com",
+        "email": "admin@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": true,
@@ -18,7 +18,7 @@
         "_id": 2,
         "username": "Treasurer",
         "type": "treasurer",
-        "email": "treasurer@placeholder.com",
+        "email": "treasurer@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": false,
@@ -33,7 +33,7 @@
         "_id": 3,
         "username": "Teacher",
         "type": "teacher",
-        "email": "teacher@placeholder.com",
+        "email": "teacher@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": false,
@@ -48,7 +48,7 @@
         "_id": 4,
         "username": "Librarian",
         "type": "librarian",
-        "email": "librarian@placeholder.com",
+        "email": "librarian@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": false,
@@ -63,7 +63,7 @@
         "_id": 5,
         "username": "Advisor",
         "type": "advisor",
-        "email": "advisor@placeholder.com",
+        "email": "advisor@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": false,
@@ -78,7 +78,7 @@
         "_id": 6,
         "username": "Student",
         "type": "student",
-        "email": "student@placeholder.com",
+        "email": "student@claymoreuni.com",
         "password": "Abc123!",
         "privileges": {
             "admin": false,

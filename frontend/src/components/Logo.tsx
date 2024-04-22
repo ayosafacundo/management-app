@@ -2,7 +2,7 @@ import React from 'react'
 
 function Logo(): React.ReactElement {
   return (
-    <h1 className='imglogo'>Claymore<br />University</h1>
+    <div className='imglogo'><img src="" alt="Claymore University" loading='eager' /></div>
   )
 }
 

@@ -16,11 +16,7 @@ import {
   Login,
   // Register,
   Student,
-<<<<<<< HEAD
 } from '../pages/Index.ts';
-=======
-} from '../pages';
->>>>>>> cdeec800b2de4c1228a69b4f4dd2f8d0cfbd04b8
 
 function routes(): React.ReactElement {
 

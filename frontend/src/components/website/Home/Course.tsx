@@ -16,7 +16,7 @@ function Course(): React.ReactElement {
     <article className="course">
       <div className="calendar">
         <BsCalendarFill />
-        <span>{date.day + " " + date.month.substring(0, 3)}</span>
+        <span>{date.day}<br />{date.month.substring(0, 3)}</span>
       </div>
       <div className="info">
         <h3>{event.title}</h3>
