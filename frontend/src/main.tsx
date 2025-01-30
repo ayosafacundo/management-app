@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './scss/main.css';
 import Router from './routes/routes.tsx';
+import './main.css';
 
 
 const rootDiv = document.getElementById('root')!

@@ -1,0 +1,77 @@
+CREATE TABLE Classes (
+    ClassID INT PRIMARY KEY AUTO_INCREMENT,
+    Title VARCHAR(100) NOT NULL,
+    Description TEXT,
+    StartDate DATE,
+    EndDate DATE,
+    TeacherID INT,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (TeacherID) REFERENCES Users(UserID) ON DELETE SET NULL
+);
+
+CREATE TABLE ClassEnrollments (
+    EnrollmentID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    ClassID INT NOT NULL,
+    EnrollmentDate TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID) ON DELETE CASCADE,
+    UNIQUE (UserID, ClassID)  -- Prevents duplicate enrollments
+);
+
+CREATE TABLE CourseMaterials (
+    MaterialID INT PRIMARY KEY AUTO_INCREMENT,
+    ClassID INT NOT NULL,
+    MaterialTitle VARCHAR(100) NOT NULL,
+    MaterialDescription TEXT,
+    MaterialLink VARCHAR(255),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID) ON DELETE CASCADE
+);
+
+CREATE TABLE Feedback (
+    FeedbackID INT PRIMARY KEY AUTO_INCREMENT,
+    UserID INT NOT NULL,
+    ClassID INT NOT NULL,
+    FeedbackText TEXT NOT NULL,
+    Rating INT CHECK (Rating BETWEEN 1 AND 5),  -- Assuming a rating scale of 1 to 5
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (UserID) REFERENCES Users(UserID) ON DELETE CASCADE,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID) ON DELETE CASCADE
+);
+
+CREATE TABLE Majors (
+    MajorID INT PRIMARY KEY AUTO_INCREMENT,
+    MajorName VARCHAR(100) UNIQUE NOT NULL,
+    Description TEXT,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE RoadmapNodes (
+    NodeID INT PRIMARY KEY AUTO_INCREMENT,
+    ParentNodeID INT DEFAULT NULL,  -- Reference to the parent node
+    MajorID INT NOT NULL,
+    NodeType ENUM('Root', 'Branch', 'Leaf') NOT NULL,
+    NodeName VARCHAR(100) NOT NULL,  -- Name of the node (e.g., "Freshman Year", "Core Classes")
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (ParentNodeID) REFERENCES RoadmapNodes(NodeID) ON DELETE CASCADE,
+    FOREIGN KEY (MajorID) REFERENCES Majors(MajorID) ON DELETE CASCADE
+);
+
+CREATE TABLE RoadmapClasses (
+    RoadmapClassID INT PRIMARY KEY AUTO_INCREMENT,
+    NodeID INT NOT NULL,  -- Reference to the leaf node
+    ClassID INT NOT NULL,  -- Reference to the class
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UpdatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (NodeID) REFERENCES RoadmapNodes(NodeID) ON DELETE CASCADE,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID) ON DELETE CASCADE,
+    UNIQUE (NodeID, ClassID)  -- Prevents duplicate class entries for the same node
+);
+
+CREATE INDEX idx_classes_title ON Classes(Title);
+CREATE INDEX idx_events_date ON Events(EventDate);

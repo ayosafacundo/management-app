@@ -5,4 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   base: '/management-app/',
   plugins: [react()],
+  server: {
+    open: true,
+    hmr: true,
+  }
 })

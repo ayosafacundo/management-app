@@ -1,0 +1,7 @@
+CREATE OR REPLACE FUNCTION update_updatedat_column()  
+RETURNS TRIGGER AS $$  
+BEGIN  
+    NEW.updatedat = CURRENT_TIMESTAMP;  
+    RETURN NEW;  
+END;  
+$$ LANGUAGE plpgsql;

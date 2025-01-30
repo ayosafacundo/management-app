@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 /* Pages */
-import Wrapper from '../layout/CampusWrapper.tsx';
-import HomeWrapper from '../layout/HomeWrapper.tsx';
+import Wrapper from '../layout/Campus/CampusWrapper.tsx';
+import HomeWrapper from '../layout/Home/HomeWrapper.tsx';
 import {
   WIP,
   Homepage,
@@ -16,7 +16,7 @@ import {
   Login,
   // Register,
   Student,
-} from '../pages/Index.ts';
+} from '../Index.ts';
 
 function routes(): React.ReactElement {
 

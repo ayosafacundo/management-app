@@ -1,0 +1,49 @@
+CREATE TABLE roles (  
+    roleid int8 generated always as identity PRIMARY KEY,  
+    rolename text UNIQUE NOT NULL,  
+    createdat timestamptz DEFAULT CURRENT_TIMESTAMP,  
+    updatedat timestamptz DEFAULT CURRENT_TIMESTAMP  
+);
+CREATE TRIGGER update_roles_updatedat  
+BEFORE UPDATE ON roles  
+FOR EACH ROW  
+EXECUTE FUNCTION update_updatedat_column();
+CREATE TABLE permissions (  
+    permissionid int8 generated always as identity PRIMARY KEY,  
+    permissionname text UNIQUE NOT NULL,  -- Descriptive name of the permission (e.g., "ViewClasses")  
+    permissiondescription text,             -- Optional description of what the permission entails  
+    createdat timestamptz DEFAULT CURRENT_TIMESTAMP,  
+    updatedat timestamptz DEFAULT CURRENT_TIMESTAMP  
+);  
+CREATE TRIGGER update_roles_updatedat  
+BEFORE UPDATE ON permissions
+FOR EACH ROW  
+EXECUTE FUNCTION update_updatedat_column();
+CREATE TABLE rolepermissions (  
+    rolepermissionid int8 generated always as identity PRIMARY KEY,  
+    roleid int8 NOT NULL,  
+    permissionid int8 NOT NULL,  
+    createdat timestamptz DEFAULT CURRENT_TIMESTAMP,  
+    FOREIGN KEY (roleid) REFERENCES roles(roleid) ON DELETE CASCADE,  
+    FOREIGN KEY (permissionid) REFERENCES permissions(permissionid) ON DELETE CASCADE,  
+    UNIQUE (roleid, permissionid)  -- Prevents duplicate entries for the same role-permission pair  
+);  
+CREATE TABLE users (  
+    userid int8 generated always as identity PRIMARY KEY,  
+    firstname text NOT NULL,  
+    lastname text NOT NULL,  
+    email text UNIQUE NOT NULL,  
+    gender text CHECK (gender IN ('Male', 'Female', 'Other')) NOT NULL,  
+    passwordhash text NOT NULL,  
+    roleid int8,  
+    active boolean,
+    createdat timestamptz DEFAULT CURRENT_TIMESTAMP,  
+    updatedat timestamptz DEFAULT CURRENT_TIMESTAMP,  
+    FOREIGN KEY (roleid) REFERENCES roles(roleid) ON DELETE SET NULL  
+);  
+CREATE TRIGGER update_roles_updatedat  
+BEFORE UPDATE ON users
+FOR EACH ROW  
+EXECUTE FUNCTION update_updatedat_column();
+
+CREATE INDEX idx_users_email ON users(email);

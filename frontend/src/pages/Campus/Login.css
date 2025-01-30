@@ -1,0 +1,213 @@
+#login {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  background-color: var(--primary-100);
+  background-image: url("https://img.freepik.com/free-photo/online-assignment_1098-13105.jpg?w=1380&t=st=1697838724~exp=1697839324~hmac=6ebca29feb6349f0150e1b53b7af2c518b9b14b370bb56b370040f51fd437176");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: left;
+  overflow: hidden;
+
+  .credentials {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    bottom: 1rem;
+    left: 1rem;
+
+    label {
+      color: var(--text-100);
+      font-size: 3rem;
+    }
+
+    input {
+      display: none;
+    }
+
+
+    .content {
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      bottom: 4rem;
+      background-color: var(--bg-100);
+      color: var(--text-100);
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: calc(clamp(15.625rem, 4.911rem + 16.741vw, 25rem) + 6rem);
+
+      h3 {
+        text-align: center;
+        font-family: var(--fontSans);
+        font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+        margin: 1rem 0;
+      }
+
+      .table {
+        width: clamp(15.625rem, 4.911rem + 16.741vw, 25rem);
+
+        .head,
+        .body>button {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          border: 1px solid var(--primary-100);
+          background-color: transparent;
+          width: 100%;
+          text-align: left;
+          color: var(--text-100);
+          height: 2rem;
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+
+          >span {
+            width: 45%;
+            padding: 0 0.25rem;
+            text-align: center;
+          }
+
+        }
+
+        .body>button {
+          cursor: pointer;
+
+          &:hover {
+            background-color: var(--accent-100);
+          }
+
+          &:active {
+            background-color: var(accent-200);
+          }
+        }
+      }
+
+      &.inactive {
+        height: 0;
+        width: 0;
+        transition: height 0.25s, width 0.25s;
+      }
+
+      &.active {
+        height: 40vh;
+        transition: height 0.25s, width 0.25s;
+      }
+    }
+  }
+
+  .welcome {
+    background: rgba(#fff, 0.2);
+    box-sizing: border-box;
+    padding: 2vh 5vw;
+    height: 100%;
+    align-self: flex-start;
+    flex-shrink: 3;
+
+    h1 {
+      font-size: clamp(2.25rem, 1.083rem + 1.823vw, 4rem);
+    }
+
+    p {
+      font-size: clamp(1rem, 0.667rem + 0.521vw, 1.5rem);
+    }
+  }
+
+  .form {
+    background-color: var(--bg-100);
+    height: 100%;
+    min-width: clamp(38.375rem, 27.375rem + 17.188vw, 48rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-100);
+
+    .person {
+      font-size: 64px;
+      font-family: var(--fontSans);
+      margin: 0;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: var(--text-100);
+    }
+
+    form {
+      display: flex;
+      flex-flow: column nowrap;
+      padding: 2rem;
+      gap: 1rem;
+      width: 80%;
+      align-items: center;
+
+      .input-container {
+        background: linear-gradient(135deg, var(--accent-100) 0%, var(--accent-200) 100%);
+        border-radius: 15rem;
+        display: flex;
+        padding: 0 0.75rem;
+        height: 2.5rem;
+        width: 50%;
+
+        >.notify-container {
+          margin: 0;
+          width: 100%;
+
+          >input {
+            background: transparent;
+            height: 95%;
+            width: 95%;
+            border: 0;
+            color: var(--text-100);
+            font-family: var(--fontSans);
+            font-size: 16px;
+
+            &:focus {
+              border: 0;
+              outline: 0;
+            }
+          }
+
+
+        }
+
+        >label {
+          display: flex;
+          align-items: center;
+          padding-right: 0.5rem;
+          font-size: 20px;
+        }
+      }
+
+      .line {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 1rem 0;
+        width: 75%;
+      }
+
+      .submit {
+        font-family: var(--fontSans);
+        color: var(--text-100);
+        font-size: 16px;
+        width: fit-content;
+        display: flex;
+        margin: auto;
+        border: 0;
+        background: linear-gradient(135deg, var(--primary-100) 0%, var(--primary-300) 100%);
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+}

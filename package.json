@@ -6,11 +6,11 @@
   "main": "server.js",
   "scripts": {
     "start": "node backend/server",
-    "server": "cd .\\backend\\ && yarn dev",
-    "client": "cd .\\frontend\\ && yarn dev",
-    "build": "cd .\\frontend\\ && yarn build",
-    "dev": "concurrently \"yarn server\" \"yarn client\"",
-    "deploy": "cd .\\frontend\\ && yarn deploy"
+    "server": "cd ./backend && bun run server",
+    "client": "cd ./frontend && bun run dev",
+    "build": "cd ./frontend && bunx run build",
+    "dev": "concurrently \"bunx run server\" \"bunx run client\"",
+    "deploy": "cd .\\frontend\\ && bunx run deploy"
   },
   "repository": {
     "type": "git",

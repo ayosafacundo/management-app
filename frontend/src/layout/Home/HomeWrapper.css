@@ -1,0 +1,357 @@
+#HomeHeader {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  min-height: 5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: white;
+  padding: 0 3rem;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .check {
+    display: flex;
+    flex-direction: row;
+    min-height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .displaynav {
+      display: none;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
+
+  .navs {
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    font-family: var(--fontSans);
+
+    &.inactive {
+      display: flex;
+    }
+
+    &.active {
+      display: flex;
+    }
+
+    a {
+      padding: 1rem;
+      margin: 0.5rem;
+      border-radius: 0.5rem;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      vertical-align: middle;
+
+      &.active {
+        color: #E76A00;
+      }
+
+      &:hover {
+        background-color: #ffffff88;
+        cursor: pointer;
+        color: black;
+      }
+    }
+
+    .campusbtn {
+      padding: 1rem;
+      border: 1px solid transparent;
+      border-radius: 0.5rem;
+      background-color: black;
+      color: white;
+
+
+      &:hover {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+
+      &:active {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  #HomeHeader {
+    flex-direction: column;
+    background-color: rgba(3, 57, 78, 1);
+    justify-content: center;
+
+    .navs {
+      flex-direction: column;
+      text-align: end;
+      align-items: normal;
+      flex-grow: 0;
+      background-color: rgba(3, 57, 78, 1);
+
+      a {
+        border: 1px solid white;
+        margin: 0.25rem 0;
+      }
+    }
+
+    .check .displaynav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .navs.inactive {
+      display: none;
+    }
+  }
+}
+
+#HomeFooter {
+  h5 {
+    text-transform: uppercase;
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    color: white;
+
+  }
+
+  .last {
+    background-color: #242424;
+    height: 22.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 10%;
+    max-width: 100%;
+    overflow-x: hidden;
+
+    .nav {
+      padding: 0.5rem 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #979797;
+      font-family: "DM Sans", sans-serif;
+
+      >a {
+        color: #979797;
+        text-decoration: none;
+        padding: 0.5rem 1.5rem;
+        border-right: 1px solid #979797;
+        text-transform: capitalize;
+        font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+
+        &.active {
+          color: #E76A00;
+        }
+
+        &:last-of-type {
+          border-right: 0;
+        }
+
+        &:hover {
+          color: #E76A00;
+        }
+      }
+    }
+
+    .copynsocials {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        color: #979797;
+      }
+
+      .copyright {
+        >span {
+          font-size: clamp(1rem, 0.714rem + 0.446vw, 1.25rem);
+        }
+
+        >.imglogo {
+          color: white;
+        }
+      }
+
+      .socials {
+        display: flex;
+        flex-direction: column;
+        font-family: "DM Sans", sans-serif;
+
+        >span {
+          margin-bottom: 8px;
+        }
+
+        .links {
+          display: flex;
+          flex-direction: row;
+          gap: 5px;
+
+          svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+            background-color: #E76A00;
+          }
+        }
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      .nav {
+        a {
+          padding: 0.25rem 0.5rem;
+          font-size: clamp(0.625rem, 0.244rem + 1.905vw, 0.75rem);
+        }
+      }
+
+      .copynsocials .socials {
+        .links svg {
+          width: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
+          height: clamp(1.25rem, -1.036rem + 11.429vw, 2rem);
+        }
+      }
+    }
+  }
+}
+
+a.button {
+  margin: auto 0;
+  border: 0;
+  color: white;
+  width: fit-content;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #e0bc43;
+  font-family: var(--fontSans);
+  padding: 1rem 2rem;
+  font-size: clamp(0.5rem, -0.262rem + 3.81vw, 0.75rem);
+
+  @media screen and (orientation:landscape) {
+    font-size: clamp(0.75rem, 0.464rem + 0.446vw, 1rem);
+  }
+}
+
+main#aboutus {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .wallpaper {
+    height: 100dvh;
+    background: linear-gradient(rgba(3, 57, 78, 0.7), rgba(3, 57, 78, 0.7)), url(https://img.freepik.com/free-photo/royal-palace-madrid-spain_1398-4247.jpg?w=1380&t=st=1697227686~exp=1697228286~hmac=bb31866bffdf9abb9dc0c7379d18b6b6c2296ab15f9548ad6e87d35d3e8060a4);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+
+    .imglogo {
+      font-size: clamp(2.5rem, 1.357rem + 1.786vw, 3.5rem);
+    }
+
+    q {
+      margin-top: 3rem;
+      font-size: clamp(2.25rem, 0.821rem + 2.232vw, 3.5rem);
+      width: 60%;
+      text-align: justify;
+      font-family: 'Lato', sans-serif;
+    }
+
+    p {
+      font-size: clamp(2rem, 1.429rem + 0.893vw, 2.5rem);
+      margin-top: 0;
+      width: 60%;
+      text-align: end;
+      font-family: 'Lato', sans-serif;
+    }
+
+    .button {
+      position: absolute;
+      margin: 1rem;
+      bottom: 0;
+    }
+  }
+
+  #me {
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0;
+    background-color: #f9f7f5;
+
+    .mysection {
+      width: 80%;
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+
+      .img {
+        background-image: url('https://img.freepik.com/free-photo/abstract-blur-defocused-bookshelf-library_1203-9639.jpg?w=1380&t=st=1698093113~exp=1698093713~hmac=2aa87b6f555c1875cee69406cc7704670852e50be7747b5c011eba5e320e8296');
+        background-position: -12rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-width: 460px;
+        border: 0.5rem solid #e0bc43;
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        div {
+          h3 {
+            color: rgb(3, 57, 78);
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1.5rem, 0.929rem + 0.893vw, 2rem);
+            margin: 0;
+          }
+
+          h4 {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1.25rem, 0.964rem + 0.446vw, 1.5rem);
+            margin: 1rem 0;
+          }
+
+          p {
+            height: auto;
+            flex-grow: 1;
+            text-align: justify;
+            font-size: clamp(0.875rem, 0.732rem + 0.223vw, 1rem);
+          }
+        }
+
+        .button {
+          align-self: center;
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .path {
+    display: flex;
+    flex-direction: column;
+  }
+}
