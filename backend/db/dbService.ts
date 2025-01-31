@@ -22,6 +22,7 @@ export default class Database {
       await client.query("COMMIT");
     } catch (err) {
       await client.query("ROLLBACK");
+      console.log(err);
       return null;
     }
     client.release();
@@ -67,13 +68,11 @@ export default class Database {
   public async getUsers({ limit, offset, role, email, gender }: GetUsersQuery) {
     let limitQuery = ""
     let filterQuerys = [];
-    if (limit != undefined && limit <= 80 && limit > 0) {
+    if (limit != undefined && limit > 0) {
       limitQuery = `LIMIT ${limit}`;
-      if (offset != undefined && offset > 0) {
-        limitQuery += ` OFFSET ${offset};`;
-      }
-    } else {
-      limitQuery = 'LIMIT 10';
+    }
+    if (offset != undefined && offset > 0) {
+      limitQuery += ` OFFSET ${offset};`;
     }
     if (role != undefined) {
       filterQuerys.push(`r.rolename = '${role}'`);
@@ -115,18 +114,12 @@ export default class Database {
   }
 
   public cleanInputs(input: string) {
-    return input.replace("\'", "");
+    return input.trim().replace("\'", "");
   }
 
   public hashpassword(password: string) {
-    let hashed;
-    bcrypt.genSalt(10, function (err, salt) {
-      bcrypt.hash(password, salt, function (err, hash) {
-        if (err) console.error(err);
-        hashed = hash;
-      });
-      if (err) console.error(err);
-    });
+    let salt = bcrypt.genSaltSync(10);
+    let hashed = bcrypt.hashSync(password, salt);
     return hashed;
   }
 
@@ -142,7 +135,7 @@ export default class Database {
    */
   public async addUser({firstname, lastname, email, gender, rolename, password}:User): Promise<Result<any[], string>> {
     let roleid;
-    let usersWithEmail = await this.safeQuery(`SELECT u.email FROM users u WHERE (u.email = ${this.cleanInputs(email.toString())})`);
+    let usersWithEmail = await this.safeQuery(`SELECT u.email FROM users u WHERE (u.email = '${this.cleanInputs(email.toString())}')`);
     if (usersWithEmail != null) {
       return Err("User with same email already registered.");
     }
